@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Variables>
+    <SetVar key="projectFile" value="%MSBuildProjectFile_SDV%" />
+    <SetVar key="KmIncludePath" value="%IncludePath_SMV_SDV%" />
+    <SetVar key="dev14" value="%VCINSTALLDIR%" />
+</Variables>

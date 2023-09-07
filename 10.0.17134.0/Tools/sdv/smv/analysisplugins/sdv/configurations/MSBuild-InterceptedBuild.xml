@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Action name="InterceptedBuild" nextAction="Scan">
+    <Env key="PATH" value="%sdv%\bin\engine;%PATH%" />
+    <Env key="SMV_OUTPUT_DIR" value="[$outputDir]" />
+    <Env key="PLATFORM_SMV_INTERCEPTOR" value="[$interceptorPlatform]" />
+    <Env key="SMV_ANALYSIS_COMPILER_MSBUILD" value="[$interceptorPath]" />
+    <Env key="SMV_CL_ADD_ARG" value="-I\&quot;%sdv%\osmodel\wdm\&quot; -I\&quot;%sdv%\osmodel\wdf\&quot; -I\&quot;%sdv%\osmodel\ndis\&quot; -I\&quot;%sdv%\osmodel\fs\&quot; -I\&quot;%sdv%\osmodel\mpio\&quot; -I\&quot;%sdv%\osmodel\storport\&quot; -I\&quot;[$headersDir]\&quot; [$driverIncludes]" />
+    <Command value="cmd" arguments="/c echo SET SOLUTIONDIR_SDV_FINAL=%SOLUTIONDIR_SDV%> runsdv.bat" />
+    <Command value="cmd" arguments="/c echo IF %SOLUTIONDIR_SDV:~-1%==\ SET SOLUTIONDIR_SDV_FINAL=%SOLUTIONDIR_SDV:~0,-1%>> runsdv.bat" />
+    <Command value="cmd" arguments="/c echo msbuild /noconsolelogger /fileLoggerParameters:LogFile=[$smvLogFileNamePrefix].log /t:rebuild /p:trackfileaccess=false /p:forcerebuild=true /p:cltoolpath=&quot;%smv%\bin&quot; /p:libtoolpath=&quot;%smv%\bin&quot; /p:linktoolpath=&quot;%smv%\bin&quot; &quot;[$projectFile]&quot; /p:configuration=&quot;%CONFIGURATION_SDV%&quot; /p:platform=&quot;%PLATFORM_SDV%&quot; /p:SolutionDir=&quot;%SOLUTIONDIR_SDV_FINAL%&quot;>> runsdv.bat" />
+    <Command value="cmd" arguments="/c runsdv.bat" />
+    <Command value="del" arguments="runsdv.bat" />
+</Action>
