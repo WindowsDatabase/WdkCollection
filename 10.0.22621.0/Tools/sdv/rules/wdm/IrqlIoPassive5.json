@@ -1,0 +1,23 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoGetConfigurationInformation",
+    "IoGetDeviceObjectPointer",
+    "IoGetDmaAdapter",
+    "IoGetFileObjectGenericMapping",
+    "IoInitializeTimer",
+    "IoIsWdmVersionAvailable",
+    "IoReadPartitionTable",
+    "IoRegisterDriverReinitialization",
+    "IoRegisterShutdownNotification",
+    "IoRemoveShareAccess",
+    "IoSetPartitionInformation",
+    "IoSetShareAccess",
+    "IoUnregisterShutdownNotification",
+    "IoUpdateShareAccess",
+    "IoWMIAllocateInstanceIds",
+    "IoWMIRegistrationControl",
+    "IoWritePartitionTable"
+  ],
+  "ruleName": "IrqlIoPassive5"
+}

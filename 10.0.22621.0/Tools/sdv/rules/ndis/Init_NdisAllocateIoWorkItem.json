@@ -1,0 +1,9 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisAllocateIoWorkItem",
+    "NdisFreeIoWorkItem",
+    "RemoveHeadList"
+  ],
+  "ruleName": "Init_NdisAllocateIoWorkItem"
+}

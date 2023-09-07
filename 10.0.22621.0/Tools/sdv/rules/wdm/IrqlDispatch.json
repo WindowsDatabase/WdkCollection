@@ -1,0 +1,30 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "AllocateAdapterChannel",
+    "AllocateCommonBuffer",
+    "BuildMdlFromScatterGatherList",
+    "BuildScatterGatherList",
+    "FlushAdapterBuffers",
+    "FreeAdapterChannel",
+    "FreeCommonBuffer",
+    "FreeMapRegisters",
+    "GetDmaAlignment",
+    "GetScatterGatherList",
+    "IoAllocateController",
+    "IoFreeController",
+    "IoStartNextPacket",
+    "IoWriteErrorLogEntry",
+    "KefAcquireSpinLockAtDpcLevel",
+    "KefReleaseSpinLockFromDpcLevel",
+    "KeInsertByKeyDeviceQueue",
+    "KeInsertDeviceQueue",
+    "KeRemoveByKeyDeviceQueue",
+    "KeRemoveDeviceQueue",
+    "MapTransfer",
+    "PutDmaAdapter",
+    "PutScatterGatherList",
+    "ReadDmaCounter"
+  ],
+  "ruleName": "IrqlDispatch"
+}

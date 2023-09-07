@@ -1,0 +1,31 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "RtlAnsiStringToUnicodeString",
+    "RtlCompareUnicodeString",
+    "RtlDowncaseUnicodeChar",
+    "RtlDowncaseUnicodeString",
+    "RtlDuplicateUnicodeString",
+    "RtlEqualUnicodeString",
+    "RtlFreeUnicodeString",
+    "RtlGenerateClass5Guid",
+    "RtlGUIDFromString",
+    "RtlHashUnicodeString",
+    "RtlOemStringToCountedUnicodeString",
+    "RtlOemStringToUnicodeString",
+    "RtlStringFromGUID",
+    "RtlUnicodeStringToAnsiString",
+    "RtlUnicodeStringToCountedOemString",
+    "RtlUnicodeStringToOemString",
+    "RtlUnicodeToUTF8N",
+    "RtlUpcaseUnicodeChar",
+    "RtlUpcaseUnicodeString",
+    "RtlUpcaseUnicodeStringToAnsiString",
+    "RtlUpcaseUnicodeStringToCountedOemString",
+    "RtlUpcaseUnicodeStringToOemString",
+    "RtlUTF8ToUnicodeN",
+    "RtlxAnsiStringToUnicodeSize",
+    "RtlxUnicodeStringToAnsiSize"
+  ],
+  "ruleName": "IrqlRtlPassive2"
+}

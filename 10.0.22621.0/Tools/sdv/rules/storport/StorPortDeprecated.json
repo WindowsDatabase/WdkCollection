@@ -1,0 +1,8 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "StorPortLogError",
+    "StorPortValidateRange"
+  ],
+  "ruleName": "StorPortDeprecated"
+}

@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "IoSetCompletionRoutine",
+    "IoSetCompletionRoutineEx"
+  ],
+  "ruleName": "SetCompletionRoutineFromDispatch"
+}

@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisCloseConfiguration",
+    "NdisOpenConfigurationEx"
+  ],
+  "ruleName": "NdisOpenConfigurationEx"
+}

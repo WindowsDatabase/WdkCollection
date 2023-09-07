@@ -1,0 +1,18 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WDF_MEMORY_DESCRIPTOR_INIT_HANDLE",
+    "WdfMemoryAssignBuffer",
+    "WdfMemoryCopyFromBuffer",
+    "WdfMemoryCopyToBuffer",
+    "WdfMemoryGetBuffer",
+    "WdfObjectDelete",
+    "WdfObjectDereference",
+    "WdfObjectReference",
+    "WdfRequestComplete",
+    "WdfRequestCompleteWithInformation",
+    "WdfRequestCompleteWithPriorityBoost",
+    "WdfRequestRetrieveInputMemory"
+  ],
+  "ruleName": "MemAfterReqCompletedWriteA"
+}

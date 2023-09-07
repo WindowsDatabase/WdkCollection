@@ -1,0 +1,85 @@
+/*++
+Copyright (c) Microsoft Corporation
+
+Module Name:
+
+    etl_UilEndpoint.npl
+
+Abstract:
+
+    The NetMon parser language file for the UilEndpoint state machine.
+    This has been generated automatically from a mdxml file.
+    DO NOT MODIFY THIS FILE MANUALLY.
+
+--*/
+
+Table UilEndpointStates(State)
+{
+    switch(State)
+    {
+    case 0: "_noevent_";
+    case 1: "AckowledgingControllerResetComplete";
+    case 2: "CancellingSecondaryTransfers";
+    case 3: "CancellingSecondaryTransfersOnControllerReset";
+    case 4: "CancellingSecondaryTransfersOnDisable";
+    case 5: "CancellingSecondaryTransfersOnHalt";
+    case 6: "CancellingSecondaryTransfersOnResetRequest";
+    case 7: "CheckingIfEndpointCanBeResetAfterHalt";
+    case 8: "CompletingAllTransfersOnDisable";
+    case 9: "CompletingAllTransfersOnDisableAfterHalt";
+    case 10: "CompletingAllTransfersOnDisableAfterResetFailure";
+    case 11: "CompletingEndpointResetOnFailure";
+    case 12: "CompletingResetEndpointOnSuccess";
+    case 13: "CompletingResetRequest";
+    case 14: "CompletingResetRequestDueToOutstandingTransfers";
+    case 15: "Disabled";
+    case 16: "DisablingTransfersOnCancel";
+    case 17: "DisablingTransfersOnControllerReset";
+    case 18: "DisablingTransfersOnDisable";
+    case 19: "DisablingTransfersOnHalt";
+    case 20: "DisablingTransfersOnReset";
+    case 21: "Enabled";
+    case 22: "EnablingTransfers";
+    case 23: "EnablingTransfersOnEnable";
+    case 24: "NotifyUCXAboutTransferCancellation";
+    case 25: "ReclaimingTransfers";
+    case 26: "ReclaimingTransfersAfterControllerReset";
+    case 27: "ReclaimingTransfersOnHalt";
+    case 28: "ReclaimingTransfersOnReset";
+    case 29: "ResettingEndpoint";
+    case 30: "SignalingCompletionOfEnable";
+    case 31: "TestingIfEndpointShouldBeReset";
+    case 32: "WaitingForControllerResetCompletion";
+    case 33: "WaitingForControllerResetCompletionInEnabled";
+    case 34: "WaitingForControllerResetOrEndpointDisable";
+    case 35: "WaitingForEndpointDisabled";
+    case 36: "WaitingForResetFromClient";
+    default: "Unknown";
+    }
+}
+
+Table UilEndpointEvents(Event)
+{
+    switch(Event)
+    {
+    case 0: "_noevent_";
+    case 1: "Cleanup";
+    case 2: "ControllerResetComplete";
+    case 3: "EndpointDisableComplete";
+    case 4: "HCD_EndpointHalted";
+    case 5: "HCD_EndpointResetFailure";
+    case 6: "HCD_EndpointResetSuccess";
+    case 7: "No";
+    case 8: "OperationFailure";
+    case 9: "OperationSuccess";
+    case 10: "SecondaryRequestsComplete";
+    case 11: "UCX_ControllerResetStart";
+    case 12: "UCX_EndpointDisabled";
+    case 13: "UCX_EndpointEnabled";
+    case 14: "UCX_OkToCancelTransfers";
+    case 15: "UCX_ResetRequestFromClient";
+    case 16: "UCX_TransferCanceled";
+    case 17: "Yes";
+    default: "Unknown";
+    }
+}

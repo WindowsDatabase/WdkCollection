@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "KeAcquireSpinLock",
+    "KeAcquireSpinLockRaiseToDpc",
+    "KeReleaseSpinLock"
+  ],
+  "ruleName": "SpinLockDpc"
+}

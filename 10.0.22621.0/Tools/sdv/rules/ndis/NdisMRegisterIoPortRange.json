@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisMRegisterIoPortRange",
+    "NdisMSetMiniportAttributes"
+  ],
+  "ruleName": "NdisMRegisterIoPortRange"
+}

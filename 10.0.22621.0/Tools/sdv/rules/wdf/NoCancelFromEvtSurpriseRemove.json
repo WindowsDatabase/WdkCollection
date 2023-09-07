@@ -1,0 +1,17 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfIoQueueDrain",
+    "WdfIoQueueDrainSynchronously",
+    "WdfIoQueuePurge",
+    "WdfIoQueuePurgeSynchronously",
+    "WdfIoQueueStop",
+    "WdfIoQueueStopAndPurge",
+    "WdfIoQueueStopAndPurgeSynchronously",
+    "WdfIoQueueStopSynchronously",
+    "WdfRequestComplete",
+    "WdfRequestCompleteWithInformation",
+    "WdfRequestCompleteWithPriorityBoost"
+  ],
+  "ruleName": "NoCancelFromEvtSurpriseRemove"
+}

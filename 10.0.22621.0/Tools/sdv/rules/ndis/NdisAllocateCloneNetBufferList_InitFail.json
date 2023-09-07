@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisAllocateCloneNetBufferList",
+    "NdisFreeCloneNetBufferList"
+  ],
+  "ruleName": "NdisAllocateCloneNetBufferList_InitFail"
+}

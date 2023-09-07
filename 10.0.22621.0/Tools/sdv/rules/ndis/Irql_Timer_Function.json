@@ -1,0 +1,10 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisAllocateTimerObject",
+    "NdisCancelTimerObject",
+    "NdisFreeTimerObject",
+    "NdisSetTimerObject"
+  ],
+  "ruleName": "Irql_Timer_Function"
+}

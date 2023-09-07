@@ -1,0 +1,18 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoOpenDeviceRegistryKey@XDV",
+    "ZwClose",
+    "ZwClose@XDV",
+    "ZwCreateKey",
+    "ZwDeleteKey",
+    "ZwEnumerateKey",
+    "ZwEnumerateValueKey",
+    "ZwFlushKey",
+    "ZwOpenKey",
+    "ZwQueryKey",
+    "ZwQueryValueKey",
+    "ZwSetValueKey"
+  ],
+  "ruleName": "ZwRegistryOpen"
+}

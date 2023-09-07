@@ -1,0 +1,8 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "StorPortAllocatePool",
+    "StorPortFreePool"
+  ],
+  "ruleName": "StorPortAllocatePool2"
+}

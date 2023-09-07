@@ -1,0 +1,14 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "IoCreateFile",
+    "IoCreateNotificationEvent",
+    "IoCreateSynchronizationEvent",
+    "IoCreateUnprotectedSymbolicLink",
+    "IoDeassignArcName",
+    "IoDeleteController",
+    "IoDeleteSymbolicLink",
+    "IoDisconnectInterrupt"
+  ],
+  "ruleName": "IrqlIoPassive4"
+}

@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisAllocateNetBufferPool",
+    "NdisFreeNetBufferPool"
+  ],
+  "ruleName": "NdisAllocateNetBufferPool"
+}

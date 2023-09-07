@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "ExAcquireFastMutex",
+    "ExTryToAcquireFastMutex"
+  ],
+  "ruleName": "IrqlExApcLte1"
+}

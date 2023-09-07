@@ -1,0 +1,11 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoBuildDeviceIoControlRequest",
+    "IoCallDriver",
+    "KeInitializeEvent",
+    "KeWaitForSingleObject",
+    "PoCallDriver"
+  ],
+  "ruleName": "IoBuildDeviceControlWait"
+}

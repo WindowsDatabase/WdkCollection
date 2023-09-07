@@ -1,0 +1,23 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfIoTargetFormatRequestForInternalIoctl",
+    "WdfIoTargetFormatRequestForInternalIoctlOthers",
+    "WdfIoTargetFormatRequestForIoctl",
+    "WdfIoTargetFormatRequestForRead",
+    "WdfIoTargetFormatRequestForWrite",
+    "WdfRequestFormatRequestUsingCurrentType",
+    "WdfRequestSend",
+    "WdfRequestWdmFormatUsingStackLocation",
+    "WdfUsbTargetDeviceFormatRequestForControlTransfer",
+    "WdfUsbTargetDeviceFormatRequestForCyclePort",
+    "WdfUsbTargetDeviceFormatRequestForString",
+    "WdfUsbTargetDeviceFormatRequestForUrb",
+    "WdfUsbTargetPipeFormatRequestForAbort",
+    "WdfUsbTargetPipeFormatRequestForRead",
+    "WdfUsbTargetPipeFormatRequestForReset",
+    "WdfUsbTargetPipeFormatRequestForUrb",
+    "WdfUsbTargetPipeFormatRequestForWrite"
+  ],
+  "ruleName": "RequestFormattedValid"
+}

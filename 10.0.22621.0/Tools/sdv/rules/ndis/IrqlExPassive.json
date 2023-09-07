@@ -1,0 +1,11 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "ExIsProcessorFeaturePresent",
+    "ExRaiseAccessViolation",
+    "ExRaiseDatatypeMisalignment",
+    "ExRaiseStatus",
+    "ExUuidCreate"
+  ],
+  "ruleName": "IrqlExPassive"
+}

@@ -1,0 +1,11 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisAcquireSpinLock",
+    "NdisAllocateSpinLock",
+    "NdisDprAcquireSpinLock",
+    "NdisDprReleaseSpinLock",
+    "NdisReleaseSpinLock"
+  ],
+  "ruleName": "SpinLockDprRelease"
+}

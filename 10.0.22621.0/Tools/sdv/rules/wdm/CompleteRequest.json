@@ -1,0 +1,11 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ExQueueWorkitem",
+    "IoCompleteRequest",
+    "IoSetCompletionRoutine",
+    "IoSetCompletionRoutineEx",
+    "RemoveHeadList"
+  ],
+  "ruleName": "CompleteRequest"
+}

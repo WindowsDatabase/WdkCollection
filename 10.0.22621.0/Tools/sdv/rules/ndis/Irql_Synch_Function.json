@@ -1,0 +1,16 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NDIS_RELEASE_MUTEX",
+    "NDIS_WAIT_FOR_MUTEX",
+    "NdisAcquireReadWriteLock",
+    "NdisAcquireSpinLock",
+    "NdisDprAcquireSpinLock",
+    "NdisDprReleaseSpinLock",
+    "NdisReleaseReadWriteLock",
+    "NdisReleaseSpinLock",
+    "NdisResetEvent",
+    "NdisSetEvent"
+  ],
+  "ruleName": "Irql_Synch_Function"
+}

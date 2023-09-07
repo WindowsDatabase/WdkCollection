@@ -1,0 +1,9 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "ExFreeToNPagedLookasideList",
+    "TdiDeregisterPnPHandlers",
+    "TdiRegisterPnPHandlers"
+  ],
+  "ruleName": "SpIrql"
+}

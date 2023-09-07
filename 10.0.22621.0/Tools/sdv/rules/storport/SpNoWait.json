@@ -1,0 +1,32 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "CcWaitForCurrentLazyWriterActivity",
+    "ExAcquireSharedWaitForExclusive",
+    "ExAllocatePool",
+    "ExAllocatePoolWithQuota",
+    "ExAllocatePoolWithQuotaTag",
+    "ExAllocatePoolWithTag",
+    "ExAllocatePoolWithTagPriority",
+    "ExEnterCriticalRegionAndAcquireSharedWaitForExclusive",
+    "ExWaitForRundownProtectionRelease",
+    "ExWaitForRundownProtectionReleaseCacheAware",
+    "FsRtlAllocateFileLock",
+    "FsRtlCancellableWaitForMultipleObjects",
+    "FsRtlCancellableWaitForSingleObject",
+    "FsRtlIncrementCcFastReadWait",
+    "IoAllocateController",
+    "IoAllocateIrp",
+    "IoWMIAllocateInstanceIds",
+    "KeWaitForMultipleObjects",
+    "KeWaitForMutexObject",
+    "KeWaitForSingleObject",
+    "MmAllocateNonCachedMemory",
+    "MmAllocatePagesForMdl",
+    "StorPortStallExecution",
+    "ZwAllocateLocallyUniqueId",
+    "ZwAllocateVirtualMemory",
+    "ZwWaitForSingleObject"
+  ],
+  "ruleName": "SpNoWait"
+}

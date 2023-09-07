@@ -1,0 +1,11 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ExInterlockedInsertHeadList",
+    "ExInterlockedInsertTailList",
+    "ExInterlockedPushEntryList",
+    "IoMarkIrpPending",
+    "RemoveHeadList"
+  ],
+  "ruleName": "MarkingInterlockedQueuedIrps"
+}

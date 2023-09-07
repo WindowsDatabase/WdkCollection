@@ -1,0 +1,11 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoAllocateIrp",
+    "IoCallDriver",
+    "IoSetCompletionRoutine",
+    "IoSetCompletionRoutineEx",
+    "PoCallDriver"
+  ],
+  "ruleName": "IoAllocateForward"
+}

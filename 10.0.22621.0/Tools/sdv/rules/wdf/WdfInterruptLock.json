@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfInterruptAcquireLock",
+    "WdfInterruptReleaseLock"
+  ],
+  "ruleName": "WdfInterruptLock"
+}

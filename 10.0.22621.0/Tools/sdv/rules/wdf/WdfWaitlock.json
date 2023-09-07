@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfWaitLockAcquire",
+    "WdfWaitLockRelease"
+  ],
+  "ruleName": "WdfWaitlock"
+}

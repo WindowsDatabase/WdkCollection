@@ -1,0 +1,20 @@
+/*
+    Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Domain:
+
+    Wdm
+
+Description:
+
+    This rule checks for Double Fetch from userland pointers
+    
+Help Link:
+
+    https://go.microsoft.com/fwlink/?LinkId=2146454
+    
+--*/
+sdv_main.exit
+{
+  abort "This is just a placeholder as the actual rule is defined by the engine"; 
+}

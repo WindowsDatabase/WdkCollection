@@ -1,0 +1,14 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "ExAcquireResourceExclusiveLite",
+    "ExAcquireResourceSharedLite",
+    "ExAcquireSharedStarveExclusive",
+    "ExAcquireSharedWaitForExclusive",
+    "ExReleaseResourceForThreadLite",
+    "ExReleaseResourceLite",
+    "KeEnterCriticalRegion",
+    "KeLeaveCriticalRegion"
+  ],
+  "ruleName": "WithinCriticalRegion"
+}

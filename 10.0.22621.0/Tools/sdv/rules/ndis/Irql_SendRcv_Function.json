@@ -1,0 +1,11 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisCancelSendNetBufferLists",
+    "NdisMIndicateReceiveNetBufferLists",
+    "NdisMSendNetBufferListsComplete",
+    "NdisReturnNetBufferLists",
+    "NdisSendNetBufferLists"
+  ],
+  "ruleName": "Irql_SendRcv_Function"
+}

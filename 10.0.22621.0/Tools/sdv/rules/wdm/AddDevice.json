@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoAttachDeviceToDeviceStack",
+    "IoCreateDevice",
+    "WdmlibIoCreateDeviceSecure"
+  ],
+  "ruleName": "AddDevice"
+}

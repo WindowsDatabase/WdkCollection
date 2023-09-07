@@ -1,0 +1,10 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "IoAssignArcName",
+    "IoCreateSymbolicLink",
+    "IoDetachDevice",
+    "IoRegisterDeviceInterface"
+  ],
+  "ruleName": "IrqlIoPassive3"
+}
