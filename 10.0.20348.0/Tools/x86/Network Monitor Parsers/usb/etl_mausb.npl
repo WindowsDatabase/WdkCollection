@@ -1,0 +1,126 @@
+/*++
+Copyright (c) Microsoft Corporation
+
+Module Name:
+
+etl_mausb.npl
+
+--*/
+
+Table MaUsbManagementSubType(SubType)
+{
+    switch(SubType)
+    {
+    case 00: "ManagementSubTypeCapReq";
+    case 01: "ManagementSubTypeCapResp";
+    case 02: "ManagementSubTypeUSBDevHandleReq";
+    case 03: "ManagementSubTypeUSBDevHandleResp";
+    case 04: "ManagementSubTypeEPHandleReq";
+    case 05: "ManagementSubTypeEPHandleResp";
+    case 06: "ManagementSubTypeEPActivateReq";
+    case 07: "ManagementSubTypeEPActivateResp";
+    case 08: "ManagementSubTypeEPInactivateReq";
+    case 09: "ManagementSubTypeEPInactivateResp";
+    case 10: "ManagementSubTypeEPResetReq";
+    case 11: "ManagementSubTypeEPResetResp";
+    case 12: "ManagementSubTypeEPClearTransferReq";
+    case 13: "ManagementSubTypeEPClearTransferResp";
+    case 14: "ManagementSubTypeEPHandleDeleteReq";
+    case 15: "ManagementSubTypeEPHandleDeleteResp";
+    case 16: "ManagementSubTypeDevResetReq";
+    case 17: "ManagementSubTypeDevResetResp";
+    case 18: "ManagementSubTypeModifyEP0Req";
+    case 19: "ManagementSubTypeModifyEP0Resp";
+    case 20: "ManagementSubTypeSetUSBDevAddrReq";
+    case 21: "ManagementSubTypeSetUSBDevAddrResp";
+    case 22: "ManagementSubTypeUpdateDevReq";
+    case 23: "ManagementSubTypeUpdateDevResp";
+    case 24: "ManagementSubTypeUSBDevDisconnectReq";
+    case 25: "ManagementSubTypeUSBDevDisconnectResp";
+    case 26: "ManagementSubTypeUSBSuspendReq";
+    case 27: "ManagementSubTypeUSBSuspendResp";
+    case 28: "ManagementSubTypeUSBResumeReq";
+    case 29: "ManagementSubTypeUSBResumeResp";
+    case 30: "ManagementSubTypeRemoteWakeReq";
+    case 31: "ManagementSubTypeRemoteWakeResp";
+    case 32: "ManagementSubTypePingReq";
+    case 33: "ManagementSubTypePingResp";
+    case 34: "ManagementSubTypeDevDisconnectReq";
+    case 35: "ManagementSubTypeDevDisconnectResp";
+    case 36: "ManagementSubTypeDevInitDisconnectReq";
+    case 37: "ManagementSubTypeDevInitDisconnectResp";
+    case 38: "ManagementSubTypeSynchReq";
+    case 39: "ManagementSubTypeSynchResp";
+    case 40: "ManagementSubTypeCancelTransferReq";
+    case 41: "ManagementSubTypeCancelTransferResp";
+    case 42: "ManagementSubTypeEPOpenStreamReq";
+    case 43: "ManagementSubTypeEPOpenStreamResp";
+    case 44: "ManagementSubTypeEPCloseStreamReq";
+    case 45: "ManagementSubTypeEPCloseStreamResp";
+    case 46: "ManagementSubTypeUSBDevResetReq";
+    case 47: "ManagementSubTypeUSBDevResetResp";
+    case 48: "ManagementSubTypeDevNotificationReq";
+    case 49: "ManagementSubTypeDevNotificationResp";
+    case 50: "ManagementSubTypeEPSetKeepAliveReq";
+    case 51: "ManagementSubTypeEPSetKeepAliveResp";
+    case 52: "ManagementSubTypeGetPortBWReq";
+    case 53: "ManagementSubTypeGetPortBWResp";
+    case 54: "ManagementSubTypeSleepReq";
+    case 55: "ManagementSubTypeSleepResp";
+    case 56: "ManagementSubTypeWakeReq";
+    case 57: "ManagementSubTypeWakeResp";
+    case 58: "ManagementSubTypeReserved1Req";
+    case 59: "ManagementSubTypeReserved1Resp";
+    case 60: "ManagementSubTypeReserved2Req";
+    case 61: "ManagementSubTypeReserved2Resp";
+    case 62: "ManagementSubTypeVendorSpecificReq";
+    case 63: "ManagementSubTypeVendorSpecificResp";
+    default: "Unknown";
+    }
+}
+
+Table MaUsbStatus(Status)
+{
+    switch(Status)
+    {
+    case 000: "MAUSB_STATUS_SUCCESS";
+    case 001: "MAUSB_STATUS_RESERVED1";
+    case 127: "MAUSB_STATUS_RESERVED2";
+    case 128: "MAUSB_STATUS_UNSUCCESSFUL";
+    case 129: "MAUSB_STATUS_INVALID_MA_USB_SESSION_STATE";
+    case 130: "MAUSB_STATUS_INVALID_DEVICE_HANDLE";
+    case 131: "MAUSB_STATUS_INVALID_EP_HANDLE";
+    case 132: "MAUSB_STATUS_INVALID_EP_HANDLE_STATE";
+    case 133: "MAUSB_STATUS_INVALID_REQUEST";
+    case 134: "MAUSB_STATUS_MISSING_SEQUENCE_NUMBER";
+    case 135: "MAUSB_STATUS_TRANSFER_PENDING";
+    case 136: "MAUSB_STATUS_TRANSFER_EP_STALL";
+    case 137: "MAUSB_STATUS_TRANSFER_SIZE_ERROR";
+    case 138: "MAUSB_STATUS_TRANSFER_DATA_BUFFER_ERROR";
+    case 139: "MAUSB_STATUS_TRANSFER_BABBLE_DETECTED";
+    case 140: "MAUSB_STATUS_TRANSFER_TRANSACTION_ERROR";
+    case 141: "MAUSB_STATUS_TRANSFER_SHORT_TRANSFER";
+    case 142: "MAUSB_STATUS_TRANSFER_CANCELLED";
+    case 143: "MAUSB_STATUS_INSUFFICIENT_RESOURCES";
+    case 144: "MAUSB_STATUS_NOT_SUFFICIENT_BANDWIDTH";
+    case 145: "MAUSB_STATUS_INTERNAL_ERROR";
+    case 146: "MAUSB_STATUS_DATA_OVERRUN";
+    case 147: "MAUSB_STATUS_DEVICE_NOT_ACCESSED";
+    case 148: "MAUSB_STATUS_BUFFER_OVERRUN";
+    case 149: "MAUSB_STATUS_BUSY";
+    case 150: "MAUSB_STATUS_DROPPED_PACKET";
+    case 151: "MAUSB_STATUS_ISOCH_TIME_EXPIRED";
+    case 152: "MAUSB_STATUS_ISOCH_TIME_INVALID";
+    case 153: "MAUSB_STATUS_NO_USB_PING_RESPONSE";
+    case 154: "MAUSB_STATUS_NOT_SUPPORTED";
+    case 155: "MAUSB_STATUS_REQUEST_DENIED";
+    case 156: "MAUSB_STATUS_MISSING_REQUEST_ID";
+    case 157: "MAUSB_STATUS_RESERVED3";
+    case 255: "MAUSB_STATUS_RESERVED4";
+    default: "Unknown";
+    }
+}
+
+
+
+

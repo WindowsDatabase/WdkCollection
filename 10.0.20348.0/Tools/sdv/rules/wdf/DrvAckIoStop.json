@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfDeviceInitSetPnpPowerEventCallbacks",
+    "WdfFdoInitSetFilter",
+    "WdfIoQueueCreate"
+  ],
+  "ruleName": "DrvAckIoStop"
+}

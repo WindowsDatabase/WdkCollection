@@ -1,0 +1,7 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "StorPortNotification"
+  ],
+  "ruleName": "StorPortNotification2"
+}

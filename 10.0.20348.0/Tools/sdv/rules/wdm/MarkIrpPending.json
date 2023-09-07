@@ -1,0 +1,11 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoCallDriver",
+    "IoCompleteRequest",
+    "IoMarkIrpPending",
+    "PoCallDriver",
+    "RemoveHeadList"
+  ],
+  "ruleName": "MarkIrpPending"
+}

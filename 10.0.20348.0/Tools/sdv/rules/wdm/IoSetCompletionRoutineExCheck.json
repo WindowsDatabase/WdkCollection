@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoCallDriver",
+    "IoSetCompletionRoutineEx",
+    "PoCallDriver"
+  ],
+  "ruleName": "IoSetCompletionRoutineExCheck"
+}

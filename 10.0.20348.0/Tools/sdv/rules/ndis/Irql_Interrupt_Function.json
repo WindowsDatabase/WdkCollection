@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisMDeregisterInterruptEx",
+    "NdisMRegisterInterruptEx"
+  ],
+  "ruleName": "Irql_Interrupt_Function"
+}

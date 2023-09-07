@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoSetCancelRoutine",
+    "IoSetStartIoAttributes"
+  ],
+  "ruleName": "StartIoCancel"
+}

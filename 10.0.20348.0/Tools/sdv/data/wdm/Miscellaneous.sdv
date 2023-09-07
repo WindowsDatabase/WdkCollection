@@ -1,0 +1,7 @@
+DanglingDeviceObjectReference
+PnpSameDeviceObject
+TargetRelationNeedsRef
+UnsafeAllocatePool
+ZwRegistryCreate
+ZwRegistryOpen
+AddDevice

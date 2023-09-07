@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "IoGetDeviceToVerify",
+    "IoSetDeviceToVerify"
+  ],
+  "ruleName": "IrqlIoDispatch"
+}

@@ -1,0 +1,12 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfIoQueueRetrieveFoundRequest",
+    "WdfIoQueueRetrieveNextRequest",
+    "WdfIoQueueRetrieveRequestByFileObject",
+    "WdfRequestComplete",
+    "WdfRequestCompleteWithInformation",
+    "WdfRequestCompleteWithPriorityBoost"
+  ],
+  "ruleName": "DoubleCompletion"
+}

@@ -1,0 +1,9 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisMDeregisterInterruptEx",
+    "NdisMRegisterInterruptEx",
+    "NdisMSynchronizeWithInterruptEx"
+  ],
+  "ruleName": "NdisMDeregisterInterruptEx"
+}

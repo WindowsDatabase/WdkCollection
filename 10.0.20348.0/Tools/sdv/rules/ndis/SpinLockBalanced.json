@@ -1,0 +1,13 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "FILTER_CANCEL_DIRECT_OID_REQUEST",
+    "NdisAcquireSpinLock",
+    "NdisDprAcquireSpinLock",
+    "NdisDprReleaseSpinLock",
+    "NdisReleaseSpinLock",
+    "PROTOCOL_CM_ACTIVATE_VC_COMPLETE",
+    "PROTOCOL_CM_MODIFY_QOS_CALL"
+  ],
+  "ruleName": "SpinLockBalanced"
+}

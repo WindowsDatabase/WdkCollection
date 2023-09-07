@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisCancelTimerObject",
+    "NdisSetTimerObject"
+  ],
+  "ruleName": "PeriodicTimer"
+}

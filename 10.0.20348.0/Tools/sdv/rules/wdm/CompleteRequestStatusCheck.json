@@ -1,0 +1,14 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoAcquireRemoveLock",
+    "IoCallDriver",
+    "IoCompleteRequest",
+    "IoMarkIrpPending",
+    "IoSetCompletionRoutine",
+    "IoSetCompletionRoutineEx",
+    "KeWaitForSingleObject",
+    "PoCallDriver"
+  ],
+  "ruleName": "CompleteRequestStatusCheck"
+}

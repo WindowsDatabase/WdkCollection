@@ -1,0 +1,13 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "FsRtlAcquireFileExclusive",
+    "FsRtlPrivateLock",
+    "FsRtlReleaseFile",
+    "KeAcquireQueuedSpinLock",
+    "KeReleaseMutant",
+    "KeReleaseQueuedSpinLock",
+    "KeTryToAcquireQueuedSpinLock"
+  ],
+  "ruleName": "ReservedDDIs"
+}

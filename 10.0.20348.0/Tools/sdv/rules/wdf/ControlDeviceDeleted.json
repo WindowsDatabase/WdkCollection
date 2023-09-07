@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfDeviceCreate",
+    "WdfObjectDelete"
+  ],
+  "ruleName": "ControlDeviceDeleted"
+}

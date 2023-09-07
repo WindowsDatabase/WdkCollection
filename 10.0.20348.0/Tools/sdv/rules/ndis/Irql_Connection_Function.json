@@ -1,0 +1,13 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisCoAssignInstanceName",
+    "NdisCoCreateVc",
+    "NdisCoDeleteVc",
+    "NdisCoGetTapiCallId",
+    "NdisCoOidRequest",
+    "NdisCoOidRequestComplete",
+    "NdisCoSendNetBufferLists"
+  ],
+  "ruleName": "Irql_Connection_Function"
+}

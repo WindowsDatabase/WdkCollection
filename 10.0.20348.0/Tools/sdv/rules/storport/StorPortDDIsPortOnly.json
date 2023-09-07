@@ -1,0 +1,7 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "StorPortCompleteRequest"
+  ],
+  "ruleName": "StorPortDDIsPortOnly"
+}

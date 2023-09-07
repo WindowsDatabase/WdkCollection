@@ -1,0 +1,62 @@
+/*++
+
+    Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Rule Name:
+
+    DoubleDeviceInitFree
+
+Domain:
+
+    wdf
+
+Rule ID:
+
+    Not Applicable
+
+Description:
+
+    This rule verifies that drivers do not free on device initialization structure twice.
+  
+    The methods WdfDeviceInitFree should not be called twice for the same device initialization structure. 
+     
+
+Help Link:
+
+    https://go.microsoft.com/fwlink/?LinkId=507065
+
+--*/
+
+
+
+
+#include "slic_base.h"
+
+state{
+     enum {INIT,  DEALLOCATED} t = INIT;
+     int *cur_deviceinit = 0;
+}
+
+[
+ sdv_WdfControlDeviceInitAllocate,
+ sdv_WdfPdoInitAllocate
+ ].exit
+{
+    cur_deviceinit = $return;
+    t = INIT;
+}
+
+sdv_WdfDeviceInitFree.entry
+{
+    if ($1 == cur_deviceinit && cur_deviceinit != 0) {
+        if (t == DEALLOCATED) {
+            abort "The driver is calling WdfDeviceInitFree on the same DeviceInit structure twice.";
+        } else {
+            t = DEALLOCATED;
+        }
+    } else {
+        halt;
+    }
+}
+
+

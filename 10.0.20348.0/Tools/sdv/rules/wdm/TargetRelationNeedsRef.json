@@ -1,0 +1,11 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoCallDriver",
+    "ObfReferenceObject",
+    "ObReferenceObjectByHandle",
+    "ObReferenceObjectByPointer",
+    "PoCallDriver"
+  ],
+  "ruleName": "TargetRelationNeedsRef"
+}

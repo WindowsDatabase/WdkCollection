@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisAllocateFromNPagedLookasideList",
+    "NdisFreeToNPagedLookasideList"
+  ],
+  "ruleName": "NdisAllocateFromNPagedLookasideList"
+}

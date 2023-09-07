@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisMDeregisterInterruptEx",
+    "NdisMRegisterInterruptEx"
+  ],
+  "ruleName": "Init_DeRegisterInterrupt"
+}

@@ -1,0 +1,30 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisMCreateLog",
+    "NdisMDeregisterDmaChannel",
+    "NdisMDeregisterIoPortRange",
+    "NdisMDeregisterMiniportDriver",
+    "NdisMFlushLog",
+    "NdisMFreePort",
+    "NdisMFreeSharedMemory",
+    "NdisMGetDeviceProperty",
+    "NdisMGetDmaAlignment",
+    "NdisMMapIoSpace",
+    "NdisMPauseComplete",
+    "NdisMQueryAdapterInstanceName",
+    "NdisMReadDmaCounter",
+    "NdisMRegisterDmaChannel",
+    "NdisMRegisterIoPortRange",
+    "NdisMRegisterMiniportDriver",
+    "NdisMRemoveMiniport",
+    "NdisMResetComplete",
+    "NdisMRestartComplete",
+    "NdisMSetMiniportAttributes",
+    "NdisMSetupDmaTransfer",
+    "NdisMSleep",
+    "NdisMUnmapIoSpace",
+    "NdisMWriteLogData"
+  ],
+  "ruleName": "Irql_Miniport_Driver_Function"
+}

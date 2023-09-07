@@ -1,0 +1,7 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "PAGED_CODE"
+  ],
+  "ruleName": "PagedCode"
+}

@@ -1,0 +1,12 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "ExAcquireResourceExclusiveLite",
+    "ExAcquireResourceSharedLite",
+    "ExAcquireSharedStarveExclusive",
+    "ExAcquireSharedWaitForExclusive",
+    "ExConvertExclusiveToSharedLite",
+    "ExDeleteResourceLite"
+  ],
+  "ruleName": "IrqlExApcLte3"
+}

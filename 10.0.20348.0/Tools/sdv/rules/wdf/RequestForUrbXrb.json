@@ -1,0 +1,15 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfRequestCreate",
+    "WdfUsbTargetDeviceCreateWithParameters",
+    "WdfUsbTargetDeviceFormatRequestForControlTransfer",
+    "WdfUsbTargetDeviceFormatRequestForString",
+    "WdfUsbTargetDeviceSendControlTransferSynchronously",
+    "WdfUsbTargetPipeAbortSynchronously",
+    "WdfUsbTargetPipeFormatRequestForAbort",
+    "WdfUsbTargetPipeFormatRequestForReset",
+    "WdfUsbTargetPipeResetSynchronously"
+  ],
+  "ruleName": "RequestForUrbXrb"
+}

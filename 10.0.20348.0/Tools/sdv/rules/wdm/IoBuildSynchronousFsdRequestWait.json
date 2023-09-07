@@ -1,0 +1,11 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoBuildSynchronousFsdRequest",
+    "IoCallDriver",
+    "KeInitializeEvent",
+    "KeWaitForSingleObject",
+    "PoCallDriver"
+  ],
+  "ruleName": "IoBuildSynchronousFsdRequestWait"
+}

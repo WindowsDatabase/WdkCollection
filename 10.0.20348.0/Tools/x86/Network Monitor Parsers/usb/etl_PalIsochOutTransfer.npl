@@ -1,0 +1,70 @@
+/*++
+Copyright (c) Microsoft Corporation
+
+Module Name:
+
+    etl_PalIsochOutTransfer.npl
+
+Abstract:
+
+    The NetMon parser language file for the PalIsochOutTransfer state machine.
+    This has been generated automatically from a mdxml file.
+    DO NOT MODIFY THIS FILE MANUALLY.
+
+--*/
+
+Table PalIsochOutTransferStates(State)
+{
+    switch(State)
+    {
+    case 0: "_noevent_";
+    case 1: "CompletingTransfer";
+    case 2: "HandlingBufferOverrunError";
+    case 3: "HandlingCompletionTimerExpiry";
+    case 4: "HandlingIsochTimeInvalidOrExpiredError";
+    case 5: "HandlingNoPingRespError";
+    case 6: "HandlingSessionDown";
+    case 7: "HandlingTransportError";
+    case 8: "InitializingTransferAndRegisteringWithEndpoint";
+    case 9: "InitialState";
+    case 10: "InitialState1";
+    case 11: "ProcessingIsochTransferRespPackets";
+    case 12: "ProgrammingTransferOnDevice";
+    case 13: "StartingCompletionTimer";
+    case 14: "StoppingCompletionTimer";
+    case 16: "UnregisteringWithEndpoint";
+    case 17: "UnregisteringWithEndpointOnCompletionTimerExpiry";
+    case 18: "UnregisteringWithEndpointOnTransportError";
+    case 19: "WaitingForIsochTransferResponse";
+    case 20: "WaitingOnReadyForCompletion";
+    case 15: "TransmittingIsochTransferReqPackets";
+    default: "Unknown";
+    }
+}
+
+Table PalIsochOutTransferEvents(Event)
+{
+    switch(Event)
+    {
+    case 0: "_noevent_";
+    case 1: "IsochTransferRespBufferOverrunError";
+    case 2: "IsochTransferRespEndOfTransfer";
+    case 3: "IsochTransferRespIsochTimeExpired";
+    case 4: "IsochTransferRespIsochTimeInvalid";
+    case 5: "IsochTransferRespNoPingRespError";
+    case 6: "IsochTransferRespReceived";
+    case 7: "No";
+    case 8: "OperationFailed";
+    case 9: "OperationSucceeded";
+    case 10: "ReadyForCompletion";
+    case 11: "SessionDown";
+    case 12: "TimerExpired";
+    case 13: "TransferInProgress";
+    case 14: "TransportRequestCompletedSuccessfully";
+    case 15: "TransportRequestCompletedWithFailure";
+    case 16: "UilTransferCancelRequested";
+    case 17: "WaitingOnReadyForCompletion";
+    case 18: "Yes";
+    default: "Unknown";
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "MmAllocateNonCachedMemory",
+    "MmAllocatePagesForMdl",
+    "MmAllocatePagesForMdlEx",
+    "MmFreeNonCachedMemory",
+    "MmFreePagesFromMdl",
+    "MmLockPagableDataSection",
+    "MmLockPagableSectionByHandle",
+    "MmPageEntireDriver",
+    "MmResetDriverPaging",
+    "MmSecureVirtualMemory",
+    "MmUnlockPagableImageSection",
+    "MmUnsecureVirtualMemory"
+  ],
+  "ruleName": "IrqlMmApcLte"
+}

@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ExAllocatePool",
+    "ExAllocatePoolWithTag",
+    "IoAcquireRemoveLock"
+  ],
+  "ruleName": "PowerDownAllocate"
+}

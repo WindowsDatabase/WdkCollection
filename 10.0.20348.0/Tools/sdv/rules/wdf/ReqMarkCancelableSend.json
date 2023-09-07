@@ -1,0 +1,10 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfRequestMarkCancelable",
+    "WdfRequestMarkCancelableEx",
+    "WdfRequestSend",
+    "WdfRequestUnmarkCancelable"
+  ],
+  "ruleName": "ReqMarkCancelableSend"
+}

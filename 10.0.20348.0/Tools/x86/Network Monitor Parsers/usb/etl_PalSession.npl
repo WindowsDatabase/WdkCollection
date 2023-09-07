@@ -1,0 +1,84 @@
+/*++
+Copyright (c) Microsoft Corporation
+
+Module Name:
+
+    etl_PalSession.npl
+
+Abstract:
+
+    The NetMon parser language file for the PalSession state machine.
+    This has been generated automatically from a mdxml file.
+    DO NOT MODIFY THIS FILE MANUALLY.
+
+--*/
+
+Table PalSessionStates(State)
+{
+    switch(State)
+    {
+    case 0: "_noevent_";
+    case 6: "CheckingIfImplicitConnect";
+    case 9: "ClosingSessionOnDisconnect";
+    case 21: "SendingDisconnectRequest";
+    case 29: "WaitingForDevDisconnectResponse";
+    case 1: "BroadcastingSessionActiveOnReset";
+    case 5: "CheckingIfAllPortsConnected";
+    case 11: "ExitingControllerResetWithDisconnect";
+    case 13: "NotifyingWsb";
+    case 15: "PurgingMgmtReqsOnDisconnect";
+    case 18: "RequestingDeviceCapabilitiesOnControllerReset";
+    case 20: "SendingDeviceQoS";
+    case 22: "SendingMaUsbDeviceResetReqOnReset";
+    case 27: "WaitingForAllPortsToAttach";
+    case 30: "WaitingForDeviceCapRespOnReset";
+    case 32: "WaitingForMaUsbDevResetRespOnReset";
+    case 2: "BroadcastingSessionDown";
+    case 3: "BroadcastingSessionDownFromInactive";
+    case 4: "BroadcastingSessionDownOnControllerReset";
+    case 7: "CheckingIfPnPDisconnect";
+    case 8: "Cleanup";
+    case 10: "Disconnecting";
+    case 12: "NotifyingSessionDown";
+    case 14: "OpeningSession";
+    case 16: "PurgingPingReq";
+    case 17: "PurgingPingReqOnReset";
+    case 19: "ResettingController";
+    case 23: "SendingPingRequest";
+    case 24: "SessionActive";
+    case 25: "SessionDown";
+    case 26: "SessionInactive";
+    case 28: "WaitingForCleanup";
+    case 31: "WaitingForDisconnect";
+    case 33: "WaitingForPingResponse";
+    default: "Unknown";
+    }
+}
+
+Table PalSessionEvents(Event)
+{
+    switch(Event)
+    {
+    case 0: "_noevent_";
+    case 1: "Cleanup";
+    case 2: "ControllerReset";
+    case 3: "DevDisconnectResponse";
+    case 4: "DeviceCapabilityResponse";
+    case 5: "DeviceResetResponse";
+    case 6: "Done";
+    case 7: "IP_AllPortsAttached";
+    case 8: "IP_Connected";
+    case 9: "IP_Disconnect";
+    case 10: "No";
+    case 11: "OperationFailure";
+    case 12: "OperationSuccess";
+    case 13: "PingRequest";
+    case 14: "PingResponse";
+    case 15: "PnP_Disconnect";
+    case 16: "ResponseFailure";
+    case 17: "Sleep";
+    case 18: "Wake";
+    case 19: "Yes";
+    default: "Unknown";
+    }
+}

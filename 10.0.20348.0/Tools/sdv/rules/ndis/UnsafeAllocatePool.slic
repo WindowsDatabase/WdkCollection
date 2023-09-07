@@ -1,0 +1,46 @@
+/*++
+
+    Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Rule Name:
+
+    UnsafeAllocatePool
+
+Domain:
+
+    Wdm
+
+Rule ID:
+
+    NA
+
+Description:
+
+    The UnsafeAllocatePool rule specifies that the driver should not call:
+        ExAllocatePool, 
+        ExAllocatePoolWithTag, 
+        ExAllocatePoolWithQuota, 
+        ExAllocatePoolWithQuotaTag,
+        ExAllocatePoolWithTagPriority 
+    A driver for a downlevel OS may call Exllocate*Zero and Exllocate*Uninitialized force inlined APIs,
+	which are calling unsecure pool allocation APIs, and then zeroing the allocated buffer.  
+
+Help Link:
+
+    https://go.microsoft.com/fwlink/?LinkId=216021
+
+--*/
+
+
+#include "slic_base.h"
+
+[
+ ExAllocatePool,
+ ExAllocatePoolWithQuota,
+ ExAllocatePoolWithQuotaTag,
+ ExAllocatePoolWithTag,
+ ExAllocatePoolWithTagPriority
+].entry
+{
+	abort "$fname is deprecated! Use ExAllocatePool2 or ExAllocatePool3 or ExAllocatePoolZero, etc.";
+}

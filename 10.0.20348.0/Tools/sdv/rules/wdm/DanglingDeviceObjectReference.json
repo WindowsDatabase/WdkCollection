@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoGetAttachedDeviceReference",
+    "ObfDereferenceObject"
+  ],
+  "ruleName": "DanglingDeviceObjectReference"
+}

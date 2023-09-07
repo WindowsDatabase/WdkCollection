@@ -1,0 +1,16 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoAcquireRemoveLock",
+    "IoAllocateIrp",
+    "IoCallDriver",
+    "IofCallDriver",
+    "IoGetDeviceInterfaces",
+    "IoMarkIrpPending",
+    "IoRegisterPlugPlayNotification",
+    "IoSetCompletionRoutine",
+    "IoSetCompletionRoutineEx",
+    "PoCallDriver"
+  ],
+  "ruleName": "MarkPower"
+}

@@ -1,0 +1,7 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "PAGED_CODE"
+  ],
+  "ruleName": "PagedCode"
+}

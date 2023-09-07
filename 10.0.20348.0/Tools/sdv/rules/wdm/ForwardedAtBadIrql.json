@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoCallDriver",
+    "PoCallDriver"
+  ],
+  "ruleName": "ForwardedAtBadIrql"
+}

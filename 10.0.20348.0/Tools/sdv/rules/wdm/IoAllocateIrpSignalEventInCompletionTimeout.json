@@ -1,0 +1,13 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoAllocateIrp",
+    "IoCallDriver",
+    "IoSetCompletionRoutine",
+    "IoSetCompletionRoutineEx",
+    "KeInitializeEvent",
+    "KeWaitForSingleObject",
+    "PoCallDriver"
+  ],
+  "ruleName": "IoAllocateIrpSignalEventInCompletionTimeout"
+}

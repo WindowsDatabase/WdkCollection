@@ -1,0 +1,9 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "ExFreePool",
+    "RemoveEntryList",
+    "RemoveHeadList"
+  ],
+  "ruleName": "DoubleExFreePool"
+}

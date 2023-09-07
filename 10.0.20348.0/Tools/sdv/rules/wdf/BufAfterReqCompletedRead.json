@@ -1,0 +1,13 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfRequestComplete",
+    "WdfRequestCompleteWithInformation",
+    "WdfRequestCompleteWithPriorityBoost",
+    "WdfRequestRetrieveInputBuffer",
+    "WdfRequestRetrieveOutputBuffer",
+    "WdfRequestRetrieveUnsafeUserInputBuffer",
+    "WdfRequestRetrieveUnsafeUserOutputBuffer"
+  ],
+  "ruleName": "BufAfterReqCompletedRead"
+}

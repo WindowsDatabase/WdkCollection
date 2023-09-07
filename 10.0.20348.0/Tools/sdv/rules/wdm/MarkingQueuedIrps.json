@@ -1,0 +1,18 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "InsertHeadList",
+    "IoCallDriver",
+    "IoMarkIrpPending",
+    "KeAcquireInStackQueuedSpinLock",
+    "KeAcquireSpinLock",
+    "KeInsertByKeyDeviceQueue",
+    "KeInsertDeviceQueue",
+    "KeInsertQueueDpc",
+    "KeReleaseInStackQueuedSpinLock",
+    "KeReleaseSpinLock",
+    "PoCallDriver",
+    "RemoveHeadList"
+  ],
+  "ruleName": "MarkingQueuedIrps"
+}

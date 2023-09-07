@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfIoQueueFindRequest",
+    "WdfIoQueueRetrieveFoundRequest",
+    "WdfObjectDereference"
+  ],
+  "ruleName": "WdfIoQueueFindRequestFailed"
+}

@@ -1,0 +1,10 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfDeviceCreate",
+    "WdfFdoAddStaticChild",
+    "WdfObjectDelete",
+    "WdfPdoInitAllocate"
+  ],
+  "ruleName": "AddPdoToStaticChildList"
+}

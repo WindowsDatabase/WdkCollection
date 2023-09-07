@@ -1,0 +1,14 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "IoAcquireCancelSpinLock",
+    "IoCompleteRequest",
+    "IoReleaseCancelSpinLock",
+    "IoStartNextPacket",
+    "KeAcquireSpinLock",
+    "KeAcquireSpinLockAtDpcLevel",
+    "KeReleaseSpinLock",
+    "KeReleaseSpinLockFromDpcLevel"
+  ],
+  "ruleName": "SpinLockSafe"
+}

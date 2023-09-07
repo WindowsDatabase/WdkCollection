@@ -1,0 +1,11 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoBuildAsynchronousFsdRequest",
+    "IoCallDriver",
+    "IoSetCompletionRoutine",
+    "IoSetCompletionRoutineEx",
+    "PoCallDriver"
+  ],
+  "ruleName": "IoBuildFsdForward"
+}

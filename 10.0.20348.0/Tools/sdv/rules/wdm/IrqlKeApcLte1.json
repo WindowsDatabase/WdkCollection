@@ -1,0 +1,13 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "KeAcquireGuardedMutex",
+    "KeAcquireGuardedMutexUnsafe",
+    "KeDelayExecutionThread",
+    "KeQueryActiveProcessors",
+    "KeReleaseGuardedMutex",
+    "KeReleaseGuardedMutexUnsafe",
+    "KeTryToAcquireGuardedMutex"
+  ],
+  "ruleName": "IrqlKeApcLte1"
+}

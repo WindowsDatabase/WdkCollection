@@ -1,0 +1,12 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ExAllocatePool",
+    "ExAllocatePoolWithTag",
+    "IoAcquireRemoveLock",
+    "IoCallDriver",
+    "PoCallDriver",
+    "PoRequestPowerIrp"
+  ],
+  "ruleName": "PowerUpFail"
+}

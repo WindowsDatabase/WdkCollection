@@ -1,0 +1,11 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisIMAssociateMiniport",
+    "NdisIMCancelInitializeDeviceInstance",
+    "NdisIMDeInitializeDeviceInstance",
+    "NdisIMGetBindingContext",
+    "NdisIMInitializeDeviceInstanceEx"
+  ],
+  "ruleName": "Irql_IM_Function"
+}

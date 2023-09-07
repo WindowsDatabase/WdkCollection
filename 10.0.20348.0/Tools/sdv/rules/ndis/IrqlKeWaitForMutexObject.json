@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "KeWaitForMutexObject",
+    "KeWaitForSingleObject"
+  ],
+  "ruleName": "IrqlKeWaitForMutexObject"
+}

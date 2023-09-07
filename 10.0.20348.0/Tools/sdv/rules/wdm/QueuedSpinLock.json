@@ -1,0 +1,10 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "KeAcquireInStackQueuedSpinLock",
+    "KeAcquireInStackQueuedSpinLockAtDpcLevel@XDV",
+    "KeReleaseInStackQueuedSpinLock",
+    "KeReleaseInStackQueuedSpinLockFromDpcLevel@XDV"
+  ],
+  "ruleName": "QueuedSpinLock"
+}

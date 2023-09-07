@@ -1,0 +1,7 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisMOidRequestComplete"
+  ],
+  "ruleName": "DoubleComplete"
+}

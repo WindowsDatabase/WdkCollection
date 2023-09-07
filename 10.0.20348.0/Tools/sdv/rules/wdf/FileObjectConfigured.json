@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfDeviceInitSetFileObjectConfig",
+    "WdfRequestGetFileObject"
+  ],
+  "ruleName": "FileObjectConfigured"
+}
