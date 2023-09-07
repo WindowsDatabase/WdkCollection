@@ -1,0 +1,7 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfDeviceCreate"
+  ],
+  "ruleName": "ControlDeviceInitAllocate"
+}

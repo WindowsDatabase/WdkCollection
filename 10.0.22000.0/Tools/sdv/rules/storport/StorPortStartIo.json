@@ -1,0 +1,19 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "ExAllocatePool",
+    "ExAllocatePoolWithQuota",
+    "ExAllocatePoolWithQuotaTag",
+    "ExAllocatePoolWithTag",
+    "ExAllocatePoolWithTagPriority",
+    "FsRtlAllocateFileLock",
+    "IoAllocateController",
+    "IoAllocateIrp",
+    "IoWMIAllocateInstanceIds",
+    "MmAllocateNonCachedMemory",
+    "MmAllocatePagesForMdl",
+    "ZwAllocateLocallyUniqueId",
+    "ZwAllocateVirtualMemory"
+  ],
+  "ruleName": "StorPortStartIo"
+}

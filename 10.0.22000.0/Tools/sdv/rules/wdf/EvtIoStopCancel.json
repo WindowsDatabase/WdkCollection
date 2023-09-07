@@ -1,0 +1,14 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfRequestCancelSentRequest",
+    "WdfRequestComplete",
+    "WdfRequestCompleteWithInformation",
+    "WdfRequestCompleteWithPriorityBoost",
+    "WdfRequestMarkCancelable",
+    "WdfRequestMarkCancelableEx",
+    "WdfRequestStopAcknowledge",
+    "WdfRequestUnmarkCancelable"
+  ],
+  "ruleName": "EvtIoStopCancel"
+}

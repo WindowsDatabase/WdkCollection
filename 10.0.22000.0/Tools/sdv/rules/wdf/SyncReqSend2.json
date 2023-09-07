@@ -1,0 +1,7 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfRequestSend"
+  ],
+  "ruleName": "SyncReqSend2"
+}

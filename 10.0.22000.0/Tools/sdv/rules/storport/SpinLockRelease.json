@@ -1,0 +1,9 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "KeAcquireSpinLock",
+    "KeAcquireSpinLockRaiseToDpc",
+    "KeReleaseSpinLock"
+  ],
+  "ruleName": "SpinLockRelease"
+}

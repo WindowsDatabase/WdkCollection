@@ -1,0 +1,15 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ExInterlockedInsertHeadList",
+    "ExInterlockedInsertTailList",
+    "ExInterlockedPushEntryList",
+    "InsertHeadList",
+    "IoAllocateIrp",
+    "IoCsqInsertIrp",
+    "IoCsqInsertIrpEx",
+    "IoFreeIrp",
+    "RemoveHeadList"
+  ],
+  "ruleName": "IoAllocateFree"
+}

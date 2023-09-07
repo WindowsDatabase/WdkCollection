@@ -1,0 +1,109 @@
+/*++
+Copyright (c) Microsoft Corporation
+
+Module Name:
+
+    etl_PalOutTransfer.npl
+
+Abstract:
+
+    The NetMon parser language file for the PalOutTransfer state machine.
+    This has been generated automatically from a mdxml file.
+    DO NOT MODIFY THIS FILE MANUALLY.
+
+--*/
+
+Table PalOutTransferStates(State)
+{
+    switch(State)
+    {
+    case 0: "_noevent_";
+    case 6: "CheckingIfReadyForInitialTransmission";
+    case 7: "CheckingIfReadyForNextTransmission";
+    case 8: "CheckingIfRetryCountRemaining";
+    case 9: "CompleteSuspendedTransferOnSessionDown";
+    case 10: "CompleteTransferOnSessionDown";
+    case 11: "CompletingRegistrationWithEndpoint";
+    case 12: "CompletingTransfer";
+    case 13: "HandlingEndOfTransfer";
+    case 14: "HandlingTransportError";
+    case 15: "InitializeTransferAndRegisterWithEndpoint";
+    case 18: "MarkWdfRequestAsCancellable";
+    case 19: "NotifyEndOfTransmissionToEndpoint";
+    case 20: "ReinitializeRetryCountOnTransmisionAck";
+    case 21: "ReinitializeTransferOnInvalidRequestError";
+    case 22: "RetryingTransferReqPackets";
+    case 23: "ReturningEndOfTransferOnCancellation";
+    case 30: "StartingSessionRecoveryOnCancelTransferReqFailure";
+    case 31: "StartingSessionRecoveryOnTransferTimeout";
+    case 32: "SuspendingRegistrationOnReprogrammingEndpoint";
+    case 34: "TransmittingInitialTransferReqPacketsForTransfer";
+    case 35: "TransmittingNextTransferReqPacketsForTransfer";
+    case 38: "UnregisterWithEndpointAndStartNextTransfer";
+    case 39: "WaitForCancelTranferResp";
+    case 40: "WaitingForActiveTransferToCompleteTransmission";
+    case 41: "WaitingForCancelTransferRespOnEndOfTransfer";
+    case 42: "WaitingForEndOfTransfer";
+    case 43: "WaitingForEvtRequestCancelCallback";
+    case 45: "WaitingForTransferRespOnCompleteTransmission";
+    case 46: "WaitingForTransferRespOnPartialTransmission";
+    case 47: "WaitingOnReadyForCompletion";
+    case 48: "WaitingOnReadyForInitialTransmission";
+    case 49: "WaitingOnReadyForNextTransmission";
+    case 5: "CheckingIfPartialTransmission1";
+    case 37: "TransmitTransferReqPackets1";
+    case 2: "CancelSentTransferReqPacket1";
+    case 3: "CheckingIfInitialTransmissionIsPartial";
+    case 16: "IsTransferCancelled";
+    case 24: "ReturningTransferCancelled";
+    case 29: "SendingCancelTransferReq";
+    case 33: "TransmittingInitialTransferReqPackets";
+    case 1: "CancellingSentTransferReq2";
+    case 4: "CheckingIfPartialTransmission";
+    case 28: "SendCancelTransferReq2";
+    case 36: "TransmitTransferReqPackets";
+    case 17: "IsTransferCancelled2";
+    case 25: "ReturningTransferCancelled2";
+    case 26: "ReturningTransferRespTransmissonAcked";
+    case 44: "WaitingForTransferResp";
+    case 27: "SendCancelTransferReq1";
+    case 50: "WaitingOnReadyForTransmission";
+    default: "Unknown";
+    }
+}
+
+Table PalOutTransferEvents(Event)
+{
+    switch(Event)
+    {
+    case 0: "_noevent_";
+    case 1: "CancelTransferReqFailure";
+    case 2: "CancelTransferReqSucceeded";
+    case 3: "CheckIfReadyForTransmission";
+    case 4: "CompletelyTransmitted";
+    case 5: "Destroy";
+    case 6: "EndpointTransferIsActive";
+    case 7: "EndpointTransfersPurging";
+    case 8: "No";
+    case 9: "OperationFailed";
+    case 10: "OperationSucceeded";
+    case 11: "PartiallyTransmitted";
+    case 12: "ReadyForCompletion";
+    case 13: "RegisterTransfer";
+    case 14: "RegistrationPending";
+    case 15: "SessionActive";
+    case 16: "SessionDown";
+    case 17: "TimerExpired";
+    case 18: "TransferCancelled";
+    case 19: "TransferRespEndOfTransfer";
+    case 20: "TransferRespInvalidRequestId";
+    case 21: "TransferRespTransmissionAcked";
+    case 22: "TransportRequestCompletedSuccessfully";
+    case 23: "TransportRequestCompletedWithFailure";
+    case 24: "UilTransferCancelRequested";
+    case 25: "WaitForCancelTransferResp";
+    case 26: "WaitingOnReadyForCompletion";
+    case 27: "Yes";
+    default: "Unknown";
+    }
+}

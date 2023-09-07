@@ -1,0 +1,68 @@
+/*++
+Copyright (c) Microsoft Corporation
+
+Module Name:
+
+    etl_PalIsochInTransfer.npl
+
+Abstract:
+
+    The NetMon parser language file for the PalIsochInTransfer state machine.
+    This has been generated automatically from a mdxml file.
+    DO NOT MODIFY THIS FILE MANUALLY.
+
+--*/
+
+Table PalIsochInTransferStates(State)
+{
+    switch(State)
+    {
+    case 0: "_noevent_";
+    case 1: "CompletingTransfer";
+    case 2: "HandlingBufferOverrunError";
+    case 3: "HandlingCompletionTimerExpiry";
+    case 4: "HandlingIsochTimeInvalidOrExpiredError";
+    case 5: "HandlingNoPingRespError";
+    case 6: "HandlingSessionDown";
+    case 7: "HandlingTransportError";
+    case 8: "InitializingTransferAndRegisteringWithEndpoint";
+    case 9: "ProcessingIsochTransferRespPackets";
+    case 10: "ProgrammingTransferOnDevice";
+    case 11: "StartingCompletionTimer";
+    case 12: "StoppingCompletionTimer";
+    case 14: "UnregisteringWithEndpoint";
+    case 15: "UnregisteringWithEndpointOnCompletionTimerExpiry";
+    case 16: "UnregisterWithEndpointOnTransportError";
+    case 17: "WaitingForIsochTransferResponse";
+    case 18: "WaitingOnReadyForCompletion";
+    case 13: "TransmittingIsochTransferReqPackets";
+    default: "Unknown";
+    }
+}
+
+Table PalIsochInTransferEvents(Event)
+{
+    switch(Event)
+    {
+    case 0: "_noevent_";
+    case 1: "IsochTransferRespBufferOverrunError";
+    case 2: "IsochTransferRespEndOfTransfer";
+    case 3: "IsochTransferRespIsochTimeExpired";
+    case 4: "IsochTransferRespIsochTimeInvalid";
+    case 5: "IsochTransferRespNoPingRespError";
+    case 6: "IsochTransferRespReceived";
+    case 7: "No";
+    case 8: "OperationFailed";
+    case 9: "OperationSucceeded";
+    case 10: "ReadyForCompletion";
+    case 11: "SessionDown";
+    case 12: "TimerExpired";
+    case 13: "TransferRespInProgress";
+    case 14: "TransportRequestCompletedSuccessfully";
+    case 15: "TransportRequestCompletedWithFailure";
+    case 16: "UilTransferCancelRequested";
+    case 17: "WaitingOnReadyForCompletion";
+    case 18: "Yes";
+    default: "Unknown";
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "KeLowerIrql",
+    "KeRaiseIrql",
+    "KeRaiseIrqlToDpcLevel",
+    "KfLowerIrql",
+    "KfRaiseIrql"
+  ],
+  "ruleName": "IrqlKeRaiseLower"
+}

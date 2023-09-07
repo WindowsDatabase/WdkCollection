@@ -1,0 +1,8 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "StorPortAcquireSpinLock",
+    "StorPortReleaseSpinLock"
+  ],
+  "ruleName": "StorPortSpinLock4"
+}

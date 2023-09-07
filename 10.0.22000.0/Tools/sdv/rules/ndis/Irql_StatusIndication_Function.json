@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisFIndicateStatus",
+    "NdisMIndicateStatusEx"
+  ],
+  "ruleName": "Irql_StatusIndication_Function"
+}

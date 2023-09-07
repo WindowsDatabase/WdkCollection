@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfRequestComplete",
+    "WdfRequestCompleteWithInformation",
+    "WdfRequestCompleteWithPriorityBoost"
+  ],
+  "ruleName": "EvtSurpriseRemoveNoRequestComplete"
+}

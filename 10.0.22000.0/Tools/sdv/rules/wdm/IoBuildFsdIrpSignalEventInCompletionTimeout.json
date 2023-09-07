@@ -1,0 +1,10 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoSetCompletionRoutine",
+    "IoSetCompletionRoutineEx",
+    "KeInitializeEvent",
+    "KeWaitForSingleObject"
+  ],
+  "ruleName": "IoBuildFsdIrpSignalEventInCompletionTimeout"
+}

@@ -1,0 +1,32 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "AllocateAdapterChannel",
+    "AllocateCommonBuffer",
+    "BuildMdlFromScatterGatherList",
+    "BuildScatterGatherList",
+    "FlushAdapterBuffers",
+    "FreeAdapterChannel",
+    "FreeCommonBuffer",
+    "FreeMapRegisters",
+    "GetDmaAlignment",
+    "GetScatterGatherList",
+    "IoAllocateController",
+    "IoFreeController",
+    "IoStartNextPacket",
+    "IoWriteErrorLogEntry",
+    "KeAcquireSpinLockAtDpcLevel",
+    "KefAcquireSpinLockAtDpcLevel",
+    "KefReleaseSpinLockFromDpcLevel",
+    "KeInsertByKeyDeviceQueue",
+    "KeInsertDeviceQueue",
+    "KeReleaseSpinLockFromDpcLevel",
+    "KeRemoveByKeyDeviceQueue",
+    "KeRemoveDeviceQueue",
+    "MapTransfer",
+    "PutDmaAdapter",
+    "PutScatterGatherList",
+    "ReadDmaCounter"
+  ],
+  "ruleName": "IrqlDispatch"
+}

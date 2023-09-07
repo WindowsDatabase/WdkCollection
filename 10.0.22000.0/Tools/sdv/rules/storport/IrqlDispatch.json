@@ -1,0 +1,20 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "AllocateAdapterChannel",
+    "FreeAdapterChannel",
+    "FreeMapRegisters",
+    "GetScatterGatherList",
+    "IoAllocateController",
+    "IoFreeController",
+    "IoStartNextPacket",
+    "KeAcquireSpinLockAtDpcLevel",
+    "KeInsertByKeyDeviceQueue",
+    "KeInsertDeviceQueue",
+    "KeReleaseSpinLockFromDpcLevel",
+    "KeRemoveByKeyDeviceQueue",
+    "KeRemoveDeviceQueue",
+    "PutScatterGatherList"
+  ],
+  "ruleName": "IrqlDispatch"
+}

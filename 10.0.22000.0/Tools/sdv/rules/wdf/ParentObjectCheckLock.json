@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfSpinLockCreate",
+    "WdfWaitLockCreate"
+  ],
+  "ruleName": "ParentObjectCheckLock"
+}

@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "ExAllocateFromPagedLookasideList",
+    "ExFreeToPagedLookasideList"
+  ],
+  "ruleName": "IrqlExApcLteInline"
+}

@@ -1,0 +1,27 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisClAddParty",
+    "NdisClCloseAddressFamily",
+    "NdisClCloseCall",
+    "NdisClDeregisterSap",
+    "NdisClDropParty",
+    "NdisClGetProtocolVcContextFromTapiCallId",
+    "NdisClIncomingCallComplete",
+    "NdisClMakeCall",
+    "NdisClModifyCallQoS",
+    "NdisClNotifyCloseAddressFamilyComplete",
+    "NdisClOpenAddressFamilyEx",
+    "NdisCloseAdapterEx",
+    "NdisClRegisterSap",
+    "NdisCompleteBindAdapterEx",
+    "NdisCompleteNetPnPEvent",
+    "NdisCompleteUnbindAdapterEx",
+    "NdisDeregisterProtocolDriver",
+    "NdisMNetPnPEvent",
+    "NdisOpenAdapterEx",
+    "NdisRegisterProtocolDriver",
+    "NdisUnbindAdapter"
+  ],
+  "ruleName": "Irql_Protocol_Driver_Function"
+}

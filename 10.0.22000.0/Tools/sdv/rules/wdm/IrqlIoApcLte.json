@@ -1,0 +1,10 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoDeleteDevice",
+    "IoGetInitialStack",
+    "IoRaiseHardError",
+    "IoRaiseInformationalHardError"
+  ],
+  "ruleName": "IrqlIoApcLte"
+}

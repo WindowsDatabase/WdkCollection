@@ -1,0 +1,23 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "KeAcquireSpinLock",
+    "KeCancelTimer",
+    "KeClearEvent",
+    "KeInitializeDeviceQueue",
+    "KeInitializeSemaphore",
+    "KeInitializeTimer",
+    "KeInitializeTimerEx",
+    "KePulseEvent",
+    "KeReadStateEvent",
+    "KeReadStateTimer",
+    "KeReleaseMutex",
+    "KeRemoveEntryDeviceQueue",
+    "KeResetEvent",
+    "KeSaveFloatingPointState",
+    "KeSaveFloatingPointState",
+    "KeSetTimer",
+    "KeSetTimerEx"
+  ],
+  "ruleName": "IrqlKeDispatchLte"
+}

@@ -1,0 +1,3967 @@
+NTSTATUS WINAPI BCryptCloseAlgorithmProvider(
+  _Inout_ BCRYPT_ALG_HANDLE hAlgorithm,
+  _In_    ULONG             dwFlags
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/desktop/aa375377(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS WINAPI BCryptCreateHash(
+  _Inout_  BCRYPT_ALG_HANDLE  hAlgorithm,
+  _Out_    BCRYPT_HASH_HANDLE *phHash,
+  _Out_    PUCHAR             pbHashObject,
+  _In_opt_ ULONG              cbHashObject,
+  _In_opt_ PUCHAR             pbSecret,
+  _In_     ULONG              cbSecret,
+  _In_     ULONG              dwFlags
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/desktop/aa375383(v=vs.85).aspx
+	assert irql_current == 0 || irql_current == 2;
+}
+
+NTSTATUS WINAPI BCryptDestroyHash(
+  _Inout_ BCRYPT_HASH_HANDLE hHash
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/desktop/aa375399(v=vs.85).aspx
+	assert irql_current == 0 || irql_current == 2;
+}
+
+NTSTATUS WINAPI BCryptFinishHash(
+  _Inout_ BCRYPT_HASH_HANDLE hHash,
+  _Out_   PUCHAR             pbOutput,
+  _In_    ULONG              cbOutput,
+  _In_    ULONG              dwFlags
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/desktop/aa375443(v=vs.85).aspx
+	assert irql_current == 0 || irql_current == 2;
+}
+
+NTSTATUS WINAPI BCryptGenRandom(
+  _Inout_ BCRYPT_ALG_HANDLE hAlgorithm,
+  _Inout_ PUCHAR            pbBuffer,
+  _In_    ULONG             cbBuffer,
+  _In_    ULONG             dwFlags
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/desktop/aa375458(v=vs.85).aspx
+	assert irql_current == 0 || irql_current == 2;
+}
+
+NTSTATUS WINAPI BCryptHashData(
+  _Inout_ BCRYPT_HASH_HANDLE hHash,
+  _In_    PUCHAR             pbInput,
+  _In_    ULONG              cbInput,
+  _In_    ULONG              dwFlags
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/desktop/aa375468(v=vs.85).aspx
+	assert irql_current == 0 || irql_current == 2;
+}
+
+NTSTATUS WINAPI BCryptOpenAlgorithmProvider(
+  _Out_ BCRYPT_ALG_HANDLE *phAlgorithm,
+  _In_  LPCWSTR           pszAlgId,
+  _In_  LPCWSTR           pszImplementation,
+  _In_  DWORD             dwFlags
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/desktop/aa375479(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS CmCallbackGetKeyObjectID(
+  _In_      PLARGE_INTEGER   Cookie,
+  _In_      PVOID            Object,
+  _Out_opt_ PULONG_PTR       ObjectID,
+  _Out_opt_ PCUNICODE_STRING *ObjectName
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff541895(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTSTATUS CmRegisterCallbackEx(
+  _In_       PEX_CALLBACK_FUNCTION Function,
+  _In_       PCUNICODE_STRING      Altitude,
+  _In_       PVOID                 Driver,
+  _In_opt_   PVOID                 Context,
+  _Out_      PLARGE_INTEGER        Cookie,
+  _Reserved_ PVOID                 Reserved
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff541921(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTSTATUS CmUnRegisterCallback(
+  _In_ LARGE_INTEGER Cookie
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff541928(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+ULONG DbgPrint(
+  _In_ PCHAR Format,
+             arguments
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff543632(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+ULONG __cdecl DbgPrintEx(
+  _In_ ULONG ComponentId,
+  _In_ ULONG Level,
+  _In_ PCSTR Format,
+       ...   arguments
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff543634(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID ExAcquireFastMutex(
+  _Inout_ PFAST_MUTEX FastMutex
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff544337(v=vs.85).aspx
+	assert irql_current <= 1;
+	mutexToIrqlMap[FastMutex] := irql_current;
+	irql_current := 1;
+}
+
+NTKERNELAPI VOID FASTCALL ExAcquirePushLockExclusiveEx (
+    _Inout_ _Requires_lock_not_held_(*_Curr_) _Acquires_lock_(*_Curr_)
+    PEX_PUSH_LOCK PushLock,
+    _In_ ULONG Flags
+    )
+{
+	assert irql_current <= 1;
+}
+
+NTKERNELAPI VOID FASTCALL ExAcquirePushLockSharedEx (
+    _Inout_ _Requires_lock_not_held_(*_Curr_) _Acquires_lock_(*_Curr_)
+    PEX_PUSH_LOCK PushLock,
+    _In_ ULONG Flags
+    )
+{
+	assert irql_current <= 1;
+}
+
+BOOLEAN ExAcquireResourceExclusiveLite(
+  _Inout_ PERESOURCE Resource,
+  _In_    BOOLEAN    Wait
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff544351(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+BOOLEAN ExAcquireResourceSharedLite(
+  _Inout_ PERESOURCE Resource,
+  _In_    BOOLEAN    Wait
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff544363(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+BOOLEAN ExAcquireRundownProtection(
+  _Inout_ PEX_RUNDOWN_REF RunRef
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/jj569371(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+KIRQL ExAcquireSpinLockExclusive(
+  _Inout_ PEX_SPIN_LOCK SpinLock
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh451007(v=vs.85).aspx
+	assert irql_current <= 2;
+	r := irql_current;
+	irql_current := 2;
+}
+
+KIRQL ExAcquireSpinLockShared(
+  _Inout_ PEX_SPIN_LOCK SpinLock
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh451053(v=vs.85).aspx
+	assert irql_current <= 2;
+	r := irql_current;
+	irql_current := 2;
+}
+
+NTKERNELAPI PEX_RUNDOWN_REF_CACHE_AWARE ExAllocateCacheAwareRundownProtection(
+    __drv_strictTypeMatch(__drv_typeExpr) _In_ POOL_TYPE PoolType,
+    _In_ ULONG PoolTag
+    )
+{
+	assert irql_current <= 1;
+}
+
+PVOID ExAllocatePoolWithQuotaTag(
+  _In_ POOL_TYPE PoolType,
+  _In_ SIZE_T    NumberOfBytes,
+  _In_ ULONG     Tag
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff544513(v=vs.85).aspx
+	assert if((PoolType mod 2) == 0) then irql_current <= 2 else irql_current <= 1;
+}
+
+PVOID ExAllocatePoolWithTag(
+  _In_ POOL_TYPE PoolType,
+  _In_ SIZE_T    NumberOfBytes,
+  _In_ ULONG     Tag
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff544520(v=vs.85).aspx
+	assert if((PoolType mod 2) == 0) then irql_current <= 2 else irql_current <= 1;
+}
+
+PEX_TIMER ExAllocateTimer(
+  _In_opt_ PEXT_CALLBACK Callback,
+  _In_opt_ PVOID         CallbackContext,
+  _In_     ULONG         Attributes
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/dn265179(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+BOOLEAN ExCancelTimer(
+  _Inout_  PEX_TIMER              Timer,
+  _In_opt_ PEXT_CANCEL_PARAMETERS Parameters
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/dn265180(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID ExConvertExclusiveToSharedLite(
+  _Inout_ PERESOURCE Resource
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff544558(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+VOID ExDeleteNPagedLookasideList(
+  _Inout_ PNPAGED_LOOKASIDE_LIST Lookaside
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff544566(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS ExDeleteResourceLite(
+  _Inout_ PERESOURCE Resource
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff544578(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+BOOLEAN ExDeleteTimer(
+  _In_ PEX_TIMER              Timer,
+  _In_ BOOLEAN                Cancel,
+  _In_ BOOLEAN                Wait,
+  _In_ PEXT_DELETE_PARAMETERS Parameters
+)
+{
+	// https://msdn.microsoft.com/en-in/library/windows/hardware/dn265181(v=vs.85).aspx
+	assert if(Wait == 0) then irql_current <= 2 else irql_current <= 1;
+}
+
+NTKERNELAPI VOID ExFreeCacheAwareRundownProtection(
+    _Inout_ PEX_RUNDOWN_REF_CACHE_AWARE RunRefCacheAware
+    )
+{
+	assert irql_current <= 1;
+}
+
+VOID ExFreePool(
+  _In_ PVOID P
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff544590(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID ExFreePoolWithTag(
+  _In_ PVOID P,
+  _In_ ULONG Tag
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff544593(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID ExInitializeNPagedLookasideList(
+  _Out_    PNPAGED_LOOKASIDE_LIST Lookaside,
+  _In_opt_ PALLOCATE_FUNCTION     Allocate,
+  _In_opt_ PFREE_FUNCTION         Free,
+  _In_     ULONG                  Flags,
+  _In_     SIZE_T                 Size,
+  _In_     ULONG                  Tag,
+  _In_     USHORT                 Depth
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff545301(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS ExInitializeResourceLite(
+  _Out_ PERESOURCE Resource
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff545317(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID ExInitializeRundownProtection(
+  _Out_ PEX_RUNDOWN_REF RunRef
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/jj569373(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+BOOLEAN ExIsResourceAcquiredExclusiveLite(
+  _In_ PERESOURCE Resource
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff545458(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTKERNELAPI BOOLEAN ExIsSoftBoot (
+    VOID
+    )
+{
+	assert irql_current <= 1;
+}
+
+VOID ExQueueWorkItem(
+  _Inout_ PWORK_QUEUE_ITEM WorkItem,
+  _In_    WORK_QUEUE_TYPE  QueueType
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff540216(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID ExRaiseDatatypeMisalignment(void)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff545524(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID ExRaiseStatus(
+  _In_ NTSTATUS Status
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff545529(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTKERNELAPI PVOID ExRegisterCallback (
+    _Inout_ PCALLBACK_OBJECT CallbackObject,
+    _In_ PCALLBACK_FUNCTION CallbackFunction,
+    _In_opt_ PVOID CallbackContext
+    )
+{
+	assert irql_current <= 1;
+}
+
+VOID ExReleaseFastMutex(
+  _Inout_ PFAST_MUTEX FastMutex
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff545549(v=vs.85).aspx
+	assert irql_current == 1;
+	
+	irql_current := mutexToIrqlMap[FastMutex];
+	assume 0 <= irql_current;
+	assume irql_current <= 1;
+
+	havoc mutexTmp;
+	mutexToIrqlMap[FastMutex] := mutexTmp;
+
+}
+
+NTKERNELAPI VOID FASTCALL ExReleasePushLockEx (
+    _Inout_ _Requires_lock_held_(*_Curr_) _Releases_lock_(*_Curr_)
+    PEX_PUSH_LOCK PushLock,
+    _In_ ULONG Flags
+    )
+{
+	assert irql_current <= 2;
+}
+
+NTKERNELAPI VOID FASTCALL ExReleasePushLockExclusiveEx (
+    _Inout_ _Requires_lock_held_(*_Curr_) _Releases_lock_(*_Curr_)
+    PEX_PUSH_LOCK PushLock,
+    _In_ ULONG Flags
+    )
+{
+	assert irql_current <= 2;
+}
+
+NTKERNELAPI VOID FASTCALL ExReleasePushLockSharedEx (
+    _Inout_ _Requires_lock_held_(*_Curr_) _Releases_lock_(*_Curr_)
+    PEX_PUSH_LOCK PushLock,
+    _In_ ULONG Flags
+    )
+{
+	assert irql_current <= 2;
+}
+
+VOID ExReleaseResourceLite(
+  _Inout_ PERESOURCE Resource
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff545597(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTKERNELAPI VOID FASTCALL ExReleaseRundownProtection (
+    _Inout_ PEX_RUNDOWN_REF RunRef
+    )
+{
+	assert irql_current <= 2;
+}
+
+VOID ExReleaseSpinLockExclusive (
+  _Inout_ PEX_SPIN_LOCK SpinLock,
+  _In_    KIRQL         OldIrql
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh451061(v=vs.85).aspx
+	assert irql_current == 2;
+	assert OldIrql <= irql_current;
+	irql_current := OldIrql;
+	assume 0 <= irql_current;
+	assume irql_current <= 31;
+}
+
+VOID ExReleaseSpinLockShared (
+  _Inout_ PEX_SPIN_LOCK SpinLock,
+  _In_    KIRQL         OldIrql
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh451067(v=vs.85).aspx
+	assert irql_current == 2;
+	assert OldIrql <= irql_current;
+	irql_current := OldIrql;
+	assume 0 <= irql_current;
+	assume irql_current <= 31;
+}
+
+BOOLEAN ExSetTimer(
+  _In_     PEX_TIMER           Timer,
+  _In_     LONGLONG            DueTime,
+  _In_     LONGLONG            Period,
+  _In_opt_ PEXT_SET_PARAMETERS Parameters
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/dn265188(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTKERNELAPI NTSTATUS ExUuidCreate(
+    _Out_ UUID *Uuid
+    )
+{
+	assert irql_current == 0;
+}
+
+VOID ExWaitForRundownProtectionRelease(
+  _Inout_ PEX_RUNDOWN_REF RunRef
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/jj569378(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTKERNELAPI VOID FASTCALL ExfAcquirePushLockExclusive (
+    __inout __deref __drv_acquiresExclusiveResource(ExPushLockType)
+    PEX_PUSH_LOCK PushLock
+    )
+{
+	assert irql_current <= 1;
+}
+
+NTKERNELAPI VOID FASTCALL ExfAcquirePushLockShared (
+    __inout __deref __drv_acquiresExclusiveResource(ExPushLockType)
+    PEX_PUSH_LOCK PushLock
+    )
+{
+	assert irql_current <= 1;
+}
+
+NTKERNELAPI VOID FASTCALL ExfReleasePushLock (
+    __inout __deref __drv_releasesExclusiveResource(ExPushLockType)
+    PEX_PUSH_LOCK PushLock
+    )
+{
+	assert irql_current <= 2;
+}
+
+NTKERNELAPI VOID FASTCALL ExfReleasePushLockShared (
+    __inout __deref __drv_releasesExclusiveResource(ExPushLockType)
+    PEX_PUSH_LOCK PushLock
+    )
+{
+	assert irql_current <= 2;
+}
+
+NTKERNELAPI BOOLEAN FASTCALL ExfTryAcquirePushLockShared (
+    __inout __deref __drv_neverHold(ExPushLockType)
+    __deref __drv_when(return==1, __drv_acquiresResource(ExPushLockType))
+    PEX_PUSH_LOCK PushLock
+    )
+{
+	assert irql_current <= 1;
+}
+
+NTKERNELAPI VOID FASTCALL ExfTryToWakePushLock (
+    __inout PEX_PUSH_LOCK PushLock
+    )
+{
+	assert irql_current <= 2;
+}
+
+VOID IoAcquireCancelSpinLock(
+  _Out_ PKIRQL Irql
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548196(v=vs.85).aspx
+	assert irql_current <= 2;
+	*Irql := irql_current;
+	irql_current := 2;
+}
+
+NTSTATUS IoAllocateDriverObjectExtension(
+  _In_  PDRIVER_OBJECT DriverObject,
+  _In_  PVOID          ClientIdentificationAddress,
+  _In_  ULONG          DriverObjectExtensionSize,
+  _Out_ PVOID          *DriverObjectExtension
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548233(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PVOID IoAllocateErrorLogEntry(
+  _In_ PVOID IoObject,
+  _In_ UCHAR EntrySize
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548245(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PIRP IoAllocateIrp(
+  _In_ CCHAR   StackSize,
+  _In_ BOOLEAN ChargeQuota
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548257(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PMDL IoAllocateMdl(
+  _In_opt_    PVOID   VirtualAddress,
+  _In_        ULONG   Length,
+  _In_        BOOLEAN SecondaryBuffer,
+  _In_        BOOLEAN ChargeQuota,
+  _Inout_opt_ PIRP    Irp
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548263(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PIO_WORKITEM IoAllocateWorkItem(
+  _In_ PDEVICE_OBJECT DeviceObject
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548276(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PDEVICE_OBJECT IoAttachDeviceToDeviceStack(
+  _In_ PDEVICE_OBJECT SourceDevice,
+  _In_ PDEVICE_OBJECT TargetDevice
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548300(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PIRP IoBuildAsynchronousFsdRequest(
+  _In_     ULONG            MajorFunction,
+  _In_     PDEVICE_OBJECT   DeviceObject,
+  _Inout_  PVOID            Buffer,
+  _In_opt_ ULONG            Length,
+  _In_opt_ PLARGE_INTEGER   StartingOffset,
+  _In_opt_ PIO_STATUS_BLOCK IoStatusBlock
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548310(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+PIRP IoBuildDeviceIoControlRequest(
+  _In_      ULONG            IoControlCode,
+  _In_      PDEVICE_OBJECT   DeviceObject,
+  _In_opt_  PVOID            InputBuffer,
+  _In_      ULONG            InputBufferLength,
+  _Out_opt_ PVOID            OutputBuffer,
+  _In_      ULONG            OutputBufferLength,
+  _In_      BOOLEAN          InternalDeviceIoControl,
+  _In_opt_  PKEVENT          Event,
+  _Out_     PIO_STATUS_BLOCK IoStatusBlock
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548318(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+PIRP IoBuildSynchronousFsdRequest(
+  _In_     ULONG            MajorFunction,
+  _In_     PDEVICE_OBJECT   DeviceObject,
+  _Inout_  PVOID            Buffer,
+  _In_opt_ ULONG            Length,
+  _In_opt_ PLARGE_INTEGER   StartingOffset,
+  _In_     PKEVENT          Event,
+  _Out_    PIO_STATUS_BLOCK IoStatusBlock
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548330(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+BOOLEAN IoCancelIrp(
+  _In_ PIRP Irp
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548338(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS IoConnectInterrupt(
+  _Out_    PKINTERRUPT       *InterruptObject,
+  _In_     PKSERVICE_ROUTINE ServiceRoutine,
+  _In_opt_ PVOID             ServiceContext,
+  _In_opt_ PKSPIN_LOCK       SpinLock,
+  _In_     ULONG             Vector,
+  _In_     KIRQL             Irql,
+  _In_     KIRQL             SynchronizeIrql,
+  _In_     KINTERRUPT_MODE   InterruptMode,
+  _In_     BOOLEAN           ShareVector,
+  _In_     KAFFINITY         ProcessorEnableMask,
+  _In_     BOOLEAN           FloatingSave
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548371(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS IoCreateDevice(
+  _In_     PDRIVER_OBJECT  DriverObject,
+  _In_     ULONG           DeviceExtensionSize,
+  _In_opt_ PUNICODE_STRING DeviceName,
+  _In_     DEVICE_TYPE     DeviceType,
+  _In_     ULONG           DeviceCharacteristics,
+  _In_     BOOLEAN         Exclusive,
+  _Out_    PDEVICE_OBJECT  *DeviceObject
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548397(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTSTATUS IoCreateSymbolicLink(
+  _In_ PUNICODE_STRING SymbolicLinkName,
+  _In_ PUNICODE_STRING DeviceName
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549043(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS IoCreateUnprotectedSymbolicLink(
+  _In_ PUNICODE_STRING SymbolicLinkName,
+  _In_ PUNICODE_STRING DeviceName
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549050(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID IoCsqInsertIrp(
+  _Inout_   PIO_CSQ             Csq,
+  _Inout_   PIRP                Irp,
+  _Out_opt_ PIO_CSQ_IRP_CONTEXT Context
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549066(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PIRP IoCsqRemoveNextIrp(
+  _Inout_  PIO_CSQ Csq,
+  _In_opt_ PVOID   PeekContext
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549072(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID IoDeleteDevice(
+  _In_ PDEVICE_OBJECT DeviceObject
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549083(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTSTATUS IoDeleteSymbolicLink(
+  _In_ PUNICODE_STRING SymbolicLinkName
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549085(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID IoDetachDevice(
+  _Inout_ PDEVICE_OBJECT TargetDevice
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549087(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID IoDisconnectInterrupt(
+  _In_ PKINTERRUPT InterruptObject
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549089(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID IoFreeIrp(
+  _In_ PIRP Irp
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549113(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID IoFreeMdl(
+  _In_ PMDL Mdl
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549126(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID IoFreeWorkItem(
+  _In_ PIO_WORKITEM IoWorkItem 
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549133(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PDEVICE_OBJECT IoGetAttachedDeviceReference(
+  _In_ PDEVICE_OBJECT DeviceObject
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549145(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PCONFIGURATION_INFORMATION IoGetConfigurationInformation(void)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549157(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS IoGetDeviceProperty(
+  _In_      PDEVICE_OBJECT           DeviceObject,
+  _In_      DEVICE_REGISTRY_PROPERTY DeviceProperty,
+  _In_      ULONG                    BufferLength,
+  _Out_opt_ PVOID                    PropertyBuffer,
+  _Out_     PULONG                   ResultLength
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549203(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+struct _DMA_ADAPTER* IoGetDmaAdapter(
+  _In_opt_ PDEVICE_OBJECT             PhysicalDeviceObject,
+  _In_     struct _DEVICE_DESCRIPTION *DeviceDescription,
+  _Out_    PULONG                     NumberOfMapRegisters
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549220(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+PVOID IoGetDriverObjectExtension(
+  _In_ PDRIVER_OBJECT DriverObject,
+  _In_ PVOID          ClientIdentificationAddress
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549229(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PVOID IoGetInitialStack(void)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549247(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTSTATUS IoGetRequestorSessionId(
+  _In_  PIRP   Irp,
+  _Out_ PULONG pSessionId
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548399(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+VOID IoInitializeIrp(
+  _Inout_ PIRP   Irp,
+  _In_    USHORT PacketSize,
+  _In_    CCHAR  StackSize
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549315(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS IoInitializeTimer(
+  _In_     PDEVICE_OBJECT    DeviceObject,
+  _In_     PIO_TIMER_ROUTINE TimerRoutine,
+  _In_opt_ PVOID             Context
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549344(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID IoInvalidateDeviceRelations(
+  _In_ PDEVICE_OBJECT       DeviceObject,
+  _In_ DEVICE_RELATION_TYPE Type
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549353(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID IoInvalidateDeviceState(
+  _In_ PDEVICE_OBJECT PhysicalDeviceObject
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549361(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS IoOpenDeviceRegistryKey(
+  _In_  PDEVICE_OBJECT DeviceObject,
+  _In_  ULONG          DevInstKeyType,
+  _In_  ACCESS_MASK    DesiredAccess,
+  _Out_ PHANDLE        DevInstRegKey
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549443(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID IoQueueWorkItem(
+  _In_     PIO_WORKITEM         IoWorkItem,
+  _In_     PIO_WORKITEM_ROUTINE WorkerRoutine,
+  _In_     WORK_QUEUE_TYPE      QueueType,
+  _In_opt_ PVOID                Context
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549466(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS IoRegisterDeviceInterface(
+  _In_           PDEVICE_OBJECT  PhysicalDeviceObject,
+  _In_     const GUID            *InterfaceClassGuid,
+  _In_opt_       PUNICODE_STRING ReferenceString,
+  _Out_          PUNICODE_STRING SymbolicLinkName
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549506(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS IoRegisterPlugPlayNotification(
+  _In_     IO_NOTIFICATION_EVENT_CATEGORY        EventCategory,
+  _In_     ULONG                                 EventCategoryFlags,
+  _In_opt_ PVOID                                 EventCategoryData,
+  _In_     PDRIVER_OBJECT                        DriverObject,
+  _In_     PDRIVER_NOTIFICATION_CALLBACK_ROUTINE CallbackRoutine,
+  _In_opt_ PVOID                                 Context,
+  _Out_    PVOID                                 *NotificationEntry
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549526(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID IoReleaseCancelSpinLock(
+  _In_ KIRQL Irql
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549550(v=vs.85).aspx
+	assert irql_current == 2;
+	assert Irql <= irql_current;
+	irql_current := Irql;
+	assume 0 <= irql_current;
+	assume irql_current <= 31;
+}
+
+NTSTATUS IoReportDetectedDevice(
+  _In_     PDRIVER_OBJECT                 DriverObject,
+  _In_     INTERFACE_TYPE                 LegacyBusType,
+  _In_     ULONG                          BusNumber,
+  _In_     ULONG                          SlotNumber,
+  _In_opt_ PCM_RESOURCE_LIST              ResourceList,
+  _In_opt_ PIO_RESOURCE_REQUIREMENTS_LIST ResourceRequirements,
+  _In_     BOOLEAN                        ResourceAssigned,
+  _Inout_  PDEVICE_OBJECT                 *DeviceObject
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549597(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID IoReuseIrp(
+  _Inout_ PIRP     Irp,
+  _In_    NTSTATUS Status
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549661(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS IoSetDeviceInterfacePropertyData(
+  _In_     PUNICODE_STRING  SymbolicLinkName,
+  _In_     CONST DEVPROPKEY *PropertyKey,
+  _In_     LCID             Lcid,
+  _In_     ULONG            Flags,
+  _In_     DEVPROPTYPE      Type,
+  _In_     ULONG            Size,
+  _In_opt_ PVOID            Data
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh439388(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTSTATUS IoSetDeviceInterfaceState(
+  _In_ PUNICODE_STRING SymbolicLinkName,
+  _In_ BOOLEAN         Enable
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549700(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+BOOLEAN IoSetThreadHardErrorMode(
+  _In_ BOOLEAN EnableHardErrors
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff550342(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID IoStartNextPacket(
+  _In_ PDEVICE_OBJECT DeviceObject,
+  _In_ BOOLEAN        Cancelable
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff550358(v=vs.85).aspx
+	assert irql_current == 2;
+}
+
+VOID IoStartPacket(
+  _In_     PDEVICE_OBJECT DeviceObject,
+  _In_     PIRP           Irp,
+  _In_opt_ PULONG         Key,
+  _In_opt_ PDRIVER_CANCEL CancelFunction
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff550370(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID IoStartTimer(
+  _In_ PDEVICE_OBJECT DeviceObject
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff550373(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID IoStopTimer(
+  _In_ PDEVICE_OBJECT DeviceObject
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff550377(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS IoUnregisterPlugPlayNotification(
+  _In_ PVOID NotificationEntry
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff550398(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS IoWMIRegistrationControl(
+  _In_ PDEVICE_OBJECT DeviceObject,
+  _In_ ULONG          Action
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff550480(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS IoWMIWriteEvent(
+  _Inout_ PVOID WnodeEventItem
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff550520(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+VOID IoWriteErrorLogEntry(
+  _In_ PVOID ElEntry
+)
+{
+	// https://msdn.microsoft.com/en-us/library/ff550527(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS IoCallDriver(
+  _In_    PDEVICE_OBJECT DeviceObject,
+  _Inout_ PIRP           Irp
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548336(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID IoCompleteRequest(
+  _In_ PIRP  Irp,
+  _In_ CCHAR PriorityBoost
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff548343(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID KeAcquireGuardedMutex(
+  _Inout_ PKGUARDED_MUTEX Mutex
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff551892(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+BOOLEAN KeAreApcsDisabled(void)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff551938(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+BOOLEAN KeCancelTimer(
+  _Inout_ PKTIMER Timer
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff551970(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID KeClearEvent(
+  _Inout_ PRKEVENT Event
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff551980(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS KeDelayExecutionThread(
+  _In_ KPROCESSOR_MODE WaitMode,
+  _In_ BOOLEAN         Alertable,
+  _In_ PLARGE_INTEGER  Interval
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff551986(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+VOID KeEnterCriticalRegion(void)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff552021(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+VOID KeFlushIoBuffers(
+  _In_ PMDL    Mdl,
+  _In_ BOOLEAN ReadOperation,
+  _In_ BOOLEAN DmaOperation
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff552041(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID KeFlushQueuedDpcs(void)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff552050(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTKERNELAPI VOID KeGenericCallDpc (
+    _In_ PKDEFERRED_ROUTINE Routine,
+    _In_opt_ PVOID Context
+    )
+{
+	assert irql_current <= 1;
+}
+
+KIRQL KeGetCurrentIrql(void)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff552054(v=vs.85).aspx
+	r := irql_current;
+}
+
+VOID KeInitializeDeviceQueue(
+  _Out_ PKDEVICE_QUEUE DeviceQueue
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff552126(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID KeInitializeGuardedMutex(
+  _Out_ PKGUARDED_MUTEX Mutex
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff552144(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+VOID KeInitializeProfileCallback (
+    _Out_ PKPROFILE Profile,
+    _In_ PKPROFILE_CALLBACK Callback,
+    _In_opt_ PVOID Context,
+    _In_ KPROFILE_SOURCE ProfileSource
+    )
+{
+	assert irql_current <= 1;
+}
+
+VOID KeInitializeQueue(
+  _Out_ PRKQUEUE Queue,
+  _In_  ULONG    Count
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549547(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID KeInitializeTimer(
+  _Out_ PKTIMER Timer
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff552168(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID KeInitializeTimerEx(
+  _Out_ PKTIMER    Timer,
+  _In_  TIMER_TYPE Type
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff552173(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+BOOLEAN KeInsertByKeyDeviceQueue(
+  _Inout_ PKDEVICE_QUEUE       DeviceQueue,
+  _Inout_ PKDEVICE_QUEUE_ENTRY DeviceQueueEntry,
+  _In_    ULONG                SortKey
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff552178(v=vs.85).aspx
+	assert irql_current == 2;
+}
+
+BOOLEAN KeInsertDeviceQueue(
+  _Inout_ PKDEVICE_QUEUE       DeviceQueue,
+  _Inout_ PKDEVICE_QUEUE_ENTRY DeviceQueueEntry
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff552180(v=vs.85).aspx
+	assert irql_current == 2;
+}
+
+LONG KeInsertQueue(
+  _Inout_ PRKQUEUE    Queue,
+  _Inout_ PLIST_ENTRY Entry
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549570(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTKERNELAPI BOOLEAN KeInsertQueueApc (
+    _Inout_ PRKAPC Apc,
+    _In_opt_ PVOID SystemArgument1,
+    _In_opt_ PVOID SystemArgument2,
+    _In_ KPRIORITY Increment
+    )
+{
+	assert irql_current <= 2;
+}
+
+NTKERNELAPI BOOLEAN KeIsAttachedProcess (
+    VOID
+    )
+{
+	assert irql_current <= 1;
+}
+
+VOID KeLeaveCriticalRegion(void)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff552964(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+VOID KeQueryBootTimeValues (
+    _Out_ PLARGE_INTEGER SystemTime,
+    _Out_ PLARGE_INTEGER BootTime,
+    _Out_ PULONG64 BootTimeBias
+    )
+{
+	assert irql_current <= 2;
+}
+
+BOOLEAN KeQueryCurrentStackInformation (
+    _Out_ PKERNEL_STACK_LIMITS Type,
+    _Out_ PULONG_PTR LowLimit,
+    _Out_ PULONG_PTR HighLimit
+    )
+{
+	assert irql_current <= 2;
+}
+
+KIRQL KeRaiseIrqlToDpcLevel(void)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553084(v=vs.85).aspx
+	assert irql_current <= 2;
+	r := irql_current;
+	irql_current := 2;
+}
+
+LONG KeReadStateEvent(
+  _In_ PRKEVENT Event
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553089(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID KeReleaseGuardedMutex(
+  _Inout_ PKGUARDED_MUTEX Mutex
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553124(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+LONG KeReleaseMutex(
+  _Inout_ PRKMUTEX Mutex,
+  _In_    BOOLEAN  Wait
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553140(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PKDEVICE_QUEUE_ENTRY KeRemoveDeviceQueue(
+  _Inout_ PKDEVICE_QUEUE DeviceQueue
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553156(v=vs.85).aspx
+	assert irql_current == 2;
+}
+
+BOOLEAN KeRemoveEntryDeviceQueue(
+  _Inout_ PKDEVICE_QUEUE       DeviceQueue,
+  _Inout_ PKDEVICE_QUEUE_ENTRY DeviceQueueEntry
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553163(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PLIST_ENTRY KeRemoveQueue(
+  _Inout_  PRKQUEUE        Queue,
+  _In_     KPROCESSOR_MODE WaitMode,
+  _In_opt_ PLARGE_INTEGER  Timeout
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549605(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+BOOLEAN KeRemoveQueueApc (
+    _Inout_ PKAPC Apc
+    )
+{
+	assert irql_current <= 2;
+}
+
+LONG KeResetEvent(
+  _Inout_ PRKEVENT Event
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553176(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS KeRestoreFloatingPointState(
+  _In_ PKFLOATING_SAVE FloatSave
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553185(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PLIST_ENTRY KeRundownQueue(
+  _Inout_ PRKQUEUE Queue
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549638(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS KeSaveFloatingPointState(
+  _Out_ PKFLOATING_SAVE FloatSave
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553243(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTKERNELAPI KPRIORITY KeSetActualBasePriorityThread (
+    _Inout_ PKTHREAD Thread,
+    _In_ KPRIORITY NewBase
+    )
+{
+	assert irql_current <= 2;
+}
+
+BOOLEAN KeSetCoalescableTimer(
+  _Inout_  PKTIMER       Timer,
+  _In_     LARGE_INTEGER DueTime,
+  _In_     ULONG         Period,
+  _In_     ULONG         TolerableDelay,
+  _In_opt_ PKDPC         Dpc
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553249(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+LONG KeSetEvent(
+  _Inout_ PRKEVENT  Event,
+  _In_    KPRIORITY Increment,
+  _In_    BOOLEAN   Wait
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553253(v=vs.85).aspx
+	assert if(Wait == 0) then irql_current <= 2 else irql_current <= 1;
+}
+
+BOOLEAN KeSetTimer(
+  _Inout_  PKTIMER       Timer,
+  _In_     LARGE_INTEGER DueTime,
+  _In_opt_ PKDPC         Dpc
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553286(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+BOOLEAN KeSetTimerEx(
+  _Inout_  PKTIMER       Timer,
+  _In_     LARGE_INTEGER DueTime,
+  _In_     LONG          Period,
+  _In_opt_ PKDPC         Dpc
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553292(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTKERNELAPI VOID KeSignalCallDpcDone (
+    _In_ PVOID SystemArgument1
+    )
+{
+	assert irql_current == 2;
+}
+
+VOID KeStackAttachProcess(
+  _Inout_ PRKPROCESS   Process,
+  _Out_   PRKAPC_STATE ApcState
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549659(v=vs.85).aspx
+	assert irql_current < 2;
+}
+
+BOOLEAN KeStartProfile (
+    _Inout_ PKPROFILE Profile
+    )
+{
+	assert irql_current <= 2;
+}
+
+BOOLEAN KeStopProfile (
+    _Inout_ PKPROFILE Profile
+    )
+{
+	assert irql_current <= 2;
+}
+
+BOOLEAN KeTryToAcquireSpinLockAtDpcLevel(
+  _Inout_ PKSPIN_LOCK SpinLock
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553317(v=vs.85).aspx
+	assert irql_current == 2;
+}
+
+NTKERNELAPI BOOLEAN KeTryToInsertQueueApc (
+    _Inout_ PRKAPC Apc,
+    _In_opt_ PVOID SystemArgument1,
+    _In_opt_ PVOID SystemArgument2
+    )
+{
+	assert irql_current > 2;
+	assert irql_current <= 31;
+}
+
+VOID KeUnstackDetachProcess(
+  _In_ PRKAPC_STATE ApcState
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff549677(v=vs.85).aspx
+	assert irql_current < 2;
+}
+
+NTSTATUS  KeWaitForMultipleObjects(
+  _In_      ULONG           Count,
+  _In_      PVOID           Object[],
+  _In_      WAIT_TYPE       WaitType,
+  _In_      KWAIT_REASON    WaitReason,
+  _In_      KPROCESSOR_MODE WaitMode,
+  _In_      BOOLEAN         Alertable,
+  _In_opt_  PLARGE_INTEGER  Timeout,
+  _Out_opt_ PKWAIT_BLOCK    WaitBlockArray
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553324(v=vs.85).aspx
+	assert if(x6 == 0 || Mem_T.VOID[x6] != 0) then irql_current <= 1 else irql_current <= 2;
+}
+
+NTSTATUS KeWaitForSingleObject(
+  _In_     PVOID           Object,
+  _In_     KWAIT_REASON    WaitReason,
+  _In_     KPROCESSOR_MODE WaitMode,
+  _In_     BOOLEAN         Alertable,
+  _In_opt_ PLARGE_INTEGER  Timeout
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553350(v=vs.85).aspx
+	assert if(x4 == 0 || Mem_T._LARGE_INTEGER[x4] != 0) then irql_current <= 1 else irql_current <= 2;
+}
+
+NTSTATUS KeWaitForSingleObject(
+  _In_     PVOID           Object,
+  _In_     KWAIT_REASON    WaitReason,
+  _In_     KPROCESSOR_MODE WaitMode,
+  _In_     BOOLEAN         Alertable,
+  _In_opt_ PLARGE_INTEGER  Timeout
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553350(v=vs.85).aspx
+	assert if(x4 == 0 || Mem_T.INT4[x4] != 0) then irql_current <= 1 else irql_current <= 2;
+}
+
+NTSTATUS KeWaitForSingleObject(
+  _In_     PVOID           Object,
+  _In_     KWAIT_REASON    WaitReason,
+  _In_     KPROCESSOR_MODE WaitMode,
+  _In_     BOOLEAN         Alertable,
+  _In_opt_ PLARGE_INTEGER  Timeout
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553350(v=vs.85).aspx
+	assert if(x4 == 0 || Mem_T._CC_FILE_SIZES[x4] != 0) then irql_current <= 1 else irql_current <= 2;
+}
+
+NTSTATUS KeWaitForSingleObject(
+  _In_     PVOID           Object,
+  _In_     KWAIT_REASON    WaitReason,
+  _In_     KPROCESSOR_MODE WaitMode,
+  _In_     BOOLEAN         Alertable,
+  _In_opt_ PLARGE_INTEGER  Timeout
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553350(v=vs.85).aspx
+	assert if(x4 == 0 || Mem_T.VOID[x4] != 0) then irql_current <= 1 else irql_current <= 2;
+}
+
+VOID KeAcquireSpinLockAtDpcLevel(
+  _Inout_ PKSPIN_LOCK SpinLock
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff551921(v=vs.85).aspx
+	assert irql_current >= 2;
+}
+
+VOID KeReleaseSpinLockFromDpcLevel(
+  _Inout_ PKSPIN_LOCK SpinLock
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553150(v=vs.85).aspx
+	assert irql_current == 2;
+}
+
+VOID KeAcquireSpinLock(
+  _In_  PKSPIN_LOCK SpinLock,
+  _Out_ PKIRQL      OldIrql
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff551917(v=vs.85).aspx
+	assert irql_current <= 2;
+	r := irql_current;
+	irql_current := 2;
+}
+
+VOID KeLowerIrql(
+  _In_ KIRQL NewIrql
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff552968(v=vs.85).aspx
+	assert NewIrql <= irql_current;
+	irql_current := NewIrql;
+	assume 0 <= irql_current;
+	assume irql_current <= 31;
+}
+
+VOID KeRaiseIrql(
+  _In_  KIRQL  NewIrql,
+  _Out_ PKIRQL OldIrql
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553079(v=vs.85).aspx
+	assert NewIrql >= irql_current;
+	OldIrql := irql_current;
+	irql_current := NewIrql;
+	assume 0 <= irql_current;
+	assume irql_current <= 31;
+}
+
+VOID KeReleaseSpinLock(
+  _Inout_ PKSPIN_LOCK SpinLock,
+  _In_    KIRQL       NewIrql
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff553145(v=vs.85).aspx
+	assert irql_current == 2;
+	assert NewIrql <= irql_current;
+	irql_current := NewIrql;
+	assume 0 <= irql_current;
+	assume irql_current <= 31;
+}
+
+void KsAcquireControl(
+  _In_ PVOID Object
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff560908(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+void KsAddEvent(
+  _In_ PVOID          Object,
+  _In_ PKSEVENT_ENTRY EventEntry
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff560931(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+void KsGenerateEvents(
+  _In_           PVOID                      Object,
+  _In_opt_ const GUID                       *EventSet,
+  _In_           ULONG                      EventId,
+  _In_           ULONG                      DataSize,
+  _In_opt_       PVOID                      Data,
+  _In_opt_       PFNKSGENERATEEVENTCALLBACK CallBack,
+  _In_opt_       PVOID                      CallBackContext
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562597(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PKSDEVICE KsGetDevice(
+  _In_ PVOID Object
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562615(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+PVOID KsGetFirstChild(
+  _In_ PVOID Object
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562626(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+PVOID KsGetNextSibling(
+  _In_ PVOID Object
+)
+{
+	// https://msdn.microsoft.com/ko-kr/library/windows/hardware/ff562643(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+PUNKNOWN KsGetOuterUnknown(
+  _In_ PVOID Object
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562655(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+PVOID KsGetParent(
+  _In_ PVOID Object
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562658(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+PUNKNOWN KsRegisterAggregatedClientUnknown(
+  _In_ PVOID    Object,
+  _In_ PUNKNOWN ClientUnknown
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff566767(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+void KsReleaseControl(
+  _In_ PVOID Object
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff566780(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTKERNELAPI NTSTATUS MmAddVerifierThunks (
+    _In_reads_bytes_ (ThunkBufferSize) PVOID ThunkBuffer,
+    _In_ ULONG ThunkBufferSize
+    )
+{
+	assert irql_current <= 1;
+}
+
+PVOID MmAllocateContiguousMemory(
+  _In_ SIZE_T           NumberOfBytes,
+  _In_ PHYSICAL_ADDRESS HighestAcceptableAddress
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554460(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PVOID MmAllocateContiguousMemorySpecifyCache(
+  _In_     SIZE_T              NumberOfBytes,
+  _In_     PHYSICAL_ADDRESS    LowestAcceptableAddress,
+  _In_     PHYSICAL_ADDRESS    HighestAcceptableAddress,
+  _In_opt_ PHYSICAL_ADDRESS    BoundaryAddressMultiple,
+  _In_     MEMORY_CACHING_TYPE CacheType
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554464(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PVOID MmAllocateContiguousNodeMemory(
+  _In_     SIZE_T           NumberOfBytes,
+  _In_     PHYSICAL_ADDRESS LowestAcceptableAddress,
+  _In_     PHYSICAL_ADDRESS HighestAcceptableAddress,
+  _In_opt_ PHYSICAL_ADDRESS BoundaryAddressMultiple,
+  _In_     ULONG            Protect,
+  _In_     NODE_REQUIREMENT PreferredNode
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/jj602795(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PVOID MmAllocateMappingAddress(
+  _In_ SIZE_T NumberOfBytes,
+  _In_ ULONG  PoolTag
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554475(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+VOID MmBuildMdlForNonPagedPool(
+  _Inout_ PMDLX MemoryDescriptorList
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554498(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID MmFreeContiguousMemory(
+  _In_ PVOID BaseAddress
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554503(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID MmFreeContiguousMemorySpecifyCache(
+  _In_ PVOID               BaseAddress,
+  _In_ SIZE_T              NumberOfBytes,
+  _In_ MEMORY_CACHING_TYPE CacheType
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554507(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID MmFreeMappingAddress(
+  _In_ PVOID BaseAddress,
+  _In_ ULONG PoolTag
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554512(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+PVOID MmGetSystemRoutineAddress(
+  _In_ PUNICODE_STRING SystemRoutineName
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554563(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTKERNELAPI NTSTATUS MmIsVerifierEnabled (
+    __out PULONG VerifierFlags
+    )
+{
+	assert irql_current <= 1;
+}
+
+PVOID MmLockPagableDataSection(
+  _In_ PVOID AddressWithinSection
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554607(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+VOID MmLockPagableSectionByHandle(
+  _In_ PVOID ImageSectionHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554610(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+PVOID MmMapIoSpace(
+  _In_ PHYSICAL_ADDRESS    PhysicalAddress,
+  _In_ SIZE_T              NumberOfBytes,
+  _In_ MEMORY_CACHING_TYPE CacheType
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554618(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PVOID MmMapIoSpace(
+  _In_ PHYSICAL_ADDRESS PhysicalAddress,
+  _In_ SIZE_T           NumberOfBytes,
+  _In_ ULONG            Protect
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/dn939699(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PVOID MmMapLockedPagesSpecifyCache(
+  _In_     PMDLX               MemoryDescriptorList,
+  _In_     KPROCESSOR_MODE     AccessMode,
+  _In_     MEMORY_CACHING_TYPE CacheType,
+  _In_opt_ PVOID               BaseAddress,
+  _In_     ULONG               BugCheckOnFailure,
+  _In_     MM_PAGE_PRIORITY    Priority
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554629(v=vs.85).aspx
+	assert if(AccessMode == 0) then irql_current <= 2 else irql_current <= 1;
+}
+
+PVOID MmMapLockedPagesWithReservedMapping(
+  _In_ PVOID               MappingAddress,
+  _In_ ULONG               PoolTag,
+  _In_ PMDLX               MemoryDescriptorList,
+  _In_ MEMORY_CACHING_TYPE CacheType
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554640(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID MmProbeAndLockPages(
+  _Inout_ PMDLX           MemoryDescriptorList,
+  _In_    KPROCESSOR_MODE AccessMode,
+  _In_    LOCK_OPERATION  Operation
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554664(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTSTATUS MmProtectMdlSystemAddress(
+  _In_ PMDLX MemoryDescriptorList,
+  _In_ ULONG NewProtect
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554670(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID MmUnlockPagableImageSection(
+  _In_ PVOID ImageSectionHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff556377(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+VOID MmUnlockPages(
+  _Inout_ PMDL MemoryDescriptorList
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff556381(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID MmUnmapIoSpace(
+  _In_ PVOID  BaseAddress,
+  _In_ SIZE_T NumberOfBytes
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff556387(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID MmUnmapLockedPages(
+  _In_ PVOID BaseAddress,
+  _In_ PMDL  MemoryDescriptorList
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff556391(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID MmUnmapReservedMapping(
+  _In_ PVOID BaseAddress,
+  _In_ ULONG PoolTag,
+  _In_ PMDLX MemoryDescriptorList
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff556392(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PVOID ExAllocatePoolWithTag(
+  _In_ POOL_TYPE PoolType,
+  _In_ SIZE_T    NumberOfBytes,
+  _In_ ULONG     Tag
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff544520(v=vs.85).aspx
+	assert if((PoolType mod 2) == 0) then irql_current <= 2 else irql_current <= 1;
+}
+
+NTSTATUS KeDelayExecutionThread(
+  _In_ KPROCESSOR_MODE WaitMode,
+  _In_ BOOLEAN         Alertable,
+  _In_ PLARGE_INTEGER  Interval
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff551986(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+VOID ExFreePoolWithTag(
+  _In_ PVOID P,
+  _In_ ULONG Tag
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff544593(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NDIS_HANDLE NdisAllocateIoWorkItem(
+  _In_ NDIS_HANDLE NdisObjectHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561604(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PMDL NdisAllocateMdl(
+  _In_ NDIS_HANDLE NdisHandle,
+  _In_ PVOID       VirtualAddress,
+  _In_ UINT        Length
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561605(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PVOID NdisAllocateMemoryWithTagPriority(
+  _In_ NDIS_HANDLE      NdisHandle,
+  _In_ UINT             Length,
+  _In_ ULONG            Tag,
+  _In_ EX_POOL_PRIORITY Priority
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561606(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PNET_BUFFER_LIST NdisAllocateNetBufferAndNetBufferList(
+  _In_     NDIS_HANDLE PoolHandle,
+  _In_     USHORT      ContextSize,
+  _In_     USHORT      ContextBackFill,
+  _In_opt_ PMDL        MdlChain,
+  _In_     ULONG       DataOffset,
+  _In_     SIZE_T      DataLength
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561608(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PNET_BUFFER_LIST NdisAllocateNetBufferList(
+  _In_ NDIS_HANDLE PoolHandle,
+  _In_ USHORT      ContextSize,
+  _In_ USHORT      ContextBackFill
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561609(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NDIS_HANDLE NdisAllocateNetBufferListPool(
+  _In_opt_ NDIS_HANDLE                      NdisHandle,
+  _In_     PNET_BUFFER_LIST_POOL_PARAMETERS Parameters
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561611(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NDIS_STATUS NdisAllocateTimerObject(
+  _In_  NDIS_HANDLE                 NdisHandle,
+  _In_  PNDIS_TIMER_CHARACTERISTICS TimerCharacteristics,
+  _Out_ PNDIS_HANDLE                pTimerObject
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561618(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+BOOLEAN NdisCancelTimerObject(
+  _In_ NDIS_HANDLE TimerObject
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561624(v=vs.85).aspx
+	assert irql_current <=2;
+}
+
+VOID NdisCloseConfiguration(
+  _In_ NDIS_HANDLE ConfigurationHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561642(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID NdisFreeIoWorkItem(
+  _In_ NDIS_HANDLE NdisIoWorkItemHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561855(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID NdisFreeMdl(
+  _In_ PMDL Mdl
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562575(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID NdisFreeMemory(
+  _In_ PVOID VirtualAddress,
+  _In_ UINT  Length,
+  _In_ UINT  MemoryFlags
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562577(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID NdisFreeNetBufferList(
+  _In_ PNET_BUFFER_LIST NetBufferList
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562583(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID NdisFreeNetBufferListPool(
+  _In_ NDIS_HANDLE PoolHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562590(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID NdisFreeTimerObject(
+  _In_ NDIS_HANDLE TimerObject
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562605(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NDIS_STATUS NdisGetProcessorInformation(
+  _Inout_ PNDIS_SYSTEM_PROCESSOR_INFO SystemProcessorInfo
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562661(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NDIS_STATUS NdisGetProcessorInformationEx(
+  _In_opt_  NDIS_HANDLE                    NdisHandle,
+  _Out_opt_ PNDIS_SYSTEM_PROCESSOR_INFO_EX SystemProcessorInfo,
+  _Inout_   PSIZE_T                        Size
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562662(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+UINT NdisGetVersion(void)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562680(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NDIS_STATUS NdisMAllocateNetBufferSGList(
+  _In_     NDIS_HANDLE NdisMiniportDmaHandle,
+  _In_     PNET_BUFFER NetBuffer,
+  _In_     PVOID       Context,
+  _In_     ULONG       Flags,
+  _In_opt_ PVOID       ScatterGatherListBuffer,
+  _In_     ULONG       ScatterGatherListBufferSize
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562776(v=vs.85).aspx
+	assert irql_current == 2;
+}
+
+VOID NdisMAllocateSharedMemory(
+  _In_  NDIS_HANDLE            MiniportAdapterHandle,
+  _In_  ULONG                  Length,
+  _In_  BOOLEAN                Cached,
+  _Out_ PVOID                  *VirtualAddress,
+  _Out_ PNDIS_PHYSICAL_ADDRESS PhysicalAddress
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562782(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID NdisMDeregisterInterruptEx(
+  _In_ NDIS_HANDLE NdisInterruptHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563575(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID NdisMDeregisterMiniportDriver(
+  _In_ NDIS_HANDLE NdisMiniportDriverHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563578(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID NdisMDeregisterScatterGatherDma(
+  _In_ NDIS_HANDLE NdisMiniportDmaHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563581(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NDIS_STATUS NdisMEnableVirtualization(
+  _In_ NDIS_HANDLE NdisMiniportHandle,
+  _In_ USHORT      NumVFs,
+  _In_ BOOLEAN     EnableVFMigration,
+  _In_ BOOLEAN     EnableMigrationInterrupt,
+  _In_ BOOLEAN     EnableVirtualization
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh451481(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID NdisMFreeNetBufferSGList(
+  _In_ NDIS_HANDLE          NdisMiniportDmaHandle,
+  _In_ PSCATTER_GATHER_LIST pSGL,
+  _In_ PNET_BUFFER          NetBuffer
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563586(v=vs.85).aspx
+	assert irql_current == 2;
+}
+
+VOID NdisMFreeSharedMemory(
+  _In_ NDIS_HANDLE           MiniportAdapterHandle,
+  _In_ ULONG                 Length,
+  _In_ BOOLEAN               Cached,
+  _In_ PVOID                 VirtualAddress,
+  _In_ NDIS_PHYSICAL_ADDRESS PhysicalAddress
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563589(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID NdisMGetDeviceProperty(
+  _In_      NDIS_HANDLE       MiniportAdapterHandle,
+  _Out_opt_ PDEVICE_OBJECT    *PhysicalDeviceObject,
+  _Out_opt_ PDEVICE_OBJECT    *FunctionalDeviceObject,
+  _Out_opt_ PDEVICE_OBJECT    *NextDeviceObject,
+  _Out_opt_ PCM_RESOURCE_LIST *AllocatedResources,
+  _Out_opt_ PCM_RESOURCE_LIST *AllocatedResourcesTranslated
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563592(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+ULONG NdisMGetVirtualFunctionBusData(
+  _In_  NDIS_HANDLE            NdisMiniportHandle,
+  _In_  NDIS_SRIOV_FUNCTION_ID VFId,
+  _Out_ PVOID                  Buffer,
+  _In_  ULONG                  Offset,
+  _In_  ULONG                  Length
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh451484(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID NdisMGetVirtualFunctionLocation(
+  _In_  NDIS_HANDLE            NdisMiniportHandle,
+  _In_  NDIS_SRIOV_FUNCTION_ID VFId,
+  _Out_ PUSHORT                SegmentNumber,
+  _Out_ PUCHAR                 BusNumber,
+  _Out_ PUCHAR                 FunctionNumber
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh451487(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID NdisMIndicateReceiveNetBufferLists(
+  _In_ NDIS_HANDLE      MiniportAdapterHandle,
+  _In_ PNET_BUFFER_LIST NetBufferLists,
+  _In_ NDIS_PORT_NUMBER PortNumber,
+  _In_ ULONG            NumberOfNetBufferLists,
+  _In_ ULONG            ReceiveFlags
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563598(v=vs.85).aspx
+	assert if((x4 mod 2) != 0) then irql_current == 2 else irql_current <= 2;
+}
+
+VOID NdisMIndicateStatusEx(
+  _In_ NDIS_HANDLE             MiniportAdapterHandle,
+  _In_ PNDIS_STATUS_INDICATION StatusIndication
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563600(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID NdisMInvalidateConfigBlock(
+  _In_ NDIS_HANDLE            NdisMiniportHandle,
+  _In_ NDIS_SRIOV_FUNCTION_ID VFId,
+  _In_ ULONGLONG              BlockMask
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh451517(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NDIS_STATUS NdisMMapIoSpace(
+  _Out_ PVOID                 *VirtualAddress,
+  _In_  NDIS_HANDLE           MiniportAdapterHandle,
+  _In_  NDIS_PHYSICAL_ADDRESS PhysicalAddress,
+  _In_  UINT                  Length
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563613(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID NdisMPauseComplete(
+  _In_ NDIS_HANDLE MiniportAdapterHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563628(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NDIS_STATUS NdisMQueryProbedBars(
+  _In_  NDIS_HANDLE NdisMiniportHandle,
+  _Out_ PULONG      BaseRegisterValues
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh451520(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NDIS_STATUS NdisMRegisterInterruptEx(
+  _In_  NDIS_HANDLE                              MiniportAdapterHandle,
+  _In_  NDIS_HANDLE                              MiniportInterruptContext,
+  _In_  PNDIS_MINIPORT_INTERRUPT_CHARACTERISTICS MiniportInterruptCharacteristics,
+  _Out_ PNDIS_HANDLE                             NdisInterruptHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563649(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NDIS_STATUS NdisMRegisterMiniportDriver(
+  _In_     PDRIVER_OBJECT                        DriverObject,
+  _In_     PUNICODE_STRING                       RegistryPath,
+  _In_opt_ NDIS_HANDLE                           MiniportDriverContext,
+  _In_     PNDIS_MINIPORT_DRIVER_CHARACTERISTICS MiniportDriverCharacteristics,
+  _Out_    PNDIS_HANDLE                          NdisMiniportDriverHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563654(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NDIS_STATUS NdisMRegisterScatterGatherDma(
+  _In_    NDIS_HANDLE              MiniportAdapterHandle,
+  _Inout_ PNDIS_SG_DMA_DESCRIPTION DmaDescription,
+  _Out_   PNDIS_HANDLE             NdisMiniportDmaHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563659(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID NdisMResetComplete(
+  _In_ NDIS_HANDLE MiniportAdapterHandle,
+  _In_ NDIS_STATUS Status,
+  _In_ BOOLEAN     AddressingReset
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563663(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+void NdisMResetMiniport(
+  _In_ NDIS_HANDLE MiniportAdapterHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/jj647917(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID NdisMRestartComplete(
+  _In_ NDIS_HANDLE MiniportAdapterHandle,
+  _In_ NDIS_STATUS Status
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563665(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID NdisMSendNetBufferListsComplete(
+  _In_ NDIS_HANDLE      MiniportAdapterHandle,
+  _In_ PNET_BUFFER_LIST NetBufferLists,
+  _In_ ULONG            SendCompleteFlags
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563668(v=vs.85).aspx
+	assert if((SendCompleteFlags mod 2) != 0) then irql_current == 2 else irql_current <= 2;
+}
+
+NDIS_STATUS NdisMSetMiniportAttributes(
+  _In_ NDIS_HANDLE                       NdisMiniportAdapterHandle,
+  _In_ PNDIS_MINIPORT_ADAPTER_ATTRIBUTES MiniportAttributes
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563672(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+ULONG NdisMSetVirtualFunctionBusData(
+  _In_ NDIS_HANDLE            NdisMiniportHandle,
+  _In_ NDIS_SRIOV_FUNCTION_ID VFId,
+  _In_ PVOID                  Buffer,
+  _In_ ULONG                  Offset,
+  _In_ ULONG                  Length
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh451526(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+BOOLEAN NdisMSynchronizeWithInterruptEx(
+  _In_ NDIS_HANDLE NdisInterruptHandle,
+  _In_ ULONG       MessageId,
+  _In_ PVOID       SynchronizeFunction,
+  _In_ PVOID       SynchronizeContext
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563681(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NDIS_STATUS NdisOpenConfigurationEx(
+  _In_  PNDIS_CONFIGURATION_OBJECT ConfigObject,
+  _Out_ PNDIS_HANDLE               ConfigurationHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563717(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID NdisOpenConfigurationKeyByName(
+  _Out_ PNDIS_STATUS Status,
+  _In_  NDIS_HANDLE  ConfigurationHandle,
+  _In_  PNDIS_STRING SubKeyName,
+  _Out_ PNDIS_HANDLE SubKeyHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563725(v=vs.85).aspx
+	assert irql_current < 2;
+}
+
+VOID NdisQueueIoWorkItem(
+  _In_ NDIS_HANDLE              NdisIoWorkItemHandle,
+  _In_ NDIS_IO_WORKITEM_ROUTINE Routine,
+  _In_ PVOID                    WorkItemContext
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563775(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID NdisReadConfiguration(
+  _Out_ PNDIS_STATUS                  Status,
+  _Out_ PNDIS_CONFIGURATION_PARAMETER *ParameterValue,
+  _In_  NDIS_HANDLE                   ConfigurationHandle,
+  _In_  PNDIS_STRING                  Keyword,
+  _In_  NDIS_PARAMETER_TYPE           ParameterType
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff564511(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID NdisReadNetworkAddress(
+  _Out_ PNDIS_STATUS Status,
+  _Out_ PVOID        *NetworkAddress,
+  _Out_ PUINT        NetworkAddressLength,
+  _In_  NDIS_HANDLE  ConfigurationHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff564512(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID NdisResetEvent(
+  _In_ PNDIS_EVENT Event
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff564526(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+BOOLEAN NdisSetCoalescableTimerObject(
+  _In_     NDIS_HANDLE   TimerObject,
+  _In_     LARGE_INTEGER DueTime,
+  _In_opt_ LONG          MillisecondsPeriod,
+  _In_opt_ PVOID         FunctionContext,
+  _In_opt_ ULONG         Tolerance
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff564537(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID NdisSetEvent(
+  _In_ PNDIS_EVENT Event
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff564539(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NDIS_STATUS NdisSetOptionalHandlers(
+   NDIS_HANDLE                    NdisHandle,
+   PNDIS_DRIVER_OPTIONAL_HANDLERS OptionalHandlers
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff564550(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+BOOLEAN NdisSetTimerObject(
+  _In_     NDIS_HANDLE   TimerObject,
+  _In_     LARGE_INTEGER DueTime,
+  _In_opt_ LONG          MillisecondsPeriod,
+  _In_opt_ PVOID         FunctionContext
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff564563(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+BOOLEAN NdisWaitEvent(
+  _In_ PNDIS_EVENT Event,
+  _In_ UINT        MsToWait
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff564651(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID NdisWriteConfiguration(
+  _Out_ PNDIS_STATUS                  Status,
+  _In_  NDIS_HANDLE                   ConfigurationHandle,
+  _In_  PNDIS_STRING                  Keyword,
+  _In_  PNDIS_CONFIGURATION_PARAMETER ParameterValue
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff564659(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID __cdecl NdisWriteErrorLogEntry(
+  _In_ NDIS_HANDLE     NdisAdapterHandle,
+  _In_ NDIS_ERROR_CODE ErrorCode,
+  _In_ ULONG           NumberOfErrorValues,
+                       ...
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff564663(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS ObReferenceObjectByHandle(
+  _In_      HANDLE                     Handle,
+  _In_      ACCESS_MASK                DesiredAccess,
+  _In_opt_  POBJECT_TYPE               ObjectType,
+  _In_      KPROCESSOR_MODE            AccessMode,
+  _Out_     PVOID                      *Object,
+  _Out_opt_ POBJECT_HANDLE_INFORMATION HandleInformation
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff558679(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS ObReferenceObjectByPointer(
+  _In_     PVOID           Object,
+  _In_     ACCESS_MASK     DesiredAccess,
+  _In_opt_ POBJECT_TYPE    ObjectType,
+  _In_     KPROCESSOR_MODE AccessMode
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff558686(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID ObDereferenceObject(
+  _In_ PVOID Object
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff557724(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID ObReferenceObject(
+  _In_ PVOID Object
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff558678(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS PcAddAdapterDevice(
+  _In_ PDRIVER_OBJECT   DriverObject,
+  _In_ PDEVICE_OBJECT   PhysicalDeviceObject,
+  _In_ PCPFNSTARTDEVICE StartDevice,
+  _In_ ULONG            MaxObjects,
+  _In_ ULONG            DeviceExtensionSize
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff537683(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+PORTCLASSAPI NTSTATUS NTAPI PcDispatchIrp(
+  _In_ PDEVICE_OBJECT pDeviceObject,
+  _In_ PIRP           pIrp
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff537691(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS PcInitializeAdapterDriver(
+  _In_ PDRIVER_OBJECT     DriverObject,
+  _In_ PUNICODE_STRING    RegistryPathName,
+  _In_ PDRIVER_ADD_DEVICE AddDevice
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff537703(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS PcNewMiniport(
+  _Out_ PMINIPORT *OutMiniPort,
+  _In_  REFCLSID  ClassID
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff537714(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS PcNewPort(
+  _Out_ PPORT    *OutPort,
+  _In_  REFCLSID ClassID
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff537715(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS PcNewRegistryKey(
+  _Out_     PREGISTRYKEY       *OutRegistryKey,
+  _In_opt_  PUNKNOWN           OuterUnknown,
+  _In_      ULONG              RegistryKeyType,
+  _In_      ACCESS_MASK        DesiredAccess,
+  _In_opt_  PVOID              DeviceObject,
+  _In_opt_  PVOID              SubDevice,
+  _In_opt_  POBJECT_ATTRIBUTES ObjectAttributes,
+  _In_opt_  ULONG              CreateOptions,
+  _Out_opt_ PULONG             Disposition
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff537716(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS PcRegisterPhysicalConnection(
+  _In_ PDEVICE_OBJECT DeviceObject,
+  _In_ PUNKNOWN       FromUnknown,
+  _In_ ULONG          FromPin,
+  _In_ PUNKNOWN       ToUnknown,
+  _In_ ULONG          ToPin
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff537726(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS PoCallDriver(
+  _In_    PDEVICE_OBJECT DeviceObject,
+  _Inout_ PIRP           Irp
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff559654(v=vs.85).aspx
+	assert irql_current == 0 || irql_current == 2;
+}
+
+VOID PoFxCompleteIdleCondition(
+  _In_ POHANDLE Handle,
+  _In_ ULONG    Component
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh406658(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID PoFxCompleteIdleState(
+  _In_ POHANDLE Handle,
+  _In_ ULONG    Component
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh406674(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID PoFxSetComponentLatency(
+  _In_ POHANDLE  Handle,
+  _In_ ULONG     Component,
+  _In_ ULONGLONG Latency
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh439531(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID PoFxSetComponentResidency(
+  _In_ POHANDLE  Handle,
+  _In_ ULONG     Component,
+  _In_ ULONGLONG Residency
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh439536(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+PULONG PoRegisterDeviceForIdleDetection(
+  _In_ PDEVICE_OBJECT     DeviceObject,
+  _In_ ULONG              ConservationIdleTime,
+  _In_ ULONG              PerformanceIdleTime,
+  _In_ DEVICE_POWER_STATE State
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff559721(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTSTATUS PoRegisterPowerSettingCallback(
+  _In_opt_ PDEVICE_OBJECT          DeviceObject,
+  _In_     LPCGUID                 SettingGuid,
+  _In_     PPOWER_SETTING_CALLBACK Callback,
+  _In_opt_ PVOID                   Context,
+  _Out_    PVOID                   *Handle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff559727(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS PoRequestPowerIrp(
+  _In_     PDEVICE_OBJECT          DeviceObject,
+  _In_     UCHAR                   MinorFunction,
+  _In_     POWER_STATE             PowerState,
+  _In_opt_ PREQUEST_POWER_COMPLETE CompletionFunction,
+  _In_opt_ PVOID                   Context,
+  _Out_    PIRP                    *Irp
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff559734(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+POWER_STATE PoSetPowerState(
+  _In_ PDEVICE_OBJECT   DeviceObject,
+  _In_ POWER_STATE_TYPE Type,
+  _In_ POWER_STATE      State
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff559765(v=vs.85).aspx
+	assert if(Type == 1 && State == 1) then irql_current <= 2 else irql_current <= 1;
+}
+
+VOID PoSetSystemState(
+  _In_ EXECUTION_STATE Flags
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff559768(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID PoStartNextPowerIrp(
+  _Inout_ PIRP Irp
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff559776(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS PoUnregisterPowerSettingCallback(
+  _Inout_ PVOID Handle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff559788(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID ProbeForRead(
+  _In_ PVOID  Address,
+  _In_ SIZE_T Length,
+  _In_ ULONG  Alignment
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff559876(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+VOID ProbeForWrite(
+  _Inout_ PVOID  Address,
+  _In_    SIZE_T Length,
+  _In_    ULONG  Alignment
+)
+{
+	// https://msdn.microsoft.com/en-in/library/windows/hardware/ff559879(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+BOOLEAN PsGetVersion(
+  _Out_opt_ PULONG          MajorVersion,
+  _Out_opt_ PULONG          MinorVersion,
+  _Out_opt_ PULONG          BuildNumber,
+  _Out_opt_ PUNICODE_STRING CSDVersion
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff559941(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS RtlAnsiStringToUnicodeString(
+  _Inout_ PUNICODE_STRING DestinationString,
+  _In_    PCANSI_STRING   SourceString,
+  _In_    BOOLEAN         AllocateDestinationString
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561729(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS RtlAppendUnicodeStringToString(
+  _Inout_ PUNICODE_STRING  Destination,
+  _In_    PCUNICODE_STRING Source
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561736(v=vs.85).aspx
+	assert irql_current < 2;
+}
+
+NTSTATUS RtlAppendUnicodeToString(
+  _Inout_  PUNICODE_STRING Destination,
+  _In_opt_ PCWSTR          Source
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561738(v=vs.85).aspx
+	assert irql_current < 2;
+}
+
+VOID RtlClearAllBits(
+  _In_ PRTL_BITMAP BitMapHeader
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561755(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+LONG RtlCompareUnicodeString(
+  _In_ PCUNICODE_STRING String1,
+  _In_ PCUNICODE_STRING String2,
+  _In_ BOOLEAN          CaseInSensitive
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561782(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS RtlCopySid(
+  _In_ ULONG DestinationSidLength,
+  _In_ PSID  DestinationSid,
+  _In_ PSID  SourceSid
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff552146(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+VOID RtlCopyString(
+  _Out_          PSTRING DestinationString,
+  _In_opt_ const STRING  *SourceString
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561814(v=vs.85).aspx
+	assert irql_current < 2;
+}
+
+VOID RtlCopyUnicodeString(
+  _Inout_  PUNICODE_STRING  DestinationString,
+  _In_opt_ PCUNICODE_STRING SourceString
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561817(v=vs.85).aspx
+	assert irql_current < 2;
+}
+
+NTSTATUS RtlDeleteRegistryValue(
+  _In_ ULONG  RelativeTo,
+  _In_ PCWSTR Path,
+  _In_ PCWSTR ValueName
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561829(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+BOOLEAN RtlEqualString(
+  _In_ const STRING  *String1,
+  _In_ const STRING  *String2,
+  _In_       BOOLEAN CaseInSensitive
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561852(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+BOOLEAN RtlEqualUnicodeString(
+  _In_ PCUNICODE_STRING String1,
+  _In_ PCUNICODE_STRING String2,
+  _In_ BOOLEAN          CaseInSensitive
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561854(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID RtlFreeUnicodeString(
+  _Inout_ PUNICODE_STRING UnicodeString
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561903(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTSTATUS RtlGUIDFromString(
+  _In_  PCUNICODE_STRING GuidString,
+  _Out_ GUID             *Guid
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561913(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS RtlGetVersion(
+  _Out_ PRTL_OSVERSIONINFOW lpVersionInformation
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561910(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID RtlInitAnsiString(
+  _Out_    PANSI_STRING DestinationString,
+  _In_opt_ PCSZ         SourceString
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561918(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID RtlInitUnicodeString(
+  _Out_    PUNICODE_STRING DestinationString,
+  _In_opt_ PCWSTR          SourceString
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561934(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID RtlInitializeBitMap(
+  _Out_ PRTL_BITMAP BitMapHeader,
+  _In_  PULONG      BitMapBuffer,
+  _In_  ULONG       SizeOfBitMap
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561925(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTSTATUS RtlIntegerToUnicodeString(
+  _In_     ULONG           Value,
+  _In_opt_ ULONG           Base,
+  _Inout_  PUNICODE_STRING String
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff561941(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS RtlQueryRegistryValues(
+  _In_     ULONG                     RelativeTo,
+  _In_     PCWSTR                    Path,
+  _Inout_  PRTL_QUERY_REGISTRY_TABLE QueryTable,
+  _In_opt_ PVOID                     Context,
+  _In_opt_ PVOID                     Environment
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562046(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID RtlSetAllBits(
+  _In_ PRTL_BITMAP BitMapHeader
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562770(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTSTATUS RtlStringFromGUID(
+  _In_  REFGUID         Guid,
+  _Out_ PUNICODE_STRING GuidString
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562871(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS RtlUnicodeStringToAnsiString(
+  _Inout_ PANSI_STRING     DestinationString,
+  _In_    PCUNICODE_STRING SourceString,
+  _In_    BOOLEAN          AllocateDestinationString
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562969(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS RtlUnicodeStringToInteger(
+  _In_     PCUNICODE_STRING String,
+  _In_opt_ ULONG            Base,
+  _Out_    PULONG           Value
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff562973(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS RtlVerifyVersionInfo(
+  _In_ PRTL_OSVERSIONINFOEXW VersionInfo,
+  _In_ ULONG                 TypeMask,
+  _In_ ULONGLONG             ConditionMask
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563026(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS RtlWriteRegistryValue(
+  _In_     ULONG  RelativeTo,
+  _In_     PCWSTR Path,
+  _In_     PCWSTR ValueName,
+  _In_     ULONG  ValueType,
+  _In_opt_ PVOID  ValueData,
+  _In_     ULONG  ValueLength
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563034(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+ULONG RtlxAnsiStringToUnicodeSize(
+  _In_ PCANSI_STRING AnsiString
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff563601(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS SdBusOpenInterface(
+  _In_  PDEVICE_OBJECT            Pdo,
+  _Out_ PSDBUS_INTERFACE_STANDARD InterfaceStandard,
+  _In_  USHORT                    Size,
+  _In_  USHORT                    Version
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff537906(v=vs.85).aspx
+	assert irql_current < 2;
+}
+
+NTSTATUS SdBusSubmitRequest(
+  _In_ PVOID                 InterfaceContext,
+  _In_ PSDBUS_REQUEST_PACKET Sdrp
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff537909(v=vs.85).aspx
+	assert irql_current < 2;
+}
+
+VOID SeCaptureSubjectContext(
+  _Out_ PSECURITY_SUBJECT_CONTEXT SubjectContext
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff554792(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS SeQueryInformationToken(
+  _In_  PACCESS_TOKEN           Token,
+  _In_  TOKEN_INFORMATION_CLASS TokenInformationClass,
+  _Out_ PVOID                   *TokenInformation
+)
+{
+	// https://msdn.microsoft.com/en-in/library/windows/hardware/ff556690(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID SeReleaseSubjectContext(
+  _Inout_ PSECURITY_SUBJECT_CONTEXT SubjectContext
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff556704(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+VOID TdiCopyBufferToMdlWithReservedMappingAtDpcLevel(
+    IN PVOID SourceBuffer,
+    IN PMDL TargetMdl,
+    IN ULONG TargetOffset,
+    IN ULONG BytesToCopy
+    )
+{
+	assert irql_current == 2;
+}
+
+void USBD_AssignUrbToIoStackLocation(
+  _In_ USBD_HANDLE        USBDHandle,
+  _In_ PIO_STACK_LOCATION IoStackLocation,
+  _In_ PURB               Urb
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh406228(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+VOID USBD_CloseHandle(
+  _In_ USBD_HANDLE USBDHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh406248(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+PURB USBD_CreateConfigurationRequestEx(
+  _In_ PUSB_CONFIGURATION_DESCRIPTOR ConfigurationDescriptor,
+  _In_ PUSBD_INTERFACE_LIST_ENTRY    InterfaceList
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff539029(v=vs.85).aspx
+	assert irql_current < 2;
+}
+
+NTSTATUS USBD_CreateHandle(
+  _In_  PDEVICE_OBJECT DeviceObject,
+  _In_  PDEVICE_OBJECT TargetDeviceObject,
+  _In_  ULONG          USBDClientContractVersion,
+  _In_  ULONG          PoolTag,
+  _Out_ USBD_HANDLE    *USBDHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh406241(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+PUSB_INTERFACE_DESCRIPTOR USBD_ParseConfigurationDescriptorEx(
+  _In_ PUSB_CONFIGURATION_DESCRIPTOR ConfigurationDescriptor,
+  _In_ PVOID                         StartPosition,
+  _In_ LONG                          InterfaceNumber,
+  _In_ LONG                          AlternateSetting,
+  _In_ LONG                          InterfaceClass,
+  _In_ LONG                          InterfaceSubClass,
+  _In_ LONG                          InterfaceProtocol
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff539102(v=vs.85).aspx
+	assert irql_current <= 1;
+}
+
+NTSTATUS USBD_SelectConfigUrbAllocateAndBuild(
+  _In_  USBD_HANDLE                   USBDHandle,
+  _In_  PUSB_CONFIGURATION_DESCRIPTOR ConfigurationDescriptor,
+  _In_  PUSBD_INTERFACE_LIST_ENTRY    InterfaceList,
+  _Out_ PURB                          *Urb
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh406243(v=vs.85).aspx
+	assert irql_current == 2;
+}
+
+NTSTATUS USBD_SelectInterfaceUrbAllocateAndBuild(
+  _In_  USBD_HANDLE                USBDHandle,
+  _In_  USBD_CONFIGURATION_HANDLE  ConfigurationHandle,
+  _In_  PUSBD_INTERFACE_LIST_ENTRY InterfaceList,
+  _Out_ PURB                       *Urb
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh406245(v=vs.85).aspx
+	assert irql_current == 2;
+}
+
+NTSTATUS USBD_UrbAllocate(
+  _In_  USBD_HANDLE USBDHandle,
+  _Out_ PURB        *Urb
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh406250(v=vs.85).aspx
+	assert irql_current == 2;
+}
+
+void USBD_UrbFree(
+  _In_ USBD_HANDLE USBDHandle,
+  _In_ PURB        Urb
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/hh406252(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS WmiCompleteRequest(
+  _In_    PDEVICE_OBJECT DeviceObject,
+  _Inout_ PIRP           Irp,
+  _In_    NTSTATUS       Status,
+  _In_    ULONG          BufferUsed,
+  _In_    CCHAR          PriorityBoost 
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff565798(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS WmiFireEvent(
+  _In_     PDEVICE_OBJECT DeviceObject,
+  _In_     LPCGUID        Guid,
+  _In_     ULONG          InstanceIndex,
+  _In_     ULONG          EventDataSize,
+  _In_opt_ PVOID          EventData
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff565807(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+NTSTATUS WmiSystemControl(
+  _In_    PWMILIB_CONTEXT         WmiLibInfo,
+  _In_    PDEVICE_OBJECT          DeviceObject,
+  _Inout_ PIRP                    Irp,
+  _Out_   PSYSCTL_IRP_DISPOSITION IrpDisposition
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff565834(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS ZwClose(
+  _In_ HANDLE Handle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff566417(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS ZwCreateDirectoryObject(
+  _Out_ PHANDLE            DirectoryHandle,
+  _In_  ACCESS_MASK        DesiredAccess,
+  _In_  POBJECT_ATTRIBUTES ObjectAttributes
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff566421(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS ZwCreateFile(
+  _Out_    PHANDLE            FileHandle,
+  _In_     ACCESS_MASK        DesiredAccess,
+  _In_     POBJECT_ATTRIBUTES ObjectAttributes,
+  _Out_    PIO_STATUS_BLOCK   IoStatusBlock,
+  _In_opt_ PLARGE_INTEGER     AllocationSize,
+  _In_     ULONG              FileAttributes,
+  _In_     ULONG              ShareAccess,
+  _In_     ULONG              CreateDisposition,
+  _In_     ULONG              CreateOptions,
+  _In_opt_ PVOID              EaBuffer,
+  _In_     ULONG              EaLength
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff566424(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS ZwCreateKey(
+  _Out_      PHANDLE            KeyHandle,
+  _In_       ACCESS_MASK        DesiredAccess,
+  _In_       POBJECT_ATTRIBUTES ObjectAttributes,
+  _Reserved_ ULONG              TitleIndex,
+  _In_opt_   PUNICODE_STRING    Class,
+  _In_       ULONG              CreateOptions,
+  _Out_opt_  PULONG             Disposition
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff566425(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS ZwDeleteKey(
+  _In_ HANDLE KeyHandle
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff566437(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS ZwEnumerateValueKey(
+  _In_      HANDLE                      KeyHandle,
+  _In_      ULONG                       Index,
+  _In_      KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass,
+  _Out_opt_ PVOID                       KeyValueInformation,
+  _In_      ULONG                       Length,
+  _Out_     PULONG                      ResultLength
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff566453(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS ZwOpenKey(
+  _Out_ PHANDLE            KeyHandle,
+  _In_  ACCESS_MASK        DesiredAccess,
+  _In_  POBJECT_ATTRIBUTES ObjectAttributes
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff567014(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS ZwQueryValueKey(
+  _In_      HANDLE                      KeyHandle,
+  _In_      PUNICODE_STRING             ValueName,
+  _In_      KEY_VALUE_INFORMATION_CLASS KeyValueInformationClass,
+  _Out_opt_ PVOID                       KeyValueInformation,
+  _In_      ULONG                       Length,
+  _Out_     PULONG                      ResultLength
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff567069(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS ZwReadFile(
+  _In_     HANDLE           FileHandle,
+  _In_opt_ HANDLE           Event,
+  _In_opt_ PIO_APC_ROUTINE  ApcRoutine,
+  _In_opt_ PVOID            ApcContext,
+  _Out_    PIO_STATUS_BLOCK IoStatusBlock,
+  _Out_    PVOID            Buffer,
+  _In_     ULONG            Length,
+  _In_opt_ PLARGE_INTEGER   ByteOffset,
+  _In_opt_ PULONG           Key
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff567072(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS ZwSetValueKey(
+  _In_     HANDLE          KeyHandle,
+  _In_     PUNICODE_STRING ValueName,
+  _In_opt_ ULONG           TitleIndex,
+  _In_     ULONG           Type,
+  _In_opt_ PVOID           Data,
+  _In_     ULONG           DataSize
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff567109(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+NTSTATUS ZwWriteFile(
+  _In_     HANDLE           FileHandle,
+  _In_opt_ HANDLE           Event,
+  _In_opt_ PIO_APC_ROUTINE  ApcRoutine,
+  _In_opt_ PVOID            ApcContext,
+  _Out_    PIO_STATUS_BLOCK IoStatusBlock,
+  _In_     PVOID            Buffer,
+  _In_     ULONG            Length,
+  _In_opt_ PLARGE_INTEGER   ByteOffset,
+  _In_opt_ PULONG           Key
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff567121(v=vs.85).aspx
+	assert irql_current == 0;
+}
+
+void __PREfastPagedCode(
+    void
+    )
+{
+	assert irql_current <= 1;
+}
+
+VOID imp_WppRecorderConfigure(
+    _In_
+    PVOID                       WppCb,
+    _In_
+    PRECORDER_CONFIGURE_PARAMS  ConfigureParams
+    )
+{
+	assert irql_current == 0;
+}
+
+NTSTATUS imp_WppRecorderLogCreate(
+    _In_
+        PVOID                       WppCb,
+    _In_
+        PRECORDER_LOG_CREATE_PARAMS CreateParams,
+    _Out_
+        RECORDER_LOG *              RecorderLog
+    )
+{
+	assert irql_current <= 2;
+}
+
+VOID imp_WppRecorderLogDelete(
+    _In_
+       PVOID                        WppCb,
+    _In_
+        RECORDER_LOG                RecorderLog
+    )
+{
+	assert irql_current <= 2;
+}
+
+RECORDER_LOG imp_WppRecorderLogGetDefault(
+    _In_
+        PVOID                       WppCb
+    )
+{
+	assert irql_current <= 2;
+}
+
+VOID imp_WppRecorderReplay(
+    _In_
+    PVOID               WppCb,
+    _In_
+    TRACEHANDLE         WppTraceHandle,
+    _In_
+    ULONG               EnableFlags,
+    _In_
+    UCHAR               EnableLevel
+    )
+{
+	assert irql_current == 0;
+}
+
+ULONG vDbgPrintExWithPrefix(
+  _In_ PCCH    Prefix,
+  _In_ ULONG   ComponentId,
+  _In_ ULONG   Level,
+  _In_ PCCH    Format,
+  _In_ va_list arglist
+)
+{
+	// https://msdn.microsoft.com/en-us/library/windows/hardware/ff556076(v=vs.85).aspx
+	assert irql_current <= 2;
+}
+
+
+VOID IoReleaseVpbSpinLock(
+  __in  KIRQL Irql
+)
+{
+  irql_current := Irql;
+  assume 0 <= irql_current;
+  assume irql_current <= 31;
+  return;
+}
+
+VOID FASTCALL KeAcquireInStackQueuedSpinLock(
+    IN PKSPIN_LOCK SpinLock,
+    IN PKLOCK_QUEUE_HANDLE LockHandle
+    ) 
+{
+  assert irql_current <= 2;
+  spinlockToIrqlMap[SpinLock] := irql_current;
+  irql_current := 2;
+  return;
+}
+
+VOID FASTCALL KeAcquireInStackQueuedSpinLockAtDpcLevel(
+    IN PKSPIN_LOCK SpinLock,
+    IN PKLOCK_QUEUE_HANDLE LockHandle
+    ) 
+{
+  assert irql_current >= 2;
+  return;
+}
+
+VOID FASTCALL KeAcquireInStackQueuedSpinLockForDpc(
+    IN PKSPIN_LOCK SpinLock,
+    IN PKLOCK_QUEUE_HANDLE LockHandle
+    ) 
+{
+  assert irql_current <= 2;
+  spinlockToIrqlMap[SpinLock] := irql_current;
+  irql_current := 2;
+  return;
+}
+
+KIRQL KeAcquireInterruptSpinLock(
+    IN PKINTERRUPT Interrupt
+    )
+{
+  r := irql_current;
+  irql_current := 2;
+  return;
+}
+
+KIRQL FASTCALL KeAcquireQueuedSpinLock (
+     KSPIN_LOCK_QUEUE_NUMBER Number
+    )
+{
+  r := irql_current;
+  irql_current := 2;
+  return;
+}
+
+KIRQL FASTCALL KeAcquireSpinLockForDpc(
+  __inout  PKSPIN_LOCK SpinLock
+)
+{
+  r := irql_current;
+  irql_current := 2;
+  return;
+}
+
+NTKERNELAPI KIRQL KeAcquireSpinLockRaiseToDpc(
+    IN PKSPIN_LOCK SpinLock
+    ) 
+{
+  r := irql_current;
+  irql_current := 2;
+  return;
+}
+
+VOID FASTCALL KeReleaseInStackQueuedSpinLock(
+    IN PKLOCK_QUEUE_HANDLE LockHandle
+    ) 
+{
+  assert irql_current == 2;
+  
+  irql_current := spinlockToIrqlMap[LockHandle];
+  assume 0 <= irql_current;
+  assume irql_current <= 2;
+
+  havoc spinlockTmp;
+  spinlockToIrqlMap[LockHandle] := spinlockTmp;
+  return;
+}
+
+VOID FASTCALL KeReleaseInStackQueuedSpinLockForDpc(
+    IN PKLOCK_QUEUE_HANDLE LockHandle
+    ) 
+{
+  assert irql_current == 2;
+  
+  irql_current := spinlockToIrqlMap[LockHandle];
+  assume 0 <= irql_current;
+  assume irql_current <= 2;
+
+  havoc spinlockTmp;
+  spinlockToIrqlMap[LockHandle] := spinlockTmp;
+  return;
+}
+
+VOID FASTCALL KeReleaseInStackQueuedSpinLockFromDpcLevel(
+    IN PKLOCK_QUEUE_HANDLE LockHandle
+    ) 
+{
+  assert irql_current >= 2;
+  return;
+}
+
+VOID KeReleaseInterruptSpinLock(
+    IN PKINTERRUPT Interrupt,
+    IN KIRQL old_irql
+    )
+{
+  irql_current := old_irql;
+  return;
+}
+
+VOID FASTCALL KeReleaseQueuedSpinLock (
+     KSPIN_LOCK_QUEUE_NUMBER Number,
+     KIRQL OldIrql
+    )
+{
+  irql_current := OldIrql;
+  return;
+}
+
+VOID FASTCALL KeReleaseSpinLockForDpc(
+  __inout  PKSPIN_LOCK SpinLock,
+  __in     KIRQL OldIrql
+)
+{
+  irql_current := OldIrql;
+  return;
+}
+
+LOGICAL FASTCALL KeTryToAcquireQueuedSpinLock (
+    KSPIN_LOCK_QUEUE_NUMBER Number,
+    PKIRQL OldIrql
+    )
+{
+  call choice := MakeChoice();
+  r := if(choice == 0) then 0 else 1;
+  PtrToInt_DummyMarker[OldIrql] := if(choice == 0) then PtrToInt_DummyMarker[OldIrql] else irql_current;
+  irql_current := if(choice == 0) then irql_current else 2;
+  return;
+}
+
+VOID sdv_ExAcquireSpinLock(
+    IN PKSPIN_LOCK SpinLock,
+    OUT PKIRQL p_old_irql
+    ) 
+{
+  PtrToInt_DummyMarker[SpinLock] := irql_current;
+  irql_current := 2;
+  return;
+}
+
+VOID sdv_ExReleaseSpinLock(
+    IN PKSPIN_LOCK  SpinLock,
+    IN KIRQL  new_irql
+    ) 
+{
+  irql_current := new_irql;
+  return;
+}
+
+NDIS_STATUS sdv_IF_QUERY_OBJECT(
+    NDIS_HANDLE             ProviderIfContext,
+    NET_IF_OBJECT_ID        ObjectId,
+    PULONG                  pOutputBufferLength,
+    PVOID                   pOutputBuffer
+    )
+{
+  irql_current := 0;
+  return;
+}
+
+NDIS_STATUS sdv_IF_SET_OBJECT(
+    NDIS_HANDLE             ProviderIfContext,
+    NET_IF_OBJECT_ID        ObjectId,
+    PULONG                  InputBufferLength,
+    PVOID                   pInputBuffer
+    )
+{
+  irql_current := 0;
+  return;
+}
+
+VOID sdv_KeAcquireSpinLock(
+    IN PKSPIN_LOCK SpinLock,
+    OUT PKIRQL p_old_irql
+    ) 
+{
+  PtrToInt_DummyMarker[SpinLock] := irql_current;
+  irql_current := 2;
+  return;
+}
+
+VOID sdv_KeAcquireSpinLockAtDpcLevel(
+    IN PKSPIN_LOCK  SpinLock
+    ) 
+{
+  assert irql_current >= 2;
+  return;
+}
+
+VOID sdv_KeReleaseSpinLockFromDpcLevel(
+    IN PKSPIN_LOCK  SpinLock
+    )
+{
+  assert irql_current == 2;
+  return;
+}
+
+VOID sdv_NdisAcquireReadWriteLock(
+    IN  PNDIS_RW_LOCK           Lock,
+    IN  BOOLEAN                 fWrite,
+    IN  PLOCK_STATE             LockState
+    )
+{
+  readWritelockToIrqlMap[LockState] := irql_current;
+  irql_current := 2;
+  return;
+}
+
+VOID sdv_NdisAcquireRWLockRead(
+    _In_  PNDIS_RW_LOCK_EX Lock,
+    _Out_ _IRQL_saves_ PLOCK_STATE_EX   LockState,
+    _In_  UCHAR            Flags
+    )
+{
+  readWritelockToIrqlMap[LockState] := irql_current;
+  irql_current := if((Flags mod 2) == 0) then 2 else irql_current;
+  return;
+}
+
+VOID sdv_NdisAcquireRWLockWrite(
+    _In_  PNDIS_RW_LOCK_EX Lock,
+    _Out_ _IRQL_saves_ PLOCK_STATE_EX   LockState,
+    _In_  UCHAR            Flags
+    )
+{
+  readWritelockToIrqlMap[LockState] := irql_current;
+  irql_current := if((Flags mod 2) == 0) then 2 else irql_current;
+  return;
+}
+
+VOID sdv_NdisAcquireSpinLock(
+    IN PNDIS_SPIN_LOCK  SpinLock
+    )
+{
+  spinlockToIrqlMap[SpinLock] := irql_current;
+  irql_current := 2;
+  return;
+}
+
+VOID sdv_NDIS_IO_WORKITEM_FUNCTION(
+    IN PVOID WorkItemContext, 
+    IN NDIS_HANDLE  NdisIoWorkItemHandle)
+{
+  irql_current := 0;
+  return;
+}
+
+VOID sdv_NDIS_LOWER_IRQL(
+    IN KIRQL _OldIrql_, 
+    IN KIRQL _CurIrql_
+    )
+{
+  irql_current := _OldIrql_;
+  return;
+}
+
+VOID sdv_NDIS_RAISE_IRQL_TO_DISPATCH(
+    OUT PKIRQL _pIrql_
+    )
+{
+  PtrToInt_DummyMarker[_pIrql_] = irql_current;
+  irql_current := 2;
+  return;
+}
+
+VOID sdv_NdisReleaseReadWriteLock(
+    IN  PNDIS_RW_LOCK           Lock,
+    IN  PLOCK_STATE             LockState
+    )
+{
+  assert irql_current == 2;
+  
+  irql_current := readWritelockToIrqlMap[LockState];
+  assume 0 <= irql_current;
+  assume irql_current <= 2;
+
+  havoc readWritelockTmp;
+  readWritelockToIrqlMap[LockState] := readWritelockTmp;
+
+  return;
+}
+
+VOID sdv_NdisReleaseRWLock(
+    _In_ PNDIS_RW_LOCK_EX Lock,
+    _In_ _IRQL_restores_ PLOCK_STATE_EX   LockState
+    )
+{
+  irql_current := readWritelockToIrqlMap[LockState];
+  assume 0 <= irql_current;
+  assume irql_current <= 2;
+
+  havoc readWritelockTmp;
+  readWritelockToIrqlMap[LockState] := readWritelockTmp;
+
+  return;
+}
+
+VOID sdv_NdisReleaseSpinLock(
+    IN PNDIS_SPIN_LOCK  SpinLock
+    )
+{
+  assert irql_current == 2;
+  
+  irql_current := spinlockToIrqlMap[SpinLock];
+  assume 0 <= irql_current;
+  assume irql_current <= 2;
+
+  havoc spinlockTmp;
+  spinlockToIrqlMap[SpinLock] := spinlockTmp;
+
+  return;
+}
+
+VOID sdv_NDIS_TIMER_FUNCTION(
+    IN  PVOID                   SystemSpecific1,
+    IN  PVOID                   FunctionContext,
+    IN  PVOID                   SystemSpecific2,
+    IN  PVOID                   SystemSpecific3
+    )
+{
+  irql_current := 2;
+  return;
+}
+
+VOID FORCEINLINE sdv_StorPortAcquireSpinLock(
+    __in PVOID DeviceExtension,
+    __in STOR_SPINLOCK SpinLock,
+    __in PVOID LockContext,
+    __inout __deref __drv_acquiresExclusiveResource(LockHandle)
+    PSTOR_LOCK_HANDLE LockHandle
+    )
+{
+  irql_current := 2;
+  return;
+}
+
+VOID FORCEINLINE sdv_StorPortReleaseSpinLock(
+  IN PVOID  HwDeviceExtension,
+    IN PSTOR_LOCK_HANDLE   LockHandle )
+{
+  irql_current := 2;
+  return;
+}
+
+void sdv_stub_dispatch_begin()
+{
+  irql_current := 0;
+  return;
+}
+
+void sdv_stub_driver_control_begin()
+{
+  driverControlTmp := irql_current;
+  irql_current := 2;
+  return;
+}
+
+void sdv_stub_driver_control_end()
+{
+  irql_current := driverControlTmp;
+  assume 0 <= irql_current;
+  assume irql_current <= 31;
+  havoc driverControlTmp;
+  return;
+}
+
+void sdv_stub_io_completion_begin()
+{
+  ioCompletionTmp := irql_current;
+  irql_current := 2;
+  return;
+}
+
+void sdv_stub_io_completion_end()
+{
+  irql_current := ioCompletionTmp;
+  assume 0 <= irql_current;
+  assume irql_current <= 31;
+  havoc ioCompletionTmp;
+  return;
+}
+
+void sdv_stub_power_completion_begin()
+{
+  call choice := MakeChoice();
+  irql_current := if(choice == 0) then 0 else 2;
+  return;
+}
+
+void sdv_stub_power_runtime_begin()
+{
+  call choice := MakeChoice();
+  irql_current := if(choice == 0) then 0 else 2;
+  return;
+}
+
+void sdv_stub_power_runtime_critical_begin()
+{
+  call choice := MakeChoice();
+  irql_current := if(choice == 0) then 0 else 2;
+  return;
+}
+
+void sdv_stub_startio_begin()
+{
+  irql_current := 2;
+  return;
+}
+
+void sdv_stub_startio_end()
+{
+  irql_current := 0;
+  return;
+}
+
+void sdv_stub_unload_begin()
+{
+  irql_current := 0;
+  return;
+}
+
+
+ULONG FORCEINLINE sdv_StorPortAcquireMSISpinLock(
+    PVOID HwDeviceExtension,
+    ULONG MessageId,
+    PULONG OldIrql
+    )
+{
+    call choice := MakeChoice();
+    r := if(HwDeviceExtension == 0) then -1056964602 else if(choice == 0) then 0 else -1056964606;
+    *OldIrql := if(choice == 0) then irql_current else *OldIrql;
+    irql_current := if(choice == 0) then 2 else irql_current;
+    return;
+}
+
+ULONG FORCEINLINE sdv_StorPortReleaseMSISpinLock(
+    PVOID HwDeviceExtension,
+    ULONG MessageId,
+    ULONG OldIrql
+    )
+{
+    r := if(HwDeviceExtension == 0) then -1056964602 else 0;
+    irql_current := if(choice == 0) then OldIrql else irql_current;
+    return;
+}
+
+VOID sdv_WdfInterruptAcquireLock(
+IN WDFINTERRUPT Interrupt
+)
+{
+    wdfInterruptTmp := irql_current;
+    irql_current := 3;
+    return;
+}
+
+VOID sdv_WdfInterruptReleaseLock(
+IN WDFINTERRUPT Interrupt
+)
+{
+    irql_current := wdfInterruptTmp;
+    assume 0 <= irql_current;
+    assume irql_current <= 31;
+    havoc wdfInterruptTmp;
+    return;
+}
+
+VOID sdv_WdfSpinLockAcquire(
+IN WDFSPINLOCK SpinLock
+)
+{
+    wdfSpinlockTmp := irql_current;
+    irql_current := 2;
+    return;
+}
+
+VOID sdv_WdfSpinLockRelease(
+IN WDFSPINLOCK SpinLock
+)
+{
+    irql_current := wdfSpinlockTmp;
+    assume 0 <= irql_current;
+    assume irql_current <= 31;
+    havoc wdfSpinlockTmp;
+    return;
+}
+
+VOID IoAcquireVpbSpinLock(
+  __out  PKIRQL Irql
+)
+{
+    *Irql := irql_current;
+    return;
+}
+
+KIRQL sdv_KeGetCurrentIrql(void) 
+{
+    r := irql_current;
+    return;
+}
+
+KIRQL sdv_NDIS_CURRENT_IRQL(VOID) 
+{
+    r := irql_current;
+    return;
+}

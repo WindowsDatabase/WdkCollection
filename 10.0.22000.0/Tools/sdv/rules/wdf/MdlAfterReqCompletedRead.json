@@ -1,0 +1,11 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfRequestComplete",
+    "WdfRequestCompleteWithInformation",
+    "WdfRequestCompleteWithPriorityBoost",
+    "WdfRequestRetrieveInputWdmMdl",
+    "WdfRequestRetrieveOutputWdmMdl"
+  ],
+  "ruleName": "MdlAfterReqCompletedRead"
+}

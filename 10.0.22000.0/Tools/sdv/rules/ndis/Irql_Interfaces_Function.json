@@ -1,0 +1,17 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisIfAddIfStackEntry",
+    "NdisIfAllocateNetLuidIndex",
+    "NdisIfDeleteIfStackEntry",
+    "NdisIfDeregisterInterface",
+    "NdisIfDeregisterProvider",
+    "NdisIfFreeNetLuidIndex",
+    "NdisIfGetInterfaceIndexFromNetLuid",
+    "NdisIfGetNetLuidFromInterfaceIndex",
+    "NdisIfQueryBindingIfIndex",
+    "NdisIfRegisterInterface",
+    "NdisIfRegisterProvider"
+  ],
+  "ruleName": "Irql_Interfaces_Function"
+}

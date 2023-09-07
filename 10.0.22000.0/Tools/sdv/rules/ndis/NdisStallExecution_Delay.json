@@ -1,0 +1,7 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisStallExecution"
+  ],
+  "ruleName": "NdisStallExecution_Delay"
+}

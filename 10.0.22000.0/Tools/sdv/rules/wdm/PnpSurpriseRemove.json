@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoDeleteDevice",
+    "IoDetachDevice"
+  ],
+  "ruleName": "PnpSurpriseRemove"
+}

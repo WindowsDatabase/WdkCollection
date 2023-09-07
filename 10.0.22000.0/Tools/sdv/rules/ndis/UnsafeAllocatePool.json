@@ -1,0 +1,11 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "ExAllocatePool",
+    "ExAllocatePoolWithQuota",
+    "ExAllocatePoolWithQuotaTag",
+    "ExAllocatePoolWithTag",
+    "ExAllocatePoolWithTagPriority"
+  ],
+  "ruleName": "UnsafeAllocatePool"
+}

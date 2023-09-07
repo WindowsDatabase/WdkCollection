@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The following parameters are shared for all binaries. If a binary does not use a parameter, it is ignored -->
+<Data>
+   <Table Id="DataDrivenSysfundTable">
+        <ParameterTypes>
+          <!-- This section describes parameter data types.  Do not edit -->
+          <ParameterType Name="SDEL">String</ParameterType>
+          <ParameterType Name="SdelExcludeVMDevnode">String</ParameterType>
+          <ParameterType Name="SdelExcludeDrivers">String</ParameterType>
+          <ParameterType Name="TestCycles">int</ParameterType>
+          <ParameterType Name="MinFunctionCode">int</ParameterType>
+          <ParameterType Name="MaxFunctionCode">int</ParameterType>
+          <ParameterType Name="MinInBuffer">int</ParameterType>
+          <ParameterType Name="MaxInBuffer">int</ParameterType>
+          <ParameterType Name="MinOutBuffer">int</ParameterType>
+          <ParameterType Name="MaxOutBuffer">int</ParameterType>
+          <ParameterType Name="MaxRandomCalls">int</ParameterType>
+          <ParameterType Name="MaxTailoredCalls">int</ParameterType>
+          <ParameterType Name="SeedNumber">int</ParameterType>
+          <ParameterType Name="MinDeviceType">int</ParameterType>
+          <ParameterType Name="MaxDeviceType">int</ParameterType>
+          <ParameterType Name="ChangeBufferProtectionFlags">bool</ParameterType>
+          <ParameterType Name="Impersonate">bool</ParameterType>
+          <ParameterType Name="FillZeroPageWithNull">bool</ParameterType>
+          <ParameterType Name="DoPoolCheck">bool</ParameterType>
+          <ParameterType Name="DoSync">bool</ParameterType>
+          <ParameterType Name="Wpa2PskAesSsid">String</ParameterType>
+          <ParameterType Name="Wpa2PskPassword">String</ParameterType>
+          <ParameterType Name="DriverVerifierLevel">unsigned int</ParameterType>
+          <ParameterType Name="AddOnly">bool</ParameterType>
+          <ParameterType Name="NoReboot">bool</ParameterType>
+        </ParameterTypes>
+        <Row>
+          <!-- Edit the data values below to customize the tests for your needs -->
+          <!-- Note that the following three SDEL queries are 'AND'ed to create the final query -->
+          <!-- It is recommended that you leave "SDEL" set to IsDevice and make changes to "SdelExcludeDrivers" instead -->
+          <Parameter Name="SDEL">IsDevice</Parameter>
+          <!-- SdelExcludeVMDevnode excludes devnodes that are critical to VM opertaion and cannot be disabled -->
+          <Parameter Name="SdelExcludeVMDevnode">((DisplayName!='Microsoft Hyper-V Virtual Machine Bus') OR (DisplayName!='Microsoft Hyper-V Video') OR (DisplayName!='Microsoft Hyper-V Input'))</Parameter>
+          <!-- SdelExcludeDrivers is the recommended place to use SDEL to exclude drivers/devices -->
+          <!-- Use this to exclude drivers that have bugs or to narrow the scope of the test -->
+          <!-- Running with the default of "(DriverBinaryNames!='')" will target all drivers of all devices -->
+          <!-- For SDEL, see: https://msdn.microsoft.com/en-us/library/windows/hardware/ff538361%28v=vs.85%29.aspx -->
+          <!-- Bug 16913331 found in ks.sys on 10.0.17645.1001.amd64fre.rs_onecore_sigma_dplat_d1.180410-1530-->
+          <!-- Bug 16240141 found in rfcomm.sys on 10.0.17645.1001.amd64fre.rs_onecore_sigma_dplat_d1.180410-1530-->
+          <!-- Bug 17326850 found in HyperVideo.sys on 17660.1000.amd64fre.rs_onecore_sigma_dplat_d1.180428-1530 -->
+          <!-- Bug 17326988 found in vmbushid.sys on 17660.1000.amd64fre.rs_onecore_sigma_dplat_d1.180428-1530 -->
+          <Parameter Name="SdelExcludeDrivers">((DriverBinaryNames!='ks.sys') OR (DriverBinaryNames!='rfcomm.sys') OR (DriverBinaryNames!='hypervideo.sys') OR (DriverBinaryNames!='vmbushid.sys'))</Parameter>
+          <!-- TestCycles specifies for how many iterations the test should run. Set to -1 to use the default. -->
+          <Parameter Name="TestCycles">1000</Parameter>
+          <!-- Specifies the minimum value of the FunctionCode field in the IOCTLs. The minimum possible value is 0 -->
+          <Parameter Name="MinFunctionCode">0</Parameter>
+          <!-- Specifies the maximum value of the FunctionCode field in the IOCTLs. The maximum possible value is 4095 -->
+          <Parameter Name="MaxFunctionCode">4095</Parameter>
+          <!-- Specifies the minimum size, in bytes, of the input buffers that the test passes to the driver in IOCTLs -->
+          <Parameter Name="MinInBuffer">0</Parameter>
+          <!-- Specifies the maximum size, in bytes, of the input buffers that the test passes to the driver in IOCTLs -->
+          <Parameter Name="MaxInBuffer">512</Parameter>
+          <!-- Specifies the minimum size, in bytes, of the output buffers that the test passes to the driver in IOCTLs -->
+          <Parameter Name="MinOutBuffer">0</Parameter>
+          <!-- Specifies the minimum size, in bytes, of the output buffers that the test passes to the driver in IOCTLs -->
+          <Parameter Name="MaxOutBuffer">512</Parameter>
+          <!-- Specifies the maximum number of calls that the test issues -->
+          <Parameter Name="MaxRandomCalls">10000</Parameter>
+          <!-- Specifies the maximum number of calls that the test issues -->
+          <Parameter Name="MaxTailoredCalls">10000</Parameter>
+          <!-- Specifies the maximum number of calls that the test issues -->
+          <Parameter Name="SeedNumber">154651</Parameter>
+          <!-- Specifies the minimum value of the DeviceType field in the IOCTLs. 
+          The minimum possible value is 0. Use -1 for automatic type detection (preferred) -->
+          <Parameter Name="MinDeviceType">-1</Parameter>
+          <!-- Specifies the maximum value of the DeviceType field in the IOCTLs. 
+          The maximum possible value is 65535. Use -1 for automatic type detection (preferred) -->
+          <Parameter Name="MaxDeviceType">-1</Parameter>
+          <!-- True or False. Changes the memory protection flags of buffers passed to the tested device. 
+          The memory protection flags alternates between no access, read-only, and read-only with page guard -->
+          <Parameter Name="ChangeBufferProtectionFlags">true</Parameter>
+          <!-- True or False. Runs the test as a non administrative user -->
+          <Parameter Name="Impersonate">true</Parameter>
+          <!-- True or False. Maps the zero page and fills it with NULL values. 
+          This test identifies drivers that do not verify a pointer reference before dereferencing a pointer -->
+          <Parameter Name="FillZeroPageWithNull">true</Parameter>
+          <!-- True or False. Monitors the driver's use of the paged and nonpaged system memory pools by using pool tags and lookaside lists. 
+          This option also monitors changes in the number of exceptions handled which might indicate errors in exception handling -->
+          <Parameter Name="DoPoolCheck">false</Parameter>
+          <!-- True or False. Also opens device handles in SYNC mode (FILE_SYNCHRONOUS_IO_ALERT). Random read and write operations are skipped. -->
+          <Parameter Name="DoSync">false</Parameter>
+          <!-- Wpa2PskAesSsid specifies the name of the test WiFi access point -->
+          <Parameter Name="Wpa2PskAesSsid">WiFiRouterName</Parameter>
+          <!-- Wpa2PskPassword specifies the password of the test WiFi access point -->
+          <Parameter Name="Wpa2PskPassword">WiFiRouterPassword</Parameter>
+          <!-- DriverVerifierLevel of 0x209BB is equal to "standard flags" for Driver Verifier -->
+          <Parameter Name="DriverVerifierLevel">0x209BB</Parameter>
+          <!-- The following parameters apply to utility_enabledisabledriververifier_datadriven.dll only: -->
+          <!-- AddOnly specifies that the resulting SDEL query results should add drivers to Driver Verifier without removing any -->
+          <Parameter Name="AddOnly">false</Parameter>
+          <!-- NoReboot specifies that the machine should not reboot automatically to enable Driver Verifier settings -->
+          <Parameter Name="NoReboot">false</Parameter>
+        </Row>
+  </Table>
+</Data>

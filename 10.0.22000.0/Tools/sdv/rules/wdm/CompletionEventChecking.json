@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoMarkIrpPending",
+    "KeSetEvent"
+  ],
+  "ruleName": "CompletionEventChecking"
+}

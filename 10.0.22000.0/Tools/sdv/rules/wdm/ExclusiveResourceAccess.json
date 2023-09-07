@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ExAcquireResourceExclusiveLite",
+    "ExReleaseResourceForThreadLite",
+    "ExReleaseResourceLite"
+  ],
+  "ruleName": "ExclusiveResourceAccess"
+}

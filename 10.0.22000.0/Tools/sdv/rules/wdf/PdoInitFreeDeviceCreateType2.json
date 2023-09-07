@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfDeviceCreate",
+    "WdfDeviceInitFree",
+    "WdfPdoInitAllocate"
+  ],
+  "ruleName": "PdoInitFreeDeviceCreateType2"
+}

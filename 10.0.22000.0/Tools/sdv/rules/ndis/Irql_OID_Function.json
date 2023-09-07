@@ -1,0 +1,14 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisAllocateCloneOidRequest",
+    "NdisCancelOidRequest",
+    "NdisFCancelOidRequest",
+    "NdisFOidRequest",
+    "NdisFOidRequestComplete",
+    "NdisFreeCloneOidRequest",
+    "NdisMOidRequestComplete",
+    "NdisOidRequest"
+  ],
+  "ruleName": "Irql_OID_Function"
+}

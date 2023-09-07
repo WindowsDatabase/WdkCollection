@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoCompleteRequest",
+    "IoSetCompletionRoutineEx"
+  ],
+  "ruleName": "IoSetCompletionExCompleteIrp"
+}

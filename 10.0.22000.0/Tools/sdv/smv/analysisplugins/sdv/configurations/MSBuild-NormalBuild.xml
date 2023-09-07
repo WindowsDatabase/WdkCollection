@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Action name="NormalBuild" breakOnError="true" nextAction="InterceptedBuild">
+    <Command value="cmd" arguments="/c echo SET SOLUTIONDIR_SDV_FINAL=%SOLUTIONDIR_SDV%> runsdv.bat" />
+    <Command value="cmd" arguments="/c echo IF %SOLUTIONDIR_SDV:~-1%==\ SET SOLUTIONDIR_SDV_FINAL=%SOLUTIONDIR_SDV:~0,-1%>> runsdv.bat" />
+    <Command value="cmd" arguments="/c echo msbuild /noconsolelogger /fileLoggerParameters:LogFile=[$smvLogFileNamePrefix].log /t:rebuild &quot;[$projectFile]&quot; /p:configuration=&quot;%CONFIGURATION_SDV%&quot; /p:platform=&quot;%PLATFORM_SDV%&quot; /p:SolutionDir=&quot;%SOLUTIONDIR_SDV_FINAL%&quot; >> runsdv.bat" />
+    <Command value="cmd" arguments="/c runsdv.bat" />
+    <Command value="del" arguments="runsdv.bat" />
+</Action>

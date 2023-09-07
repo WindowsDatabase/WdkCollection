@@ -1,0 +1,12 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "PsCreateSystemThread",
+    "PsGetVersion",
+    "PsSetCreateProcessNotifyRoutine",
+    "PsSetCreateThreadNotifyRoutine",
+    "PsSetLoadImageNotifyRoutine",
+    "PsTerminateSystemThread"
+  ],
+  "ruleName": "IrqlPsPassive"
+}

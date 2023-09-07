@@ -1,0 +1,16 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ExInterlockedInsertHeadList",
+    "ExInterlockedInsertTailList",
+    "ExInterlockedPushEntryList",
+    "InsertHeadList",
+    "IoAcquireRemoveLock",
+    "IoCsqInsertIrp",
+    "IoCsqInsertIrpEx",
+    "IoReleaseRemoveLock",
+    "IoReleaseRemoveLockAndWait",
+    "RemoveHeadList"
+  ],
+  "ruleName": "RemoveLockReleaseCleanup"
+}

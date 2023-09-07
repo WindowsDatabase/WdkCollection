@@ -1,0 +1,9 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "IoAllocateIrp",
+    "IoFreeIrp",
+    "IoSetCompletionRoutine"
+  ],
+  "ruleName": "IoFreeIrp"
+}

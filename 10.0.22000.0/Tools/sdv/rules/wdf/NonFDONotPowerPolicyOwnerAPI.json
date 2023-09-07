@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfDeviceAssignS0IdleSettings",
+    "WdfDeviceAssignSxWakeSettings",
+    "WdfDeviceInitSetPowerPolicyEventCallbacks"
+  ],
+  "ruleName": "NonFDONotPowerPolicyOwnerAPI"
+}

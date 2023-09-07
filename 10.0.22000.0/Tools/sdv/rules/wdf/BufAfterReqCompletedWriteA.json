@@ -1,0 +1,20 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "RtlCompareMemory",
+    "RtlMoveMemory",
+    "RtlZeroMemory",
+    "WDF_MEMORY_DESCRIPTOR_INIT_BUFFER",
+    "WdfMemoryAssignBuffer",
+    "WdfMemoryCopyFromBuffer",
+    "WdfMemoryCopyToBuffer",
+    "WdfMemoryCreatePreallocated",
+    "WdfRequestComplete",
+    "WdfRequestCompleteWithInformation",
+    "WdfRequestCompleteWithPriorityBoost",
+    "WdfRequestRetrieveInputBuffer",
+    "WdfRequestRetrieveUnsafeUserInputBuffer",
+    "ZwReadFile"
+  ],
+  "ruleName": "BufAfterReqCompletedWriteA"
+}

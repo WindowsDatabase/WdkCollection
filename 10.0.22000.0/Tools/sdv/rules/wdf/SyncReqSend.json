@@ -1,0 +1,14 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfIoTargetSendIoctlSynchronously",
+    "WdfIoTargetSendReadSynchronously",
+    "WdfIoTargetSendWriteSynchronously",
+    "WdfUsbTargetDeviceSendControlTransferSynchronously",
+    "WdfUsbTargetDeviceSendUrbSynchronously",
+    "WdfUsbTargetPipeReadSynchronously",
+    "WdfUsbTargetPipeSendUrbSynchronously",
+    "WdfUsbTargetPipeWriteSynchronously"
+  ],
+  "ruleName": "SyncReqSend"
+}

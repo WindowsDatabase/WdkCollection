@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoBuildAsynchronousFsdRequest",
+    "IoFreeIrp"
+  ],
+  "ruleName": "IoBuildFsdFree"
+}

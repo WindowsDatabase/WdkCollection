@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoSetCompletionRoutineEx",
+    "KeInitializeEvent",
+    "KeWaitForSingleObject"
+  ],
+  "ruleName": "StartDeviceWait2"
+}

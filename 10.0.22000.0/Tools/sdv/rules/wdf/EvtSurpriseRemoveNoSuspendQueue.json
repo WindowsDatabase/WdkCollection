@@ -1,0 +1,14 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfIoQueueDrain",
+    "WdfIoQueueDrainSynchronously",
+    "WdfIoQueuePurge",
+    "WdfIoQueuePurgeSynchronously",
+    "WdfIoQueueStop",
+    "WdfIoQueueStopAndPurge",
+    "WdfIoQueueStopAndPurgeSynchronously",
+    "WdfIoQueueStopSynchronously"
+  ],
+  "ruleName": "EvtSurpriseRemoveNoSuspendQueue"
+}

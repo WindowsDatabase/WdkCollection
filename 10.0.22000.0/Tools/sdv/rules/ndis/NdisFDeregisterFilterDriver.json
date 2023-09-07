@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisFDeregisterFilterDriver",
+    "NdisFRegisterFilterDriver"
+  ],
+  "ruleName": "NdisFDeregisterFilterDriver"
+}

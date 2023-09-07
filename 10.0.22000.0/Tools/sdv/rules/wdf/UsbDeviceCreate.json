@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfUsbTargetDeviceCreate",
+    "WdfUsbTargetDeviceCreateWithParameters"
+  ],
+  "ruleName": "UsbDeviceCreate"
+}

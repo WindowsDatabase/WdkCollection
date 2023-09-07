@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisMDeregisterScatterGatherDma",
+    "NdisMRegisterScatterGatherDma"
+  ],
+  "ruleName": "Init_RegisterSG"
+}

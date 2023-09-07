@@ -1,0 +1,7 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoReuseIrp"
+  ],
+  "ruleName": "IoReuseIrp2"
+}

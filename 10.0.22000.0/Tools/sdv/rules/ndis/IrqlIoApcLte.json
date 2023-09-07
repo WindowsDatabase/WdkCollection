@@ -1,0 +1,10 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "IoDeleteDevice",
+    "IoGetInitialStack",
+    "IoRaiseHardError",
+    "IoRaiseInformationalHardError"
+  ],
+  "ruleName": "IrqlIoApcLte"
+}

@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "IoCreateDevice",
+    "IoCreateDeviceSecure",
+    "WdfDriverCreate"
+  ],
+  "ruleName": "MiniportOnlyWdmDevice"
+}
