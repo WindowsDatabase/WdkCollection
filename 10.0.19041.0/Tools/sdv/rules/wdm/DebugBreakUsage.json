@@ -1,0 +1,7 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "DbgBreakPointWithStatus"
+  ],
+  "ruleName": "DebugBreakUsage"
+}

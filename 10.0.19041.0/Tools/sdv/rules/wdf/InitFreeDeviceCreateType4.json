@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfControlDeviceInitAllocate",
+    "WdfDeviceCreate",
+    "WdfDeviceInitFree"
+  ],
+  "ruleName": "InitFreeDeviceCreateType4"
+}

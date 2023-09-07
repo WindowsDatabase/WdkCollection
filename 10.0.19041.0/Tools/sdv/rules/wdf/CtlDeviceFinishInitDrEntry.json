@@ -1,0 +1,10 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfControlDeviceInitAllocate",
+    "WdfControlFinishInitializing",
+    "WdfDeviceCreate",
+    "WdfObjectDelete"
+  ],
+  "ruleName": "CtlDeviceFinishInitDrEntry"
+}

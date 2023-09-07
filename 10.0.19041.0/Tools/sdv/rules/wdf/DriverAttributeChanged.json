@@ -1,0 +1,7 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfDriverCreate"
+  ],
+  "ruleName": "DriverAttributeChanged"
+}

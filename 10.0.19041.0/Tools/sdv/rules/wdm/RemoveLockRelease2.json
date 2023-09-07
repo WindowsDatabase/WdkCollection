@@ -1,0 +1,13 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ExInterlockedInsertHeadList",
+    "ExInterlockedInsertTailList",
+    "ExInterlockedPushEntryList",
+    "InsertHeadList",
+    "IoAcquireRemoveLock",
+    "IoReleaseRemoveLock",
+    "RemoveHeadList"
+  ],
+  "ruleName": "RemoveLockRelease2"
+}

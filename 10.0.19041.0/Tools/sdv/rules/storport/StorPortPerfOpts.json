@@ -1,0 +1,7 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "StorPortInitializePerfOpts"
+  ],
+  "ruleName": "StorPortPerfOpts"
+}

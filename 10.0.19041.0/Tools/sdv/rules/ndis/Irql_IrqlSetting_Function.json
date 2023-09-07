@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NDIS_LOWER_IRQL",
+    "NDIS_RAISE_IRQL_TO_DISPATCH"
+  ],
+  "ruleName": "Irql_IrqlSetting_Function"
+}

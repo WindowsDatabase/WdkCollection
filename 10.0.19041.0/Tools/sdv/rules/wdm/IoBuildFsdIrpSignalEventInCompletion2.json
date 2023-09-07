@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoSetCompletionRoutine",
+    "IoSetCompletionRoutineEx",
+    "KeInitializeEvent"
+  ],
+  "ruleName": "IoBuildFsdIrpSignalEventInCompletion2"
+}

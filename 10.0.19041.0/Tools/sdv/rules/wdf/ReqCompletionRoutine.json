@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfRequestSend",
+    "WdfRequestSetCompletionRoutine"
+  ],
+  "ruleName": "ReqCompletionRoutine"
+}

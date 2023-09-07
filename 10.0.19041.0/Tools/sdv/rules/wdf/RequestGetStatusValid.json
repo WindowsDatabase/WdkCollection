@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfRequestGetStatus",
+    "WdfRequestSend"
+  ],
+  "ruleName": "RequestGetStatusValid"
+}

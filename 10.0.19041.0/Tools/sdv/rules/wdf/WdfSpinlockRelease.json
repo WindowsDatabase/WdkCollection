@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfSpinLockAcquire",
+    "WdfSpinLockRelease"
+  ],
+  "ruleName": "WdfSpinlockRelease"
+}

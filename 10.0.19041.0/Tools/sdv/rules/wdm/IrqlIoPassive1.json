@@ -1,0 +1,11 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoAttachDevice",
+    "IoBuildDeviceIoControlRequest",
+    "IoCreateDevice",
+    "IoSetDeviceInterfaceState",
+    "WdmlibIoCreateDeviceSecure"
+  ],
+  "ruleName": "IrqlIoPassive1"
+}

@@ -1,0 +1,20 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "IoBuildPartialMdl",
+    "KeFlushIoBuffers",
+    "MmGetMdlByteCount",
+    "MmGetMdlByteOffset",
+    "MmGetMdlPfnArray",
+    "MmGetMdlVirtualAddress",
+    "MmGetSystemAddressForMdlSafe",
+    "MmPrepareMdlForReuse",
+    "WDF_MEMORY_DESCRIPTOR_INIT_MDL",
+    "WdfDmaTransactionInitialize",
+    "WdfRequestComplete",
+    "WdfRequestCompleteWithInformation",
+    "WdfRequestCompleteWithPriorityBoost",
+    "WdfRequestRetrieveInputWdmMdl"
+  ],
+  "ruleName": "MdlAfterReqCompletedWriteA"
+}

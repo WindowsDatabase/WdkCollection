@@ -1,0 +1,12 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "KeDeregisterNmiCallback",
+    "KeEnterCriticalRegion",
+    "KeEnterGuardedRegion",
+    "KeLeaveCriticalRegion",
+    "KeLeaveGuardedRegion",
+    "KeRegisterNmiCallback"
+  ],
+  "ruleName": "IrqlKeApcLte2"
+}

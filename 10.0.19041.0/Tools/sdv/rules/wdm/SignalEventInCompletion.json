@@ -1,0 +1,12 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoBuildDeviceIoControlRequest",
+    "IoBuildSynchronousFsdRequest",
+    "IoSetCompletionRoutine",
+    "IoSetCompletionRoutineEx",
+    "KeInitializeEvent",
+    "KeSetEvent"
+  ],
+  "ruleName": "SignalEventInCompletion"
+}

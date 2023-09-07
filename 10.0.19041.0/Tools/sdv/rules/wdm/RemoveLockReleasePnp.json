@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoAcquireRemoveLock",
+    "IoReleaseRemoveLock",
+    "RemoveHeadList"
+  ],
+  "ruleName": "RemoveLockReleasePnp"
+}

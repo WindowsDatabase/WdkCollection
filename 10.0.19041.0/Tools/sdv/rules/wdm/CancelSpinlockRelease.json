@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoAcquireCancelSpinLock",
+    "IoReleaseCancelSpinLock"
+  ],
+  "ruleName": "CancelSpinlockRelease"
+}

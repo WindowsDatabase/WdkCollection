@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoAcquireRemoveLock",
+    "IoCallDriver",
+    "PoCallDriver"
+  ],
+  "ruleName": "WmiForward"
+}

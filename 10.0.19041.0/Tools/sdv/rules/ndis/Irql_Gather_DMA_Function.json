@@ -1,0 +1,11 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisMAllocateNetBufferSGList",
+    "NdisMAllocateSharedMemoryAsyncEx",
+    "NdisMDeregisterScatterGatherDma",
+    "NdisMFreeNetBufferSGList",
+    "NdisMRegisterScatterGatherDma"
+  ],
+  "ruleName": "Irql_Gather_DMA_Function"
+}

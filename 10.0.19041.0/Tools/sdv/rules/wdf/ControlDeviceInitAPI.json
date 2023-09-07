@@ -1,0 +1,18 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfControlDeviceInitAllocate",
+    "WdfControlDeviceInitSetShutdownNotification",
+    "WdfDeviceCreate",
+    "WdfDeviceInitAssignName",
+    "WdfDeviceInitAssignWdmIrpPreprocessCallback",
+    "WdfDeviceInitSetCharacteristics",
+    "WdfDeviceInitSetDeviceClass",
+    "WdfDeviceInitSetExclusive",
+    "WdfDeviceInitSetFileObjectConfig",
+    "WdfDeviceInitSetIoInCallerContextCallback",
+    "WdfDeviceInitSetIoType",
+    "WdfDeviceInitSetRequestAttributes"
+  ],
+  "ruleName": "ControlDeviceInitAPI"
+}

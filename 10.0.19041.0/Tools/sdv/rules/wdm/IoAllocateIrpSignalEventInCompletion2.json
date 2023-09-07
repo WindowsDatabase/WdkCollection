@@ -1,0 +1,11 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoAllocateIrp",
+    "IoBuildDeviceIoControlRequest",
+    "IoSetCompletionRoutine",
+    "IoSetCompletionRoutineEx",
+    "KeInitializeEvent"
+  ],
+  "ruleName": "IoAllocateIrpSignalEventInCompletion2"
+}

@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoBuildDeviceIoControlRequest",
+    "IoFreeIrp"
+  ],
+  "ruleName": "IoBuildDeviceControlNoFree"
+}

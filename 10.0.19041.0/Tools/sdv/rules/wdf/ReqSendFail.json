@@ -1,0 +1,12 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfObjectDelete",
+    "WdfRequestComplete",
+    "WdfRequestCompleteWithInformation",
+    "WdfRequestCompleteWithPriorityBoost",
+    "WdfRequestReuse",
+    "WdfRequestSend"
+  ],
+  "ruleName": "ReqSendFail"
+}

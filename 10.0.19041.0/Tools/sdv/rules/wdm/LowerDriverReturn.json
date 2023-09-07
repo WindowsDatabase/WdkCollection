@@ -1,0 +1,14 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoCallDriver",
+    "IoMarkIrpPending",
+    "IoSetCompletionRoutine",
+    "IoSetCompletionRoutineEx",
+    "IoSetDeviceInterfaceState",
+    "IoWMIRegistrationControl",
+    "KeWaitForSingleObject",
+    "PoCallDriver"
+  ],
+  "ruleName": "LowerDriverReturn"
+}

@@ -1,0 +1,16 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoAcquireCancelSpinLock",
+    "IoCompleteRequest",
+    "IofCompleteRequest",
+    "IofCompleteRequest@XDV",
+    "IoReleaseCancelSpinLock",
+    "IoStartNextPacket",
+    "IoStartNextPacket@XDV",
+    "KeAcquireSpinLock",
+    "KeAcquireSpinLockRaiseToDpc",
+    "KeReleaseSpinLock"
+  ],
+  "ruleName": "SpinLockSafe"
+}

@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoCheckShareAccess",
+    "IoConnectInterrupt",
+    "IoCreateController"
+  ],
+  "ruleName": "IrqlIoPassive2"
+}

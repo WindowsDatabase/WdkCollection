@@ -1,0 +1,7 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisMFreeSharedMemory"
+  ],
+  "ruleName": "NdisMFreeSharedMemory"
+}

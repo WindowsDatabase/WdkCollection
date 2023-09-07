@@ -1,0 +1,13 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfIoTargetSendInternalIoctlOthersSynchronously",
+    "WdfIoTargetSendInternalIoctlSynchronously",
+    "WdfIoTargetSendReadSynchronously",
+    "WdfIoTargetSendWriteSynchronously",
+    "WdfUsbTargetPipeReadSynchronously",
+    "WdfUsbTargetPipeSendUrbSynchronously",
+    "WdfUsbTargetPipeWriteSynchronously"
+  ],
+  "ruleName": "IoctlReqs"
+}

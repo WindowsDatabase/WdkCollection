@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExtensionPackages Version="1.0.0.0" Compression="none" OptionalPackagesFolder="OptionalExtensions">
+<ExtensionPackage>
+    <Name>JsProvider</Name>
+    <Version>$#Engine_version#$</Version>
+    <MinDebuggerSupported>6.13.16.2161</MinDebuggerSupported>
+    <Description>JavaScript Script Provider Extension</Description>
+    <Components>
+        <BinaryComponent Name="JsProvider" Type="Engine">
+            <Files>
+                <File Architecture="Any" Module="winext\JsProvider.dll" FilePathKind="RepositoryRelative"/>
+            </Files>
+            <ScriptProviders>
+                <ScriptProvider Name="JavaScript" Extension="js">
+                    <Template IsDefault="Yes">
+                        <Name>
+                            <![CDATA[Extension Script]]>
+                        </Name>
+                        <Description>
+                            <![CDATA[Use this template to help you extend objects in the debugger through the data model.]]>
+                        </Description>
+                        <Content>
+                            <![CDATA["use strict"
+
+function initializeScript()
+{
+//
+// Return an array of registration objects to modify the object model of the debugger
+// See the following for more details:
+//
+//     https://aka.ms/JsDbgExt
+//
+return [];
+}]]>
+                        </Content>
+                    </Template>
+                    <Template>
+                        <Name>
+                            <![CDATA[Imperative Script]]>
+                        </Name>
+                        <Description>
+                            <![CDATA[Use this template to create a script that can be invoked to run an arbitrary set of debugger commands.]]>
+                        </Description>
+                        <Content>
+                            <![CDATA["use strict"
+
+function initializeScript()
+{
+// Insert your script content here.  This method will be called whenever the script is
+// invoked from a client.
+//
+// See the following for more details:
+//
+//     https://aka.ms/JsDbgExt
+}]]>
+                        </Content>
+                    </Template>
+                </ScriptProvider>
+            </ScriptProviders>
+        </BinaryComponent>
+    </Components>
+</ExtensionPackage>
+
+<ExtensionPackage>
+    <Name>storagekd</Name>
+    <Version>$#Engine_version#$</Version>
+    <Components>
+        <BinaryComponent Name="storagekd" Type="Engine">
+            <Files>
+                <File Architecture="Any" Module="winext\storagekd.dll" FilePathKind="RepositoryRelative"/>
+            </Files>
+            <EngineCommands>
+                <EngineCommand Name="storlogirp">
+                    <EngineCommandItem>
+                        <Syntax>
+<![CDATA[!storlogirp <args>]]>
+                        </Syntax>
+                        <Description>
+<![CDATA[Displays internal log entries referencing the specified IRP.
+Usage: !storlogirp ADAPTER-EXTENSION <irp> [<starting_entry>] [<ending_entry>] [L <count>]
+   !storlogirp <irp> [<starting_entry>] [<ending_entry>] [L <count>]
+See '!storhelp storloglist' for details.]]>
+                        </Description>
+                    </EngineCommandItem>
+                </EngineCommand>
+                <EngineCommand Name="storloglist">
+                    <EngineCommandItem>
+                        <Syntax>
+<![CDATA[!storloglist <args>]]>
+                        </Syntax>
+                        <Description>
+<![CDATA[Displays internal log entries.
+Usage: !storloglist ADAPTER-EXTENSION [<starting_entry>[ <ending_entry>]] [L <count>]
+   !storloglist [<starting_entry>[ <ending_entry>]] [L <count>]
+See '!storhelp storloglist' for details.]]>
+                        </Description>
+                    </EngineCommandItem>
+                </EngineCommand>
+                <EngineCommand Name="storlogsrb">
+                    <EngineCommandItem>
+                        <Syntax>
+<![CDATA[!storlogsrb <args>]]>
+                        </Syntax>
+                        <Description>
+<![CDATA[Displays internal log entries referencing the specified SRB.
+Usage: !storlogsrb ADPATER-EXTENSION <srb> [<starting_entry>] [<ending_entry>] [L <count>]
+   !storlogsrb <srb> [<starting_entry>] [<ending_entry>] [L <count>]
+See '!storhelp storlogsrb' for details.]]>
+                        </Description>
+                    </EngineCommandItem>
+                </EngineCommand>
+                <EngineCommand Name="storsrb">
+                    <EngineCommandItem>
+                        <Syntax>
+<![CDATA[!storsrb <args>]]>
+                        </Syntax>
+                        <Description>
+<![CDATA[Displays details for the specified SCSI or STORAGE request block.]]>
+                        </Description>
+                    </EngineCommandItem>
+                </EngineCommand>
+                <EngineCommand Name="storahci">
+                    <EngineCommandItem>
+                        <Syntax>
+<![CDATA[!storahci <unit object> [detail]]]>
+                        </Syntax>
+                        <Description>
+<![CDATA[Provides detailed information about storahci device.]]>
+                        </Description>
+                    </EngineCommandItem>
+                </EngineCommand>
+                <EngineCommand Name="storreadsector">
+                    <EngineCommandItem>
+                        <Syntax>
+<![CDATA[!storreadsector <unit object> <starting sector #>]]>
+                        </Syntax>
+                        <Description>
+<![CDATA[Reads the specified sector content from a disk.
+NOTE: This only works for disks managed by storahci and the sector size should be 512 bytes.]]>
+                        </Description>
+                    </EngineCommandItem>
+                </EngineCommand>
+            </EngineCommands>
+        </BinaryComponent>
+    </Components>
+</ExtensionPackage>
+
+<ExtensionPackage>
+  <Name>atlmfc.natvis</Name>
+  <Version>$#Engine_version#$</Version>
+  <MinDebuggerSupported>10.0.16171.1000</MinDebuggerSupported>
+  <Components>
+    <ScriptComponent Name="atlmfc" Type="Engine" File="Visualizers\atlmfc.natvis" FilePathKind="RepositoryRelative">
+        <LoadTriggers>
+            <TriggerSet>
+                <AlwaysTrigger />
+            </TriggerSet>
+        </LoadTriggers>
+    </ScriptComponent>
+  </Components>
+</ExtensionPackage>
+
+<ExtensionPackage>
+  <Name>concurrency.natvis</Name>
+  <Version>$#Engine_version#$</Version>
+  <MinDebuggerSupported>10.0.16171.1000</MinDebuggerSupported>
+  <Components>
+    <ScriptComponent Name="concurrency" Type="Engine" File="Visualizers\concurrency.natvis" FilePathKind="RepositoryRelative">
+        <LoadTriggers>
+            <TriggerSet>
+                <AlwaysTrigger />
+            </TriggerSet>
+        </LoadTriggers>
+    </ScriptComponent>
+  </Components>
+</ExtensionPackage>
+
+<ExtensionPackage>
+  <Name>cpp_rest.natvis</Name>
+  <Version>$#Engine_version#$</Version>
+  <MinDebuggerSupported>10.0.16171.1000</MinDebuggerSupported>
+  <Components>
+    <ScriptComponent Name="cpp_rest" Type="Engine" File="Visualizers\cpp_rest.natvis" FilePathKind="RepositoryRelative">
+        <LoadTriggers>
+            <TriggerSet>
+                <AlwaysTrigger />
+            </TriggerSet>
+        </LoadTriggers>
+    </ScriptComponent>
+  </Components>
+</ExtensionPackage>
+
+<ExtensionPackage>
+  <Name>Kernel.natvis</Name>
+  <Version>$#Engine_version#$</Version>
+  <MinDebuggerSupported>10.0.16171.1000</MinDebuggerSupported> 
+  <Components>
+    <ScriptComponent Name="Kernel" Type="Engine" File="Visualizers\Kernel.natvis" FilePathKind="RepositoryRelative">
+        <LoadTriggers>
+            <TriggerSet>
+                <TargetTrigger Type="Kernel" />
+            </TriggerSet>
+        </LoadTriggers>
+    </ScriptComponent>
+  </Components>
+</ExtensionPackage>
+
+<ExtensionPackage>
+  <Name>stl.natvis</Name>
+  <Version>$#Engine_version#$</Version>
+  <MinDebuggerSupported>10.0.16171.1000</MinDebuggerSupported>
+  <Components>
+    <ScriptComponent Name="stl" Type="Engine" File="Visualizers\stl.natvis" FilePathKind="RepositoryRelative">
+        <LoadTriggers>
+            <TriggerSet>
+                <AlwaysTrigger />
+            </TriggerSet>
+        </LoadTriggers>
+    </ScriptComponent>
+  </Components>
+</ExtensionPackage>
+
+<ExtensionPackage>
+  <Name>Windows.Data.Json.natvis</Name>
+  <Version>$#Engine_version#$</Version>
+  <MinDebuggerSupported>10.0.16171.1000</MinDebuggerSupported>
+  <Components>
+    <ScriptComponent Name="Windows.Data.Json" Type="Engine" File="Visualizers\Windows.Data.Json.natvis" FilePathKind="RepositoryRelative">
+        <LoadTriggers>
+            <TriggerSet>
+                <AlwaysTrigger />
+            </TriggerSet>
+        </LoadTriggers>
+    </ScriptComponent>
+  </Components>
+</ExtensionPackage>
+
+<ExtensionPackage>
+  <Name>Windows.Devices.Geolocation.natvis</Name>
+  <Version>$#Engine_version#$</Version>
+  <MinDebuggerSupported>10.0.16171.1000</MinDebuggerSupported>
+  <Components>
+    <ScriptComponent Name="Windows.Devices.Geolocation" Type="Engine" File="Visualizers\Windows.Devices.Geolocation.natvis" FilePathKind="RepositoryRelative">
+        <LoadTriggers>
+            <TriggerSet>
+                <AlwaysTrigger />
+            </TriggerSet>
+        </LoadTriggers>
+    </ScriptComponent>
+  </Components>
+</ExtensionPackage>
+
+<ExtensionPackage>
+  <Name>Windows.Devices.Sensors.natvis</Name>
+  <Version>$#Engine_version#$</Version>
+  <MinDebuggerSupported>10.0.16171.1000</MinDebuggerSupported>
+  <Components>
+    <ScriptComponent Name="Windows.Devices.Sensors" Type="Engine" File="Visualizers\Windows.Devices.Sensors.natvis" FilePathKind="RepositoryRelative">
+        <LoadTriggers>
+            <TriggerSet>
+                <AlwaysTrigger />
+            </TriggerSet>
+        </LoadTriggers>
+    </ScriptComponent>
+  </Components>
+</ExtensionPackage>
+
+<ExtensionPackage>
+  <Name>Windows.Media.natvis</Name>
+  <Version>$#Engine_version#$</Version>
+  <MinDebuggerSupported>10.0.16171.1000</MinDebuggerSupported>
+  <Components>
+    <ScriptComponent Name="Windows.Media" Type="Engine" File="Visualizers\Windows.Media.natvis" FilePathKind="RepositoryRelative">
+        <LoadTriggers>
+            <TriggerSet>
+                <AlwaysTrigger />
+            </TriggerSet>
+        </LoadTriggers>
+    </ScriptComponent>
+  </Components>
+</ExtensionPackage>
+
+<ExtensionPackage>
+  <Name>windows.natvis</Name>
+  <Version>$#Engine_version#$</Version>
+  <MinDebuggerSupported>10.0.16171.1000</MinDebuggerSupported>
+  <Components>
+    <ScriptComponent Name="windows" Type="Engine" File="Visualizers\windows.natvis" FilePathKind="RepositoryRelative">
+        <LoadTriggers>
+            <TriggerSet>
+                <AlwaysTrigger />
+            </TriggerSet>
+        </LoadTriggers>
+    </ScriptComponent>
+  </Components>
+</ExtensionPackage>
+
+<ExtensionPackage>
+  <Name>winrt.natvis</Name>
+  <Version>$#Engine_version#$</Version>
+  <MinDebuggerSupported>10.0.16171.1000</MinDebuggerSupported>
+  <Components>
+    <ScriptComponent Name="winrt" Type="Engine" File="Visualizers\winrt.natvis" FilePathKind="RepositoryRelative">
+        <LoadTriggers>
+            <TriggerSet>
+                <AlwaysTrigger />
+            </TriggerSet>
+        </LoadTriggers>
+    </ScriptComponent>
+  </Components>
+</ExtensionPackage>
+
+<ExtensionPackage>
+    <Name>DbgModelApiXtn</Name>
+    <Version>$#Engine_version#$</Version>
+    <MinDebuggerSupported>10.0.17069.1001</MinDebuggerSupported>
+    <Description>Provides a set of APIs for other extensions to consume</Description>
+    <Components>
+        <BinaryComponent Name="DbgModelApiXtn" Type="Engine">
+            <Files>
+                <File Architecture="Any" Module="winext\DbgModelApiXtn.dll" FilePathKind="RepositoryRelative"/>
+            </Files>
+            <ObjectExtensionList>
+                <NamedExtension Name="Debugger.Models.Utility" Namespace="Debugger.Models.Utility.FileSystem" Property="FileSystem" />
+                <NamedExtension Name="Debugger.Models.Utility" Namespace="Debugger.Models.Utility.Code" Property="Code" />
+                <NamedExtension Name="Debugger.Models.Utility" Namespace="Debugger.Models.Utility.Collections" Property="Collections" />
+            </ObjectExtensionList>
+        </BinaryComponent>
+        <ScriptComponent Name="CodeFlow" Type="Engine" File="winext\ApiExtension\CodeFlow.js" FilePathKind="RepositoryRelative">
+            <FunctionAliases>
+                <FunctionAlias Name="dflow">
+                    <AliasItem>
+                        <Syntax>
+                            <![CDATA[!dflow [<address>]]]>
+                        </Syntax>
+                        <Description>
+                            <![CDATA[Shows the instructions of the function containing [<address>] which influence the source operands of that instruction.]]>
+                        </Description>
+                    </AliasItem>
+                </FunctionAlias>
+                <FunctionAlias Name="dis">
+                    <AliasItem>
+                        <Syntax>
+                            <![CDATA[!dis [<address>]]]>
+                        </Syntax>
+                        <Description>
+                            <![CDATA[Disassembles instructions starting at [<address>] using the data model disassembler.]]>
+                        </Description>
+                    </AliasItem>
+                </FunctionAlias>
+            </FunctionAliases>
+            <ObjectExtensionList>
+                <NamedExtension Name="Debugger.Models.Utility" Namespace="Debugger.Models.Utility.Code" Property="Code" />
+                <NamedExtension Name="Debugger.Models.Utility.Code.Instruction" />
+            </ObjectExtensionList>
+        </ScriptComponent>
+        <ScriptComponent Name="SynTypes" Type="Engine" File="winext\ApiExtension\SynTypes.js" FilePathKind="RepositoryRelative">
+            <ObjectExtensionList>
+                <NamedExtension Name="Debugger.Models.Utility" Namespace="Debugger.Models.Utility.Analysis" Property="Analysis" />
+            </ObjectExtensionList>
+        </ScriptComponent>
+    </Components>
+</ExtensionPackage>
+
+</ExtensionPackages>

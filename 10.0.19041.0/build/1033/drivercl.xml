@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Rule
+  Name="CL"
+  OverrideMode="Extend"
+  xmlns="http://schemas.microsoft.com/build/2009/properties">
+  <!-- Hide the SpectreMitigation property that is defined already by SDK
+     Create a new Propety Driver_SpectreMitigation which will have the same display name as SpectreMitigation.
+     Value of Driver_SpectreMitigation set in vctargetspath\platfroms\$(arch)\$(ToolsetType)\Toolset.props
+     The value of Driver_SpectreMitigation is passed to SpectreMitigation property.
+     This file is imported after cl.xml is imported so that it can override the value of SpectreMitigation and is
+     imported by vctargetspath\platfroms\$(arch)\ImportAfter\Microsoft.Cpp.WDK.targets
+  -->
+  <EnumProperty Name="SpectreMitigation" Visible="false" DisplayName="Spectre Mitigation" Description="Spectre mitigations for CVE 2017-5753.     (/Qspectre)" Category="Code Generation" F1Keyword="VC.Project.VCCLCompilerTool.SpectreMitigation">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFile" ItemType="" Label="Configuration" HasConfigurationCondition="true" SourceOfDefaultValue="AfterContext"/>
+    </EnumProperty.DataSource>
+    <EnumValue Name="Spectre" Switch="Qspectre" DisplayName="Enabled" Description="Enable Spectre mitigation feature for CVE 2017-5753">
+    </EnumValue>
+    <EnumValue Name="false" Switch="" DisplayName="Disabled" Description="Not Set.">
+    </EnumValue>
+  </EnumProperty>
+  <EnumProperty Name="Driver_SpectreMitigation" DisplayName="Spectre Mitigation" Description="Spectre mitigations for CVE 2017-5753.     (/Qspectre)" Category="Code Generation" F1Keyword="VC.Project.VCCLCompilerTool.SpectreMitigation">
+    <EnumProperty.DataSource>
+      <DataSource Persistence="ProjectFile" ItemType="" Label="Configuration" HasConfigurationCondition="true" SourceOfDefaultValue="AfterContext"/>
+    </EnumProperty.DataSource>
+    <EnumValue Name="Spectre" Switch="Qspectre" DisplayName="Enabled" Description="Enable Spectre mitigation feature for CVE 2017-5753">
+    </EnumValue>
+    <EnumValue Name="false" Switch="" DisplayName="Disabled" Description="Not Set.">
+    </EnumValue>
+  </EnumProperty>
+</Rule>

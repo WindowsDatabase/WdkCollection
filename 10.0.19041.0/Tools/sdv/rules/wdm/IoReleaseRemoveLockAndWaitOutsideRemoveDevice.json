@@ -1,0 +1,7 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoReleaseRemoveLockAndWait"
+  ],
+  "ruleName": "IoReleaseRemoveLockAndWaitOutsideRemoveDevice"
+}

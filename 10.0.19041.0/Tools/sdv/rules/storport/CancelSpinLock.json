@@ -1,0 +1,8 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "IoAcquireCancelSpinLock",
+    "IoReleaseCancelSpinLock"
+  ],
+  "ruleName": "CancelSpinLock"
+}

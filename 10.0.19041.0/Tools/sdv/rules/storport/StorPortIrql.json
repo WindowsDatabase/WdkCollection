@@ -1,0 +1,25 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "StorPortAllocateContiguousMemorySpecifyCacheNode",
+    "StorPortAllocateMdl",
+    "StorPortAllocatePool",
+    "StorPortBuildMdlForNonPagedPool",
+    "StorPortFreeContiguousMemorySpecifyCache",
+    "StorPortFreeMdl",
+    "StorPortFreePool",
+    "StorPortGetActiveGroupCount",
+    "StorPortGetActiveNodeCount",
+    "StorPortGetCurrentProcessorNumber",
+    "StorPortGetGroupAffinity",
+    "StorPortGetHighestNodeNumber",
+    "StorPortGetLogicalProcessorRelationship",
+    "StorPortGetNodeAffinity",
+    "StorPortGetSystemAddress",
+    "StorPortLogSystemEvent",
+    "StorPortPutScatterGatherList",
+    "StorPortRegistryRead",
+    "StorPortRegistryWrite"
+  ],
+  "ruleName": "StorPortIrql"
+}

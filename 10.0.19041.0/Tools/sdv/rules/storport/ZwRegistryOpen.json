@@ -1,0 +1,15 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "ZwClose",
+    "ZwDeleteKey",
+    "ZwEnumerateKey",
+    "ZwEnumerateValueKey",
+    "ZwFlushKey",
+    "ZwOpenKey",
+    "ZwQueryKey",
+    "ZwQueryValueKey",
+    "ZwSetValueKey"
+  ],
+  "ruleName": "ZwRegistryOpen"
+}

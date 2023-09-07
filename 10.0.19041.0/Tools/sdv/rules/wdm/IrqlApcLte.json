@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ObGetObjectSecurity",
+    "ObReleaseObjectSecurity"
+  ],
+  "ruleName": "IrqlApcLte"
+}

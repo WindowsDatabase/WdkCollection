@@ -1,0 +1,23 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfDeviceEnqueueRequest",
+    "WdfDmaTransactionInitialize",
+    "WdfDmaTransactionInitializeUsingRequest",
+    "WdfIoTargetSendInternalIoctlOthersSynchronously",
+    "WdfIoTargetSendInternalIoctlSynchronously",
+    "WdfIoTargetSendIoctlSynchronously",
+    "WdfIoTargetSendReadSynchronously",
+    "WdfIoTargetSendWriteSynchronously",
+    "WdfRequestComplete",
+    "WdfRequestCompleteWithInformation",
+    "WdfRequestCompleteWithPriorityBoost",
+    "WdfRequestForwardToIoQueue",
+    "WdfRequestMarkCancelable",
+    "WdfRequestMarkCancelableEx",
+    "WdfRequestSend",
+    "WdfRequestStopAcknowledge",
+    "WdfWorkItemEnqueue"
+  ],
+  "ruleName": "RequestCompleted"
+}

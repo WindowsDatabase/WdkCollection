@@ -1,0 +1,14 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "KeLowerIrql",
+    "KeLowerIrql",
+    "KeRaiseIrql",
+    "KeRaiseIrql",
+    "KfLowerIrql",
+    "KfLowerIrql",
+    "KfRaiseIrql",
+    "KfRaiseIrql"
+  ],
+  "ruleName": "IrqlKeRaiseLower2"
+}

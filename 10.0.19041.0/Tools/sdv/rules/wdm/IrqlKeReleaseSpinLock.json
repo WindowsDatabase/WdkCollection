@@ -1,0 +1,7 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "KeReleaseSpinLock"
+  ],
+  "ruleName": "IrqlKeReleaseSpinLock"
+}

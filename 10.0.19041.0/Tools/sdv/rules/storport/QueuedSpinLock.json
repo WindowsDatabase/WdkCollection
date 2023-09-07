@@ -1,0 +1,8 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "KeAcquireInStackQueuedSpinLock",
+    "KeReleaseInStackQueuedSpinLock"
+  ],
+  "ruleName": "QueuedSpinLock"
+}

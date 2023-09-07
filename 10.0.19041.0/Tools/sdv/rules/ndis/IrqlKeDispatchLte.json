@@ -1,0 +1,27 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "KeAcquireSpinLock",
+    "KeCancelTimer",
+    "KeClearEvent",
+    "KeInitializeDeviceQueue",
+    "KeInitializeSemaphore",
+    "KeInitializeTimer",
+    "KeInitializeTimerEx",
+    "KePulseEvent",
+    "KeRaiseIrqlToDpcLevel",
+    "KeRaiseIrqlToDpcLevel",
+    "KeReadStateEvent",
+    "KeReadStateTimer",
+    "KeReleaseMutex",
+    "KeRemoveEntryDeviceQueue",
+    "KeResetEvent",
+    "KeSaveFloatingPointState",
+    "KeSaveFloatingPointState",
+    "KeSetTimer",
+    "KeSetTimerEx",
+    "KfAcquireSpinLock",
+    "KfAcquireSpinLock"
+  ],
+  "ruleName": "IrqlKeDispatchLte"
+}
