@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Action name="FinalCompile" nextAction="CheckRule">
+  <Path value="[$analysisDir]\[$analysisProperty]" />
+  <Env key="SDV" value="%sdv%" />
+  <Env key="PATH" value="%sdv%\bin\engine;[$finalCompilePath];%PATH%" />
+  <Env key="INCLUDE" value="[$workingDir];[$KmIncludePath]\crt;[$KmIncludePath];[$KmIncludePath]\..\Shared" />
+  <Command value="where" arguments="cl"/>
+  <Command value="where" arguments="slamcl"/>
+  <Command value="slamcl" arguments="--noTP [$SlamclFlags]"/>
+</Action>

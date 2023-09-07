@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Action name="NormalBuild" breakOnError="true" nextAction="InterceptedBuild">
+    <Command value="msbuild" arguments="/noconsolelogger /fileLoggerParameters:LogFile=[$smvLogFileNamePrefix].log /t:rebuild &quot;[$projectFile]&quot; /p:configuration=&quot;%CONFIGURATION_SDV%&quot; /p:platform=&quot;%PLATFORM_SDV%&quot;"/>
+</Action>

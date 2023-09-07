@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Action name="Scan">
+    <Path value="[$outputDir]" />
+    <Env key="PATH" value="%sdv%\bin\engine;%PATH%" />
+    <!-- Copy the SDV product os model to a location that was
+      established with the legacy SDV product.  This is needed since
+      frontend and engine has filename hardcoded and to minimize
+      regression baseline changes during transition from legacy SDV to
+      SMV-SDV -->
+    <Command value="copy" arguments="&quot;%sdv%\osmodel\[$driverType]\osmodel.c&quot; &quot;[$outputDir]\sdv-harness.c&quot;" />
+    <Command value="slamscan" arguments="[$ScannerFlags]"/>
+</Action>
