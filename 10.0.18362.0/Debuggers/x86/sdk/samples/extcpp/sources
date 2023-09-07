@@ -1,0 +1,33 @@
+TARGETNAME = extcpp
+
+TARGETTYPE = DYNLINK
+
+_NT_TARGET_VERSION=$(_NT_TARGET_VERSION_WIN7)
+
+DLLENTRY=_DllMainCRTStartup
+
+INCLUDES=\
+    $(INCLUDES); \
+    $(MINWIN_PRIV_SDK_INC_PATH)\dbg; \
+
+LINKLIBS = $(MINWIN_PRIV_SDK_LIB_PATH)\engextcpp.lib
+
+TARGETLIBS = \
+        $(SDK_LIB_PATH)\kernel32.lib \
+        $(SDK_LIB_PATH)\advapi32.lib \
+        $(SDK_LIB_PATH)\dbgeng.lib
+
+DLLDEF_OBJECTS=\
+    $(MINWIN_PRIV_SDK_LIB_PATH)\engextcpp.lib \
+
+
+USE_NOTHROW_NEW=1
+USE_MSVCRT = 1
+
+UMTYPE = windows
+
+MSC_WARNING_LEVEL = /W4 /WX
+
+SOURCES = \
+         extcpp.cpp\
+         extcpp.rc

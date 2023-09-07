@@ -1,0 +1,20 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfDeviceInitAssignName",
+    "WdfDeviceInitAssignSDDLString",
+    "WdfDeviceInitAssignWdmIrpPreprocessCallback",
+    "WdfDeviceInitFree",
+    "WdfDeviceInitRegisterPnpStateChangeCallback",
+    "WdfDeviceInitRegisterPowerPolicyStateChangeCallback",
+    "WdfDeviceInitRegisterPowerStateChangeCallback",
+    "WdfPdoInitAddCompatibleID",
+    "WdfPdoInitAddDeviceText",
+    "WdfPdoInitAddHardwareID",
+    "WdfPdoInitAllocate",
+    "WdfPdoInitAssignDeviceID",
+    "WdfPdoInitAssignInstanceID",
+    "WdfPdoInitAssignRawDevice"
+  ],
+  "ruleName": "PdoInitFreeDeviceCallback"
+}

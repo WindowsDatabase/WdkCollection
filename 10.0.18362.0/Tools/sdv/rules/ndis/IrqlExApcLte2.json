@@ -1,0 +1,17 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "CmRegisterCallback",
+    "CmRegisterCallbackEx",
+    "CmUnRegisterCallback",
+    "ExCreateCallback",
+    "ExDeletePagedLookasideList",
+    "ExInitializePagedLookasideList",
+    "ExRegisterCallback",
+    "ExSetTimerResolution",
+    "ExUnregisterCallback",
+    "ProbeForRead",
+    "ProbeForWrite"
+  ],
+  "ruleName": "IrqlExApcLte2"
+}

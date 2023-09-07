@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoAllocateIrp",
+    "IoCompleteRequest"
+  ],
+  "ruleName": "IoAllocateComplete"
+}

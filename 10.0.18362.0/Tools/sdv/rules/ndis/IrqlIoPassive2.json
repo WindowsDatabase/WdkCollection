@@ -1,0 +1,9 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "IoCheckShareAccess",
+    "IoConnectInterrupt",
+    "IoCreateController"
+  ],
+  "ruleName": "IrqlIoPassive2"
+}

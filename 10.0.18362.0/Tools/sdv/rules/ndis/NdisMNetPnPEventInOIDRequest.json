@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisMNetPnPEvent",
+    "NdisMOidRequestComplete"
+  ],
+  "ruleName": "NdisMNetPnPEventInOIDRequest"
+}

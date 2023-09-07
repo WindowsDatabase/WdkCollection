@@ -1,0 +1,39 @@
+/*++
+
+    Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Rule Name:
+
+    StorPortStatusPending
+
+Domain:
+
+    storport
+
+Rule ID:
+
+    Not Applicable
+
+Description:
+
+    This rule checks that an SRB is not completed with status SRB_STATUS_PENDING.
+
+Help Link:
+
+    https://go.microsoft.com/fwlink/?LinkId=507245
+
+--*/
+
+
+
+#include "ntddk_slic.h"
+
+sdv_StorPortNotificationOfRequestComplete.entry
+{
+    if ($1->SrbStatus == SRB_STATUS_PENDING) {
+        abort "The miniport should not complete an SRB with status SRB_STATUS_PENDING.";
+    }
+    else {
+        halt;
+    }
+}

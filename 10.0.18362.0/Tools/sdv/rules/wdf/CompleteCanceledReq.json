@@ -1,0 +1,10 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfRequestComplete",
+    "WdfRequestCompleteWithInformation",
+    "WdfRequestCompleteWithPriorityBoost",
+    "WdfRequestUnmarkCancelable"
+  ],
+  "ruleName": "CompleteCanceledReq"
+}

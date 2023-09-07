@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisAllocateGenericObject",
+    "NdisFreeGenericObject"
+  ],
+  "ruleName": "NdisAllocateGenericObject"
+}

@@ -1,0 +1,9 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisAllocateMemoryWithTagPriority",
+    "NdisFreeMemory",
+    "NdisFreeMemoryWithTagPriority"
+  ],
+  "ruleName": "NdisAllocateMemoryWithTagPriority_InitFail"
+}

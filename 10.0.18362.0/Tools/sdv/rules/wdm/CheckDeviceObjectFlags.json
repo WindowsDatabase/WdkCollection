@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ExAllocatePoolWithTag",
+    "IoCreateDevice"
+  ],
+  "ruleName": "CheckDeviceObjectFlags"
+}

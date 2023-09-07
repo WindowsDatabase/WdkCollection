@@ -1,0 +1,10 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfIoTargetStart",
+    "WdfIoTargetStop",
+    "WdfUsbTargetPipeConfigContinuousReader",
+    "WdfUsbTargetPipeGetIoTarget"
+  ],
+  "ruleName": "FailD0EntryIoTargetState"
+}

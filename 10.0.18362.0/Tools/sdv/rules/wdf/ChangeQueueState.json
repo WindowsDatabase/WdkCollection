@@ -1,0 +1,17 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfDeviceCreate",
+    "WdfDriverCreate",
+    "WdfIoQueueCreate",
+    "WdfIoQueueDrain",
+    "WdfIoQueueDrainSynchronously",
+    "WdfIoQueuePurge",
+    "WdfIoQueuePurgeSynchronously",
+    "WdfIoQueueStop",
+    "WdfIoQueueStopAndPurge",
+    "WdfIoQueueStopAndPurgeSynchronously",
+    "WdfIoQueueStopSynchronously"
+  ],
+  "ruleName": "ChangeQueueState"
+}

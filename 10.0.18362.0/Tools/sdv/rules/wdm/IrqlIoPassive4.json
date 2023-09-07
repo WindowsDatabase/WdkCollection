@@ -1,0 +1,13 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoCreateFile",
+    "IoCreateNotificationEvent",
+    "IoCreateSynchronizationEvent",
+    "IoCreateUnprotectedSymbolicLink",
+    "IoDeleteController",
+    "IoDeleteSymbolicLink",
+    "IoDisconnectInterrupt"
+  ],
+  "ruleName": "IrqlIoPassive4"
+}

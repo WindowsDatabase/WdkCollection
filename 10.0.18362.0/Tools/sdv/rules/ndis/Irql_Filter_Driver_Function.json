@@ -1,0 +1,20 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisEnumerateFilterModules",
+    "NdisFCancelSendNetBufferLists",
+    "NdisFDeregisterFilterDriver",
+    "NdisFDevicePnPEventNotify",
+    "NdisFIndicateReceiveNetBufferLists",
+    "NdisFNetPnPEvent",
+    "NdisFPauseComplete",
+    "NdisFRegisterFilterDriver",
+    "NdisFRestartComplete",
+    "NdisFRestartFilter",
+    "NdisFReturnNetBufferLists",
+    "NdisFSendNetBufferLists",
+    "NdisFSendNetBufferListsComplete",
+    "NdisFSetAttributes"
+  ],
+  "ruleName": "Irql_Filter_Driver_Function"
+}

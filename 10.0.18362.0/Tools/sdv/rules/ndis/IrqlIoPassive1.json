@@ -1,0 +1,12 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "IoAttachDevice",
+    "IoBuildDeviceIoControlRequest",
+    "IoCreateDevice",
+    "IoCreateDeviceSecure",
+    "IoSetDeviceInterfaceState",
+    "WdmlibIoCreateDeviceSecure"
+  ],
+  "ruleName": "IrqlIoPassive1"
+}

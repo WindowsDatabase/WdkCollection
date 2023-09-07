@@ -1,0 +1,10 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoCallDriver",
+    "IoSetCompletionRoutine",
+    "IoSetCompletionRoutineEx",
+    "PoCallDriver"
+  ],
+  "ruleName": "CompletionRoutineRegistered"
+}

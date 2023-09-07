@@ -1,0 +1,7 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisReEnumerateProtocolBindings"
+  ],
+  "ruleName": "NdisReEnumerateProtocolBindings"
+}

@@ -1,0 +1,22 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ExAcquireResourceExclusiveLite",
+    "ExAcquireResourceExclusiveLite@XDV",
+    "ExAcquireResourceSharedLite",
+    "ExAcquireResourceSharedLite@XDV",
+    "ExAcquireSharedStarveExclusive",
+    "ExAcquireSharedStarveExclusive@XDV",
+    "ExAcquireSharedWaitForExclusive",
+    "ExAcquireSharedWaitForExclusive@XDV",
+    "ExReleaseResourceForThreadLite",
+    "ExReleaseResourceForThreadLite@XDV",
+    "ExReleaseResourceLite",
+    "ExReleaseResourceLite@XDV",
+    "KeEnterCriticalRegion",
+    "KeEnterGuardedRegion",
+    "KeLeaveCriticalRegion",
+    "KeLeaveGuardedRegion"
+  ],
+  "ruleName": "WithinCriticalRegion"
+}

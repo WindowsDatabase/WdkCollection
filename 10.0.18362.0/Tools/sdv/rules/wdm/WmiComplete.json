@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoCompleteRequest",
+    "IofCompleteRequest",
+    "WmiSystemControl"
+  ],
+  "ruleName": "WmiComplete"
+}

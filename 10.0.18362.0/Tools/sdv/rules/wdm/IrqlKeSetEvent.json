@@ -1,0 +1,7 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "KeSetEvent"
+  ],
+  "ruleName": "IrqlKeSetEvent"
+}

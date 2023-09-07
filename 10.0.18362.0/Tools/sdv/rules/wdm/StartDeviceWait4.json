@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoSetCompletionRoutineEx",
+    "KeWaitForSingleObject"
+  ],
+  "ruleName": "StartDeviceWait4"
+}

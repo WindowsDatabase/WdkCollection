@@ -1,0 +1,28 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "EvtInterruptPostEnable",
+    "EvtInterruptPreDisable",
+    "retrieve_request",
+    "save_request",
+    "WdfDeviceEnqueueRequest",
+    "WdfDmaTransactionInitialize",
+    "WdfDmaTransactionInitializeUsingRequest",
+    "WdfIoTargetSendInternalIoctlOthersSynchronously",
+    "WdfIoTargetSendInternalIoctlSynchronously",
+    "WdfIoTargetSendIoctlSynchronously",
+    "WdfIoTargetSendReadSynchronously",
+    "WdfIoTargetSendWriteSynchronously",
+    "WdfRequestComplete",
+    "WdfRequestCompleteWithInformation",
+    "WdfRequestCompleteWithPriorityBoost",
+    "WdfRequestForwardToIoQueue",
+    "WdfRequestMarkCancelable",
+    "WdfRequestMarkCancelableEx",
+    "WdfRequestSend",
+    "WdfRequestStopAcknowledge",
+    "WdfRequestUnmarkCancelable",
+    "WdfWorkItemEnqueue"
+  ],
+  "ruleName": "DeferredRequestCompleted"
+}

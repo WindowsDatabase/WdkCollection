@@ -1,0 +1,13 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisMCoActivateVcComplete",
+    "NdisMCoDeactivateVcComplete",
+    "NdisMCoIndicateReceiveNetBufferLists",
+    "NdisMCoIndicateStatusEx",
+    "NdisMCompleteDmaTransfer",
+    "NdisMCoOidRequestComplete",
+    "NdisMCoSendNetBufferListsComplete"
+  ],
+  "ruleName": "Irql_MCO_Function"
+}

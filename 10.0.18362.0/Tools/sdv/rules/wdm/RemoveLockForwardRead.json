@@ -1,0 +1,18 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ExInterlockedInsertHeadList",
+    "ExInterlockedInsertTailList",
+    "ExInterlockedPushEntryList",
+    "InsertHeadList",
+    "IoAcquireRemoveLock",
+    "IoCallDriver",
+    "IoCsqInsertIrp",
+    "IoCsqInsertIrpEx",
+    "IoReleaseRemoveLock",
+    "KeWaitForSingleObject",
+    "PoCallDriver",
+    "RemoveHeadList"
+  ],
+  "ruleName": "RemoveLockForwardRead"
+}

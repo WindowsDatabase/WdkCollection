@@ -1,0 +1,15 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ExEnterCriticalRegionAndAcquireResourceExclusive",
+    "ExEnterCriticalRegionAndAcquireResourceShared",
+    "ExEnterCriticalRegionAndAcquireSharedWaitForExclusive",
+    "ExEnterPriorityRegionAndAcquireResourceExclusive@XDV",
+    "ExEnterPriorityRegionAndAcquireResourceShared@XDV",
+    "ExReleaseResourceAndLeaveCriticalRegion",
+    "ExReleaseResourceAndLeavePriorityRegion@XDV",
+    "KeEnterCriticalRegion",
+    "KeLeaveCriticalRegion"
+  ],
+  "ruleName": "CriticalRegions"
+}

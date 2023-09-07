@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "KeEnterGuardedRegion",
+    "KeLeaveGuardedRegion"
+  ],
+  "ruleName": "GuardedRegions"
+}

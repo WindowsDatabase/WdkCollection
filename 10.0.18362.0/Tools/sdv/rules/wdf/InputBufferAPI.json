@@ -1,0 +1,10 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfRequestRetrieveInputBuffer",
+    "WdfRequestRetrieveInputMemory",
+    "WdfRequestRetrieveInputWdmMdl",
+    "WdfRequestRetrieveUnsafeUserInputBuffer"
+  ],
+  "ruleName": "InputBufferAPI"
+}

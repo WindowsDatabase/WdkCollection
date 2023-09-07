@@ -1,0 +1,28 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "NdisMCmActivateVc",
+    "NdisMCmAddPartyComplete",
+    "NdisMCmCloseAddressFamilyComplete",
+    "NdisMCmCloseCallComplete",
+    "NdisMCmCreateVc",
+    "NdisMCmDeactivateVc",
+    "NdisMCmDeleteVc",
+    "NdisMCmDeregisterSapComplete",
+    "NdisMCmDispatchCallConnected",
+    "NdisMCmDispatchIncomingCall",
+    "NdisMCmDispatchIncomingCallQoSChange",
+    "NdisMCmDispatchIncomingCloseCall",
+    "NdisMCmDispatchIncomingDropParty",
+    "NdisMCmDropPartyComplete",
+    "NdisMCmMakeCallComplete",
+    "NdisMCmModifyCallQoSComplete",
+    "NdisMCmNotifyCloseAddressFamily",
+    "NdisMCmOidRequest",
+    "NdisMCmOidRequestComplete",
+    "NdisMCmOpenAddressFamilyComplete",
+    "NdisMCmRegisterAddressFamilyEx",
+    "NdisMCmRegisterSapComplete"
+  ],
+  "ruleName": "Irql_MCM_Function"
+}

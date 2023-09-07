@@ -1,0 +1,10 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoCsqInsertIrp",
+    "IoCsqInsertIrpEx",
+    "IoMarkIrpPending",
+    "IoSetCancelRoutine"
+  ],
+  "ruleName": "IrpCancelField"
+}

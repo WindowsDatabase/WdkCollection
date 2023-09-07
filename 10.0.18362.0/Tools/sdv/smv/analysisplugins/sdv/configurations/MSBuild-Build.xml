@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SMVConfig
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="Config.xsd"
+    >
+    <!-- Please don't add any comments with double hyphens in them.                                                                              -->
+    <!-- XML does not support a double hyphen within a comment, since it is a delimiter.                                                         -->
+    <!-- Available variables which can be used inside actions :                                                                                  -->
+    <!-- $assemblyDir         : Directory where SMV binaries are located            [Available in all actions]                                   -->
+    <!-- $workingDir          : Directory where SMV is run                          [Available in all actions]                                   -->
+    <!-- $actionName          : Name of the current action                          [Available in all actions]                                   -->
+    <!-- $actionPath          : Path where the current action is run                [Available in all actions]                                   -->
+    <!-- $configFilePath      : Path of the config file provided to SMV             [Available in all actions]                                   -->
+    <!-- $logFilePath         : Path to the log file                                [Available in all actions, if SMV is run with /log:<path>]   -->
+    <!-- $outputDir           : Directory where the build files are generated       [Available in all actions following InterceptedBuild]        -->
+    <!-- Run the normal build, intercepted build and the scan step -->
+    
+    
+    <xi:include href="MSBuild-Variables.xml" parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    
+    
+    <Build>
+        <!-- Do a normal build first to ensure everything builds correctly. -->
+        <xi:include href="MSBuild-NormalBuild.xml" parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="MSBuild-InterceptedBuild.xml" parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>     
+    </Build>
+</SMVConfig>

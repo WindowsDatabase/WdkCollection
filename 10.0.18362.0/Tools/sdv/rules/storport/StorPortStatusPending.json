@@ -1,0 +1,7 @@
+{
+  "driverModel": "storport",
+  "relatedDDIs": [
+    "StorPortNotificationOfRequestComplete"
+  ],
+  "ruleName": "StorPortStatusPending"
+}

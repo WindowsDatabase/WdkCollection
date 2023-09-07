@@ -1,0 +1,8 @@
+{
+  "driverModel": "ndis",
+  "relatedDDIs": [
+    "KeReleaseSpinLock",
+    "KfReleaseSpinLock"
+  ],
+  "ruleName": "IrqlKeReleaseSpinLock"
+}

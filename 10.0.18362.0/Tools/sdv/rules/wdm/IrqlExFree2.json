@@ -1,0 +1,8 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "ExAllocatePoolWithTagPriority",
+    "ExFreePoolWithTag"
+  ],
+  "ruleName": "IrqlExFree2"
+}

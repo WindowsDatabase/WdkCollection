@@ -1,0 +1,21 @@
+{
+  "driverModel": "wdf",
+  "relatedDDIs": [
+    "WdfIoTargetFormatRequestForInternalIoctl",
+    "WdfIoTargetFormatRequestForInternalIoctlOthers",
+    "WdfIoTargetFormatRequestForIoctl",
+    "WdfIoTargetFormatRequestForRead",
+    "WdfIoTargetFormatRequestForWrite",
+    "WdfRequestSend",
+    "WdfUsbTargetDeviceFormatRequestForControlTransfer",
+    "WdfUsbTargetDeviceFormatRequestForCyclePort",
+    "WdfUsbTargetDeviceFormatRequestForString",
+    "WdfUsbTargetDeviceFormatRequestForUrb",
+    "WdfUsbTargetPipeFormatRequestForAbort",
+    "WdfUsbTargetPipeFormatRequestForRead",
+    "WdfUsbTargetPipeFormatRequestForReset",
+    "WdfUsbTargetPipeFormatRequestForUrb",
+    "WdfUsbTargetPipeFormatRequestForWrite"
+  ],
+  "ruleName": "RequestSendAndForgetNoFormatting"
+}

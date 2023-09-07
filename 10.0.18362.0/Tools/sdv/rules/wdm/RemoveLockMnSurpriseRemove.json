@@ -1,0 +1,11 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoAcquireRemoveLock",
+    "IoCallDriver",
+    "IoReleaseRemoveLock",
+    "PoCallDriver",
+    "RemoveHeadList"
+  ],
+  "ruleName": "RemoveLockMnSurpriseRemove"
+}

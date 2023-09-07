@@ -1,0 +1,11 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoCallDriver",
+    "IoCompleteRequest",
+    "KeWaitForSingleObject",
+    "PoCallDriver",
+    "RemoveHeadList"
+  ],
+  "ruleName": "PendedCompletedRequest2"
+}

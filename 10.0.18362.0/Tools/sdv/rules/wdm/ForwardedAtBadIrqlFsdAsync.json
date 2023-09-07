@@ -1,0 +1,9 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoBuildAsynchronousFsdRequest",
+    "IoCallDriver",
+    "PoCallDriver"
+  ],
+  "ruleName": "ForwardedAtBadIrqlFsdAsync"
+}

@@ -1,0 +1,10 @@
+{
+  "driverModel": "wdm",
+  "relatedDDIs": [
+    "IoBuildDeviceIoControlRequest",
+    "KeClearEvent",
+    "KeInitializeEvent",
+    "KeSetEvent"
+  ],
+  "ruleName": "IoBuildDeviceIoControlSetEvent"
+}
